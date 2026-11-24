@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://equesai.github.io/HexaLoam/</loc></url>
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://equesai.github.io/HexaLoam/</loc>
+  </url>
+  <url>
+    <loc>https://equesai.github.io/HexaLoam/videos/tripod/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://equesai.github.io/HexaLoam/assets/gait-tripod.jpg</video:thumbnail_loc>
+      <video:title>Tripod gait of the HexaLoam hexapod</video:title>
+      <video:description>Two groups of three legs alternate stance and swing in this CAD animation.</video:description>
+      <video:content_loc>https://equesai.github.io/HexaLoam/assets/gait-tripod.mp4</video:content_loc>
+      <video:duration>10</video:duration>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://equesai.github.io/HexaLoam/videos/ripple/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://equesai.github.io/HexaLoam/assets/gait-ripple.jpg</video:thumbnail_loc>
+      <video:title>Ripple gait of the HexaLoam hexapod</video:title>
+      <video:description>Two staggered swings overlap while four feet remain in stance in this CAD animation.</video:description>
+      <video:content_loc>https://equesai.github.io/HexaLoam/assets/gait-ripple.mp4</video:content_loc>
+      <video:duration>10</video:duration>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://equesai.github.io/HexaLoam/videos/wave/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://equesai.github.io/HexaLoam/assets/gait-wave.jpg</video:thumbnail_loc>
+      <video:title>Wave gait of the HexaLoam hexapod</video:title>
+      <video:description>One foot moves at a time, from rear to front along each side, in this CAD animation.</video:description>
+      <video:content_loc>https://equesai.github.io/HexaLoam/assets/gait-wave.mp4</video:content_loc>
+      <video:duration>10</video:duration>
+    </video:video>
+  </url>
 </urlset>

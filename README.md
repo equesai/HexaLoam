@@ -6,7 +6,7 @@ Published by **HexaLoam contributors**. [Project homepage and research overview]
 
 [![Kinematic tripod walking animation with a live footfall diagram](docs/media/gait-tripod.gif)](docs/walking.md)
 
-**Walking sequences** · [Tripod](docs/walking.md#tripod) · [Ripple](docs/walking.md#ripple) · [Wave](docs/walking.md#wave)
+**Watch the hexapod walk** · [Tripod gait](https://equesai.github.io/HexaLoam/videos/tripod/) · [Ripple gait](https://equesai.github.io/HexaLoam/videos/ripple/) · [Wave gait](https://equesai.github.io/HexaLoam/videos/wave/) · [Reproduce the animations](docs/walking.md#reproduce-the-videos)
 
 [360° assembly video](docs/media/assembly-orbit.mp4?raw=1) · [Multi-angle CAD gallery](docs/gallery.md)
 
