@@ -1,0 +1,10 @@
+* text=auto
+
+*.SLDASM binary
+*.SLDPRT binary
+*.STL binary
+*.sldasm binary
+*.sldprt binary
+*.stl binary
+*.3mf binary
+*.png binary

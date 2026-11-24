@@ -1,0 +1,11 @@
+# SOLIDWORKS temporary lock files and local backups
+~$*
+*.swp
+*.tmp
+*.bak
+*.sldprt~
+*.sldasm~
+
+# Windows Explorer metadata
+Thumbs.db
+Desktop.ini
