@@ -9,7 +9,7 @@ Start with the visual meshes to study packaging, or run the MATLAB leg example t
 | Unity | Import the same GLBs with Unity glTFast | Documented static-asset workflow. Native editor test pending. |
 | Unreal Engine | Import the same GLBs as static meshes | Documented static-asset workflow. Native editor and co-simulation tests pending. |
 | MATLAB | Calculate idealized one-leg position, Jacobian and holding torque | Two tests passed on MATLAB R2025b, including a finite-difference check. |
-| Simscape Multibody | Full CAD-to-dynamics import | Blocked at XML import. The available local export ended inside the part list. MATLAB rejected it, so it is excluded from the release. |
+| Simscape Multibody | Full assembly XML and seven STEP files | Imported and compiled in R2025b. The generated model contains 18 revolute joints and 29 additional 6-DOF joints. |
 
 ## Visual meshes
 
@@ -48,12 +48,23 @@ For this example the foot is **0.25 m** along positive X. The balancing joint to
 
 ## Full robot and agricultural scene
 
-Before importing a new export, run the following from the checkout. Replace the example path with the actual XML path. The check verifies that the XML parses and its listed geometry files are present within the export directory. The inspected local export ended before the chassis and servo part definitions.
+Run this check from the repository root to confirm that the XML parses and all seven referenced STEP files are present.
 
 ```sh
-python tools/check_cad_export.py path/to/Full_Robot_Assembly.xml
+python tools/check_cad_export.py simulation/cad-export/Full_Robot_Assembly.xml
 ```
 
-For a complete CAD export, place the Simscape XML and its referenced geometry together. Work in a writable copy. Run `smimport('Full_Robot_Assembly.xml')` and inspect the generated model, including mate conversion, axis direction, mass properties, joint limits and assembly behavior. A successful parse or a block count alone cannot verify independence. The [joint acceptance test](development-roadmap.md#2-establish-one-leg-then-all-18-leg-axes) requires motion on each of the 18 intended coordinates. [MathWorks model import](https://www.mathworks.com/help/sm/ref/smimport.html)
+Copy the contents of [simulation/cad-export](../simulation/cad-export/) to a writable working directory and make it the current MATLAB folder. To reproduce the import and count the joint blocks in R2025b:
+
+```matlab
+model = smimport('Full_Robot_Assembly.xml');
+name = get_param(model,'Name');
+set_param(name,'SimulationCommand','update');
+revolute = find_system(name,'ReferenceBlock','sm_lib/Joints/Revolute Joint');
+free = find_system(name,'ReferenceBlock','sm_lib/Joints/6-DOF Joint');
+disp([numel(revolute), numel(free)])   % Observed: 18, 29
+```
+
+The generated parameter file associates twelve revolute joints with the six L1 links and six with the six L3 links. The additional 6-DOF joints require a mechanical review. Trace each one to its connected bodies, check which connections should be rigid, and compare the remaining joint axes with the assembled hardware before using the model for gait or torque estimates. [Joint acceptance test](development-roadmap.md#2-establish-one-leg-then-all-18-leg-axes) · [MathWorks model import](https://www.mathworks.com/help/sm/ref/smimport.html)
 
 The development machine reported MATLAB R2025b with Simulink, Simscape Multibody, Multibody Link and Robotics System Toolbox. The installed support-package inventory listed Arduino packages only. For the agricultural scene, MathWorks pairs R2025b with **Unreal Engine 5.3** and requires its **Robotics System Toolbox Interface for Unreal Engine Projects** for custom scenes. On Windows, confirm a supported Visual Studio 2022 C++ toolchain before building the project. The first scene milestone is one crop row, one known robot pose and one sensor target. [MathWorks compatibility table](https://www.mathworks.com/help/robotics/ug/unreal-engine-simulation-environment-requirements-and-limitations.html)

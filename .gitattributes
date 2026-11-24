@@ -9,3 +9,7 @@
 *.3mf binary
 *.png binary
 *.glb binary
+*.mp4 binary
+*.gif binary
+*.STEP binary
+simulation/cad-export/*.xml text eol=lf

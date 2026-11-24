@@ -30,7 +30,7 @@ The six plates below are taken from the [Bambu Studio project](../Printables/Ful
 
 ## Simulation plan
 
-The intended model has three single-axis revolute joints per leg, for 18 revolute joints and 18 leg degrees of freedom. This is a design target pending a successful import and verification of the joint topology.
+The R2025b import compiled with 18 Revolute Joint blocks and 29 additional 6-DOF Joint blocks. The design target is three independent single-axis joints per leg. Review each free connection against the mechanical assembly and confirm the joint axes and motion before relying on the dynamics. [Complete XML and STEP package](../simulation/cad-export/)
 
 1. Keep the Simscape Multibody XML export and its referenced STEP files together. Import the XML with MATLAB's `smimport` function. [MathWorks model-import documentation](https://www.mathworks.com/help/sm/ref/smimport.html)
 2. Confirm that the imported model has three independent revolute joints per leg. Check the joint axes and initial positions against the CAD. Confirm that each leg moves independently and that no imported constraint locks an intended axis.

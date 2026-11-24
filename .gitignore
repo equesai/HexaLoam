@@ -15,3 +15,4 @@ __pycache__/
 .venv/
 slprj/
 *.slxc
+.render-cache/

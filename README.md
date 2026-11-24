@@ -4,7 +4,11 @@
 
 Published by **HexaLoam contributors**.
 
-![Isometric SOLIDWORKS render of the HexaLoam hexapod with six legs around a central chassis](docs/assembly-preview.png)
+[![Kinematic tripod walking animation with a live footfall diagram](docs/media/gait-tripod.gif)](docs/walking.md)
+
+**Walking sequences** · [Tripod](docs/walking.md#tripod) · [Ripple](docs/walking.md#ripple) · [Wave](docs/walking.md#wave)
+
+[360° assembly video](docs/media/assembly-orbit.mp4?raw=1) · [Multi-angle CAD gallery](docs/gallery.md)
 
 This is a **mechanical starting point**. The designer is expected to finish the robot around the intended application, including the payload, mounting adapters, actuators, controller, battery, wiring, firmware, and validation.
 
@@ -16,6 +20,7 @@ This is a **mechanical starting point**. The designer is expected to finish the 
 | --- | --- |
 | Bring a chassis or leg mesh into Unity or Unreal Engine | [Visual assets and import instructions](docs/simulation-guide.md#visual-meshes) |
 | Study how a foot force loads three joints | [Runnable MATLAB example](docs/simulation-guide.md#single-leg-static-study) |
+| Change a gait and render it from the assembly geometry | [Walking demonstrations and reproduction commands](docs/walking.md#reproduce-the-videos) |
 | Develop the complete 18-joint model and agricultural experiment | [Engineering roadmap and acceptance tests](docs/development-roadmap.md) |
 | Share a modification, classroom exercise or benchmark | [Contribution guide](CONTRIBUTING.md) · [Citation metadata](CITATION.cff) |
 
@@ -70,7 +75,7 @@ The repository includes all dependencies reported for the main robot and leg ass
 
 ## MATLAB and Simscape Multibody analysis
 
-The simulation design target is **18 revolute joints and 18 leg degrees of freedom**, with three single-axis joints per leg. The intended workflow is to import the assembly XML and its companion geometry into MATLAB and Simscape Multibody, then configure joint actuation and sensing to analyze angular position, speed, and required actuator torque for the intended gait and payload. A complete import with the expected joint count still needs verification. See the [simulation plan](docs/designer-guide.md#simulation-plan).
+The assembly XML and seven STEP files imported and compiled in **MATLAB R2025b with Simscape Multibody**. The generated model contains **18 Revolute Joint blocks and 29 additional 6-DOF Joint blocks**. The next dynamics milestone is to review the free connections and verify three independent hinge motions per leg before estimating gait speed or actuator torque. [CAD export](simulation/cad-export/) · [Import and verification guide](docs/simulation-guide.md#full-robot-and-agricultural-scene)
 
 ## Supporting CAD
 

@@ -1,0 +1,1534 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="" on="11/25/26||00:16:42" using="Simscape Multibody Link Version 7.4" from="SolidWorks 33.5.0"/>
+<ModelUnits mass="kilogram" length="millimeter"/>
+<DataUnits mass="kilogram" length="meter"/>
+<RootAssembly name="Full_Robot_Assembly" uid="Full_Robot_Assembly" version="1231">
+<AssemblyFile name="Full_Robot_Assembly.SLDASM" type="SolidWorks Assembly"/>
+<InstanceTree>
+<Instance name="Servo Motor MG996R-4" uid="Servo Motor MG996R-4" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.50186265657453921 -2.3686142577732668e-16 -0.86494732437064981 0 -1 2.3544546434762341e-16 -0.86494732437064981 0 0.50186265657453921</Rotation>
+<Translation>-0.13835131915691901 -0.0052000000000000102 0.036449826354479048</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-2" uid="Servo Motor MG996R-2" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.50186265657453921 -2.3686142577732668e-16 0.86494732437064981 0 -1 -2.3544546434762341e-16 0.86494732437064981 0 0.50186265657453921</Rotation>
+<Translation>-0.13835131915691901 -0.0052000000000000102 -0.036449826354479055</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-3" uid="Servo Motor MG996R-3" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.50186265657453921 -2.3686142577732668e-16 0.86494732437064981 0 1 2.3544546434762341e-16 -0.86494732437064981 0 -0.50186265657453921</Rotation>
+<Translation>-0.13835131915691901 0.0052000000000000102 0.036449826354479055</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-5" uid="Servo Motor MG996R-5" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.49813502755308831 1.7117566934185327e-16 -0.86709947198962378 0 -1 -2.3532340356735979e-16 -0.86709947198962378 -1.7444481166164828e-16 0.49813502755308831</Rotation>
+<Translation>0.017571100712975532 -0.0052000000000000102 -0.053867819405241102</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-7" uid="Servo Motor MG996R-7" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.99999768412763168 0 -0.0021521476189668709 0 -1 2.3522162811034484e-16 -0.0021521476189668709 -2.3536348627191363e-16 -0.99999768412763168</Rotation>
+<Translation>-0.045561850460045086 -0.0052000000000000102 -0.090317645759720455</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-9" uid="Servo Motor MG996R-9" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.99999768412763168 0 0.0021521476189668709 0 1 2.3566930058490197e-16 -0.0021521476189668709 -2.3581121213788505e-16 0.99999768412763168</Rotation>
+<Translation>-0.045561850460045093 0.0052000000000000102 -0.090317645759720455</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-23" uid="Servo Motor MG996R-23" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.92639943085556964 0.36935805998139926 -0.073203265208964516 0.078773568014009809 3.5388358909926855e-16 0.99689253431969393 0.36821029248626264 -0.92928715880871682 -0.029095652259467135</Rotation>
+<Translation>-0.31466486274447308 -0.011845727525164466 -0.12131232565089593</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-26" uid="Servo Motor MG996R-26" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.86813487756830543 0.48271126047267437 -0.11546286572896601 -0.13184010098521068 1.8735013540549512e-16 0.99127099613183955 0.47849767201280385 0.8757795607416754 0.063640701327415561</Rotation>
+<Translation>-0.21614591395270186 -0.0012513610350984811 0.095140218475016802</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-12" uid="Servo Motor MG996R-12" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.99999768412763157 0 -0.0021521476189806932 0 1 -2.3534363653607008e-16 0.0021521476189806932 2.3548595148614023e-16 0.99999768412763157</Rotation>
+<Translation>-0.045305684757071668 0.0052000000000000093 0.08987395374701182</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-11" uid="Servo Motor MG996R-11" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.49813502755308831 1.7119999599020991e-16 0.86709947198962356 0 1 -2.3556752512788703e-16 -0.86709947198962356 -1.7489253752761965e-16 -0.49813502755308831</Rotation>
+<Translation>0.017571100712975546 0.0052000000000000093 -0.053867819405241102</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-19" uid="Servo Motor MG996R-19" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.38220865854391406 -0.92183196204640749 0.064361285597264742 0.16605516898198514 -4.3715031594615539e-16 -0.98611646414323917 0.90903367494742804 0.38758977508400677 0.1530749622306109</Rotation>
+<Translation>-0.13479596778467767 -0.021478973293840208 -0.26886094110159453</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-20" uid="Servo Motor MG996R-20" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.38220865854391173 0.92183196204640827 -0.064361285597265089 0.16605516898198516 1.2073675392798571e-15 0.98611646414323928 0.90903367494742904 -0.3875897750840045 -0.15307496223061082</Rotation>
+<Translation>-0.12815877765794367 -0.02147897329384019 -0.27165158748219925</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-22" uid="Servo Motor MG996R-22" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.92117540760484373 -0.36935805998139926 -0.12251731286160084 -0.13184010098521073 -1.6653345369377343e-16 0.99127099613183955 -0.36613393204708539 0.92928715880871682 -0.048696203927649034</Rotation>
+<Translation>-0.22438684953531934 -0.0012513610350984505 -0.077682203967213176</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-6" uid="Servo Motor MG996R-6" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.99999768412763146 0 0.0021521476189807487 0 -1 -2.3554729215917668e-16 0.0021521476189807487 2.3568874692366011e-16 -0.99999768412763146</Rotation>
+<Translation>-0.045305684757071661 -0.0052000000000000102 0.08987395374701182</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-18" uid="Servo Motor MG996R-18" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.37823114068345598 -0.92183196204640827 -0.084658360289820239 -0.21842258421670424 -8.8817841970012484e-16 0.97585427944140146 -0.89957366508885128 0.38758977508400455 -0.20134891936373095</Rotation>
+<Translation>-0.096544044417426172 -0.0021388314882212385 -0.17788370734448716</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-8" uid="Servo Motor MG996R-8" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.4981350275531003 1.7098788001700866e-16 0.86709947198961668 0 -1 2.3532259526666311e-16 0.86709947198961668 1.747700723133963e-16 0.4981350275531003</Rotation>
+<Translation>0.017827266415949464 -0.0052000000000000102 0.053424127392533355</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-10" uid="Servo Motor MG996R-10" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.4981350275531003 1.7138778531504961e-16 -0.86709947198961668 0 1 2.3556833342858371e-16 0.86709947198961668 1.7456727687587642e-16 -0.4981350275531003</Rotation>
+<Translation>0.017827266415949478 0.0052000000000000102 0.053424127392533355</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-24" uid="Servo Motor MG996R-24" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.92639943085556953 -0.3693580599813992 0.07320326520896446 0.078773568014009809 -1.5612511283791266e-16 -0.99689253431969416 0.36821029248626258 0.92928715880871693 0.029095652259467329</Rotation>
+<Translation>-0.31732424077633903 -0.011845727525164471 -0.1146214581074731</Translation>
+</Transform>
+</Instance>
+<Instance name="LidarCover-1" uid="LidarCover-1" entityUid="LidarCover*:*Default">
+<Transform>
+<Rotation>0.99999768412763146 0 -0.0021521476189604117 0 1 0 0.0021521476189604117 0 0.99999768412763146</Rotation>
+<Translation>-0.081782517571045765 -0.064000000000000001 -0.00020475839295861718</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot_Base-1" uid="Robot_Base-1" entityUid="Robot_Base*:*Default">
+<Transform>
+<Rotation>0.99999768412763146 0 -0.0021521476189609633 0 1 0 0.0021521476189609633 0 0.99999768412763146</Rotation>
+<Translation>-0.055405010686050749 0 0.019852056344983045</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-21" uid="Servo Motor MG996R-21" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.92117540760484362 0.36935805998139898 0.12251731286160088 -0.13184010098521071 3.4601721165549345e-16 -0.99127099613183944 -0.36613393204708522 -0.92928715880871671 0.048696203927648833</Rotation>
+<Translation>-0.22172747150345329 -0.0012513610350984548 -0.084373071510635916</Translation>
+</Transform>
+</Instance>
+<Instance name="RP-Lidar-1" uid="RP-Lidar-1" entityUid="RP-Lidar*:*Default">
+<Transform>
+<Rotation>-0.99999768412763146 5.2152878134066469e-15 -0.0021521476189609303 -5.2040999561060614e-15 -1 -5.2040618557959875e-15 -0.0021521476189609303 -5.1928498125235637e-15 0.99999768412763146</Rotation>
+<Translation>-0.14562896318102733 0.69069231955245325 -0.13326004447052114</Translation>
+</Transform>
+</Instance>
+<Instance name="L1-3" uid="L1-3" entityUid="L1*:*Default">
+<Transform>
+<Rotation>0.92928715880871671 0 -0.36935805998139914 0 1 -1.2814681953819681e-16 0.36935805998139914 1.2814681953819679e-16 0.92928715880871671</Rotation>
+<Translation>-0.13320722692703002 -0.017477148707167121 -0.045315536429278214</Translation>
+</Transform>
+</Instance>
+<Instance name="L3-2" uid="L3-2" entityUid="L3*:*Default">
+<Transform>
+<Rotation>-0.072538241491019673 0.38074143098835445 -0.92183196204640838 -0.98233094747103156 -0.18715210295549872 -6.4305386102830875e-16 -0.17252279026857906 0.90554406468612825 0.38758977508400455</Rotation>
+<Translation>-0.14829129591389262 -0.10390668197987538 -0.3102459977748212</Translation>
+</Transform>
+</Instance>
+<Instance name="L2-3" uid="L2-3" entityUid="L2*:*Default">
+<Transform>
+<Rotation>0.92411642380815695 -0.36935805998139903 0.097895141732366353 0.10534433926522907 -2.3231517921223416e-16 -0.99443580495915995 0.36730287969575631 0.92928715880871671 0.038909780781027123</Rotation>
+<Translation>-0.25750408503302691 -0.0071028754204844613 -0.12958447916620619</Translation>
+</Transform>
+</Instance>
+<Instance name="L2-2" uid="L2-2" entityUid="L2*:*Default">
+<Transform>
+<Rotation>0.38035531397958611 -0.92183196204640783 0.074536359430553367 0.1923073419942456 -8.2873087781258732e-16 -0.98133474727796555 0.90462573550756276 0.38758977508400572 0.17727505438648467</Rotation>
+<Translation>-0.082442506455450967 -0.012355930572057109 -0.23722673719519766</Translation>
+</Transform>
+</Instance>
+<Instance name="L1-2" uid="L1-2" entityUid="L1*:*Default">
+<Transform>
+<Rotation>0.38758977508400516 1.3457626051773493e-16 -0.92183196204640816 -3.4687215431342858e-16 1 0 0.92183196204640816 3.1972566114877032e-16 0.38758977508400516</Rotation>
+<Translation>-0.055811826722353471 -0.017477148707167104 -0.090295586246625939</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-17" uid="Servo Motor MG996R-17" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.3782311406834582 0.92183196204640749 0.084658360289820642 -0.21842258421670424 7.7368667028565596e-16 -0.97585427944140146 -0.89957366508885028 -0.38758977508400688 0.20134891936373076</Rotation>
+<Translation>-0.089906854290692229 -0.0021388314882212277 -0.18067435372509189</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-1" uid="Servo Motor MG996R-1" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.50186265657453932 -2.3686142577732668e-16 -0.86494732437065003 0 1 -2.3544546434762336e-16 0.86494732437065003 0 -0.50186265657453932</Rotation>
+<Translation>-0.13835131915691901 0.0052000000000000093 -0.036449826354479062</Translation>
+</Transform>
+</Instance>
+<Instance name="L3-3" uid="L3-3" entityUid="L3*:*Default">
+<Transform>
+<Rotation>2.2678930017421146e-06 0.92928715880594959 -0.36935805998139909 -0.99999999999702227 2.440465232050699e-06 -2.1189406075551264e-16 9.0140550336539086e-07 0.36935805998029925 0.92928715880871671</Rotation>
+<Translation>-0.34182417054391145 -0.098179613747913702 -0.12823323182965235</Translation>
+</Transform>
+</Instance>
+<Instance name="L2-4" uid="L2-4" entityUid="L2*:*Default">
+<Transform>
+<Rotation>0.87090655245292747 0.48271126047267449 0.092258419168324349 0.10534433926522906 0 -0.99443580495915995 -0.48002536087099479 0.8757795607416754 -0.050850898790379719</Rotation>
+<Translation>-0.27726515741738761 -0.0071028754204844387 0.087721624528244418</Translation>
+</Transform>
+</Instance>
+<Instance name="L1-4" uid="L1-4" entityUid="L1*:*Default">
+<Transform>
+<Rotation>0.8757795607416754 0 0.48271126047267443 0 1 1.6747411113206089e-16 -0.48271126047267443 -1.6747411113206092e-16 0.8757795607416754</Rotation>
+<Translation>-0.1332072269270301 -0.017477148707167146 0.045315536429278137</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-25" uid="Servo Motor MG996R-25" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.86813487756830565 -0.48271126047267454 0.11546286572896594 -0.13184010098521071 0 -0.99127099613183978 0.47849767201280402 -0.8757795607416754 -0.063640701327415811</Rotation>
+<Translation>-0.21962143502810511 -0.0012513610350984791 0.088834605637676728</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-29" uid="Servo Motor MG996R-29" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.21837755768700545 -0.97584232406463234 -0.0065575043115105756 0.03001475945683036 -1.7974958863739616e-16 -0.9995494556122515 0.97540266378219775 -0.21847599081852648 0.029289672624594278</Rotation>
+<Translation>-0.080211007438515905 0.00040765128443242399 0.18349939514976149</Translation>
+</Transform>
+</Instance>
+<Instance name="L1-5" uid="L1-5" entityUid="L1*:*Default">
+<Transform>
+<Rotation>0.21847599081852656 -2.7114560915332351e-16 0.97584232406463267 -2.711456091533238e-16 1 3.3856331768133745e-16 -0.97584232406463267 -3.3856331768133774e-16 0.21847599081852656</Rotation>
+<Translation>-0.055555661019380073 -0.017477148707167118 0.089851894233917221</Translation>
+</Transform>
+</Instance>
+<Instance name="L3-5" uid="L3-5" entityUid="L3*:*Default">
+<Transform>
+<Rotation>5.3318305982522311e-07 0.21847599081787589 0.97584232406463245 -0.99999999999702205 2.4404652318040871e-06 2.5481599201694497e-16 -2.3815092635469612e-06 -0.97584232406172644 0.21847599081852648</Rotation>
+<Translation>-0.10470629207869669 -0.078565437275606761 0.30938753228032728</Translation>
+</Transform>
+</Instance>
+<Instance name="L3-4" uid="L3-4" entityUid="L3*:*Default">
+<Transform>
+<Rotation>2.1373095689548495e-06 0.8757795607390676 0.48271126047267443 -0.99999999999702227 2.440465232032135e-06 0 -1.1780400482206434e-06 -0.48271126047123702 0.8757795607416754</Rotation>
+<Translation>-0.32981217676651292 -0.098179613747913702 0.15368004663982973</Translation>
+</Transform>
+</Instance>
+<Instance name="L1-6" uid="L1-6" entityUid="L1*:*Default">
+<Transform>
+<Rotation>-0.71517521303173026 0 0.69894521578233826 -1.231653667943533e-16 1 -3.2959746043559335e-16 -0.69894521578233826 -2.9837243786801082e-16 -0.71517521303173015</Rotation>
+<Translation>0.022933150448368758 -0.017477148707167111 0.044536357804639798</Translation>
+</Transform>
+</Instance>
+<Instance name="L2-5" uid="L2-5" entityUid="L2*:*Default">
+<Transform>
+<Rotation>0.21812484520377873 0.97584232406463245 -0.012381860480732448 -0.056673781106764701 2.4616166139503478e-16 -0.99839274964067248 -0.97427390113863266 0.2184759908185262 0.055304674268755578</Rotation>
+<Translation>-0.11929045854469991 0.0027009249091164435 0.22622895255171421</Translation>
+</Transform>
+</Instance>
+<Instance name="L2-6" uid="L2-6" entityUid="L2*:*Default">
+<Transform>
+<Rotation>-0.71119583865804747 0.69894521578233815 -0.075339660275697246 0.10534433926522897 -4.3376582010963072e-16 -0.99443580495915995 -0.6950561482788632 -0.71517521303173026 -0.073629921939183024</Rotation>
+<Translation>0.1051555318865402 -0.007102875420485673 0.17019638977844531</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-33" uid="Servo Motor MG996R-33" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.70893244583076376 -0.69894521578233815 -0.094288772308223204 -0.1318401009852106 5.6210504412115864e-16 -0.99127099613183955 0.69284412029014197 0.71517521303173026 -0.092149007831872867</Rotation>
+<Translation>0.089565051988602429 -0.0012513610350984375 0.11468986408646357</Translation>
+</Transform>
+</Instance>
+<Instance name="L1-7" uid="L1-7" entityUid="L1*:*Default">
+<Transform>
+<Rotation>-0.92855131851387929 -5.9685144621148057e-16 -0.3712040528956228 -6.9693749356900356e-16 0.99999999999999989 1.3548015430186316e-16 0.37120405289562286 3.8450629813719001e-16 -0.92855131851387918</Rotation>
+<Translation>0.022676984745394452 -0.017477148707167114 -0.044980049817347406</Translation>
+</Transform>
+</Instance>
+<Instance name="L3-7" uid="L3-7" entityUid="L3*:*Default">
+<Transform>
+<Rotation>-2.266097208477817e-06 -0.92855131851111417 -0.37120405289562264 -0.99999999999702205 2.4404652314150084e-06 1.6198866584435474e-16 9.0591058470168987e-07 0.37120405289451724 -0.92855131851387918</Rotation>
+<Translation>0.23159984642061249 -0.091768852003333151 -0.12850048799895919</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-37" uid="Servo Motor MG996R-37" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.92564804385141097 0.37120405289562269 -0.07337063464302411 -0.079016240869111812 -1.686668537754835e-16 -0.99687332880307045 -0.37004341987525041 0.9285513185138794 0.029331148855190888</Rotation>
+<Translation>0.11384542782752607 -0.00070991646890835387 -0.077549165778189336</Translation>
+</Transform>
+</Instance>
+<Instance name="L3-6" uid="L3-6" entityUid="L3*:*Default">
+<Transform>
+<Rotation>-1.7453602423787381e-06 -0.71517521302960063 0.69894521578233826 -0.99999999999702227 2.4404652319520671e-06 -4.133447016529092e-16 -1.7057514978838513e-06 -0.69894521578025703 -0.71517521303173015</Rotation>
+<Translation>0.18348381089706467 -0.09817961374791366 0.20144352400187207</Translation>
+</Transform>
+</Instance>
+<Instance name="L2-7" uid="L2-7" entityUid="L2*:*Default">
+<Transform>
+<Rotation>-0.92727614936256175 -0.37120405289562275 -0.048646623081197313 0.052389805615757228 2.8428648747359438e-16 -0.99862671117266988 0.37069428251712155 -0.92855131851387951 0.019447308174982674</Rotation>
+<Translation>0.17113656804204389 -0.003900976858190827 -0.069436209168083324</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-38" uid="Servo Motor MG996R-38" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.92564804385141097 -0.37120405289562275 0.073370634643024207 -0.079016240869111812 4.0592529337857286e-16 0.99687332880307045 -0.37004341987525052 -0.9285513185138794 -0.029331148855190677</Rotation>
+<Translation>0.11117275864667767 -0.00070991646890835463 -0.084234735271489045</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-31" uid="Servo Motor MG996R-31" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.21771681879951835 0.97584232406463245 -0.018197400252633035 -0.083292448678027722 3.4000580129145409e-16 -0.99652514669385939 -0.97245141513858457 0.21847599081852639 0.081280296695000767</Rotation>
+<Translation>-0.095121522941052652 0.0061072722760562373 0.28305409687926975</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-32" uid="Servo Motor MG996R-32" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.21771681879951787 -0.97584232406463267 0.018197400252633191 -0.083292448678027736 -1.4224732503009816e-16 0.9965251466938595 -0.9724514151385848 -0.21847599081852595 -0.081280296695000753</Rotation>
+<Translation>-0.10214758767431796 0.0061072722760562347 0.28148106974537634</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-30" uid="Servo Motor MG996R-30" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.21837755768700501 0.97584232406463267 0.0065575043115104264 0.03001475945683036 3.1832175784174405e-16 0.99954945561225172 0.97540266378219798 0.21847599081852606 -0.029289672624594316</Rotation>
+<Translation>-0.073184942705249972 0.00040765128443242616 0.18507242228365503</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-34" uid="Servo Motor MG996R-34" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.70893244583076376 0.69894521578233815 0.094288772308223009 -0.13184010098521054 -3.1918911957973251e-16 0.99127099613183978 0.69284412029014197 -0.71517521303173026 0.09214900783187302</Rotation>
+<Translation>0.094597457542235253 -0.001251361035098439 0.10954060255263516</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-40" uid="Servo Motor MG996R-40" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.92824399586239204 -0.37120405289562258 -0.0238879731095702 0.025726066651654847 4.0766001685454957e-16 -0.99966902997673912 0.37108119548160118 -0.9285513185138794 0.0095496202061568173</Rotation>
+<Translation>0.20442792007606114 -0.0059787026695537187 -0.1215150591327763</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-36" uid="Servo Motor MG996R-36" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.7129528306018289 -0.69894521578233804 0.056336903285689278 0.078773568014009726 5.3429483060085649e-16 0.99689253431969393 -0.69677326751188029 0.71517521303173059 0.055058408493496309</Rotation>
+<Translation>0.1610892498098819 -0.011845727525167006 0.18459091066766661</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-27" uid="Servo Motor MG996R-27" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.87305810581315701 -0.48271126047267465 -0.068988280793363999 0.078773568014009823 0 0.99689253431969416 -0.48121125179725843 -0.8757795607416754 0.038024888307972703</Rotation>
+<Translation>-0.30720756694224594 -0.011845727525164317 0.13711023803585234</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-28" uid="Servo Motor MG996R-28" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>0.87305810581315701 0.48271126047267454 0.06898828079336411 0.078773568014009823 1.8735013540549517e-16 -0.99689253431969405 -0.48121125179725843 0.8757795607416754 -0.038024888307972481</Rotation>
+<Translation>-0.30373204586684255 -0.01184572752516427 0.14341585087319253</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-35" uid="Servo Motor MG996R-35" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.7129528306018289 0.69894521578233804 -0.056336903285689147 0.078773568014009782 -2.7061686225238186e-16 -0.99689253431969393 -0.69677326751188029 -0.71517521303173059 -0.055058408493496538</Rotation>
+<Translation>0.16612165536351478 -0.011845727525167009 0.17944164913383806</Translation>
+</Transform>
+</Instance>
+<Instance name="Servo Motor MG996R-39" uid="Servo Motor MG996R-39" entityUid="Servo Motor MG996R*:*Default">
+<Transform>
+<Rotation>-0.92824399586239204 0.37120405289562258 0.023887973109570106 0.02572606665165484 -1.7694179454963427e-16 0.99966902997673923 0.37108119548160123 0.92855131851387929 -0.0095496202061570307</Rotation>
+<Translation>0.20710058925690961 -0.0059787026695537178 -0.1148294896394766</Translation>
+</Transform>
+</Instance>
+</InstanceTree>
+<Constraints>
+<Coincident name="Coincident1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot_Base-1</Uid>
+</InstancePath>
+<Position>-4.2724555794335095e-05 0 -0.019852010370154296</Position>
+<Axis>-0.0021521476189609633 0 -0.99999768412763146</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Full_Robot_Assembly</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident2">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot_Base-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Full_Robot_Assembly</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident5">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot_Base-1</Uid>
+</InstancePath>
+<Position>0.055404882375117558 0 -0.00011923976182648399</Position>
+<Axis>-0.99999768412763146 0 0.0021521476189608245</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Full_Robot_Assembly</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident7">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot_Base-1</Uid>
+</InstancePath>
+<Position>0.017320508075688669 0.034000000000000002 -0.0099999999999998059</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-1</Uid>
+</InstancePath>
+<Position>-0.027300000000000012 0.028799999999999999 -0.0092500000000000082</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric2">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot_Base-1</Uid>
+</InstancePath>
+<Position>-0.075397413359520993 0.034000000000000002 -0.079407849302036912</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-1</Uid>
+</InstancePath>
+<Position>-0.024000000000000021 0.024399999999999998 0.0049999999999999767</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric3">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot_Base-1</Uid>
+</InstancePath>
+<Position>-0.066737159321676648 0.034000000000000002 -0.07440784930203681</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-1</Uid>
+</InstancePath>
+<Position>-0.024000000000000007 0.024399999999999995 -0.0050000000000000322</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident4">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L1-2</Uid>
+</InstancePath>
+<Position>0 0 -0.051000000000000004</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-17</Uid>
+</InstancePath>
+<Position>-0.010250000000000009 0.047400000000000012 0</Position>
+<Axis>0 0.99999999999999978 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric4">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L1-2</Uid>
+</InstancePath>
+<Position>-0.086526414254431472 0.0175771487071671 -0.050999999999999997</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-17</Uid>
+</InstancePath>
+<Position>-0.010250000000000009 0.047400000000000012 0</Position>
+<Axis>0 -0.99999999999999978 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident16">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L1-3</Uid>
+</InstancePath>
+<Position>0 0 -0.050999999999999983</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-21</Uid>
+</InstancePath>
+<Position>-0.010249999999999981 0.047399999999999998 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric14">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L1-3</Uid>
+</InstancePath>
+<Position>-0.086526414254431444 0.017577148707167103 -0.05099999999999999</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-21</Uid>
+</InstancePath>
+<Position>-0.010249999999999981 0.047399999999999998 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident21">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L1-4</Uid>
+</InstancePath>
+<Position>0 0 -0.050999999999999997</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-25</Uid>
+</InstancePath>
+<Position>-0.010250000000000009 0.047399999999999998 0</Position>
+<Axis>1.1102230246251565e-16 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric21">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L1-4</Uid>
+</InstancePath>
+<Position>-0.086526414254431472 0.0175771487071671 -0.050999999999999983</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-25</Uid>
+</InstancePath>
+<Position>-0.010250000000000009 0.047399999999999998 0</Position>
+<Axis>-1.1102230246251565e-16 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident26">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L1-5</Uid>
+</InstancePath>
+<Position>0 0 -0.05099999999999999</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-29</Uid>
+</InstancePath>
+<Position>-0.010249999999999954 0.047400000000000005 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric28">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L1-5</Uid>
+</InstancePath>
+<Position>-0.086526414254431541 0.017577148707167103 -0.051000000000000018</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-29</Uid>
+</InstancePath>
+<Position>-0.010249999999999954 0.047400000000000005 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident31">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L1-6</Uid>
+</InstancePath>
+<Position>0 0 -0.050999999999999997</Position>
+<Axis>-1.1102230246251565e-16 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-33</Uid>
+</InstancePath>
+<Position>-0.010250000000000009 0.047399999999999984 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric35">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L1-6</Uid>
+</InstancePath>
+<Position>-0.086526414254431472 0.017577148707167103 -0.050999999999999983</Position>
+<Axis>-1.1102230246251565e-16 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-33</Uid>
+</InstancePath>
+<Position>-0.010250000000000009 0.047399999999999984 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident36">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L1-7</Uid>
+</InstancePath>
+<Position>0 0 -0.050999999999999983</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-37</Uid>
+</InstancePath>
+<Position>-0.010249999999999995 0.047400000000000005 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric42">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L1-7</Uid>
+</InstancePath>
+<Position>-0.086526414254431472 0.017577148707167093 -0.050999999999999983</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-37</Uid>
+</InstancePath>
+<Position>-0.010249999999999995 0.047400000000000005 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric6">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-18</Uid>
+</InstancePath>
+<Position>-0.024000000000000049 0.024399999999999991 0.0049999999999999906</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L2-2</Uid>
+</InstancePath>
+<Position>0.074142507153543424 0.056799999999999982 -0.0061960141935711727</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric7">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-18</Uid>
+</InstancePath>
+<Position>-0.024000000000000021 0.024399999999999991 -0.0050000000000000114</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L2-2</Uid>
+</InstancePath>
+<Position>0.074409324441831265 0.056799999999999996 0.0038004255993955294</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident6">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-18</Uid>
+</InstancePath>
+<Position>-0.027300000000000019 0.028799999999999985 -0.0092500000000000013</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L2-2</Uid>
+</InstancePath>
+<Position>0 0.064799999999999983 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric15">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-22</Uid>
+</InstancePath>
+<Position>-0.024000000000000021 0.024400000000000012 0.004999999999999994</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L2-3</Uid>
+</InstancePath>
+<Position>0.074142507153543424 0.056799999999999989 -0.0061960141935711692</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric16">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-22</Uid>
+</InstancePath>
+<Position>-0.024000000000000021 0.024400000000000012 -0.0050000000000000079</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L2-3</Uid>
+</InstancePath>
+<Position>0.074409324441831237 0.056799999999999989 0.0038004255993955328</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident17">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-22</Uid>
+</InstancePath>
+<Position>-0.027300000000000019 0.028799999999999999 -0.0092500000000000047</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L2-3</Uid>
+</InstancePath>
+<Position>0 0.064799999999999983 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric22">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-26</Uid>
+</InstancePath>
+<Position>-0.023999999999999994 0.024399999999999977 0.0050000000000000044</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L2-4</Uid>
+</InstancePath>
+<Position>0.074142507153543424 0.056799999999999976 -0.0061960141935711727</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric23">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-26</Uid>
+</InstancePath>
+<Position>-0.023999999999999994 0.024399999999999977 -0.005000000000000001</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L2-4</Uid>
+</InstancePath>
+<Position>0.074409324441831265 0.056799999999999989 0.0038004255993955259</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident22">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-26</Uid>
+</InstancePath>
+<Position>-0.027299999999999991 0.028799999999999992 -0.0092499999999999978</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L2-4</Uid>
+</InstancePath>
+<Position>0 0.064799999999999996 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric29">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-30</Uid>
+</InstancePath>
+<Position>-0.024000000000000021 0.024400000000000005 0.0049999999999999958</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L2-5</Uid>
+</InstancePath>
+<Position>0.074142507153543424 0.056800000000000003 -0.0061960141935711727</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric30">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-30</Uid>
+</InstancePath>
+<Position>-0.024000000000000021 0.024399999999999998 -0.005000000000000007</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L2-5</Uid>
+</InstancePath>
+<Position>0.074409324441831265 0.056800000000000003 0.0038004255993955276</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident27">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-30</Uid>
+</InstancePath>
+<Position>-0.027300000000000019 0.028800000000000013 -0.0092500000000000013</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L2-5</Uid>
+</InstancePath>
+<Position>0 0.064799999999999996 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric36">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-34</Uid>
+</InstancePath>
+<Position>-0.024000000000000021 0.024400000000000012 0.005000000000000001</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L2-6</Uid>
+</InstancePath>
+<Position>0.074142507153543424 0.056799999999999976 -0.0061960141935711692</Position>
+<Axis>-1.1102230246251565e-16 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric37">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-34</Uid>
+</InstancePath>
+<Position>-0.024000000000000007 0.024399999999999998 -0.0050000000000000079</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L2-6</Uid>
+</InstancePath>
+<Position>0.074409324441831265 0.056799999999999982 0.0038004255993955328</Position>
+<Axis>-1.1102230246251565e-16 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident32">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-34</Uid>
+</InstancePath>
+<Position>-0.027300000000000005 0.028799999999999999 -0.0092500000000000013</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L2-6</Uid>
+</InstancePath>
+<Position>0 0.064799999999999996 0</Position>
+<Axis>-1.1102230246251565e-16 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric43">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-38</Uid>
+</InstancePath>
+<Position>-0.024000000000000007 0.024400000000000005 0.0049999999999999958</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L2-7</Uid>
+</InstancePath>
+<Position>0.074142507153543424 0.056800000000000031 -0.0061960141935711701</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric44">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-38</Uid>
+</InstancePath>
+<Position>-0.023999999999999994 0.024400000000000005 -0.0050000000000000062</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L2-7</Uid>
+</InstancePath>
+<Position>0.074409324441831237 0.056800000000000017 0.0038004255993955289</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident37">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-38</Uid>
+</InstancePath>
+<Position>-0.027300000000000005 0.028800000000000006 -0.0092500000000000013</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L2-7</Uid>
+</InstancePath>
+<Position>0 0.064800000000000024 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric8">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-20</Uid>
+</InstancePath>
+<Position>-0.010250000000000037 0.047399999999999998 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L3-2</Uid>
+</InstancePath>
+<Position>-0.085526414254431499 0.01757714870716709 -0.051000000000000004</Position>
+<Axis>0 -1.1102230246251565e-16 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident13">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-20</Uid>
+</InstancePath>
+<Position>-0.010250000000000037 0.047399999999999998 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L3-2</Uid>
+</InstancePath>
+<Position>0 0 -0.050999999999999976</Position>
+<Axis>0 -1.1102230246251565e-16 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric17">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-23</Uid>
+</InstancePath>
+<Position>-0.010249999999999926 0.047400000000000012 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L3-3</Uid>
+</InstancePath>
+<Position>-0.085526414254431513 0.01757714870716709 -0.051000000000000004</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident18">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-23</Uid>
+</InstancePath>
+<Position>-0.010249999999999926 0.047400000000000012 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L3-3</Uid>
+</InstancePath>
+<Position>0 0 -0.051000000000000018</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric24">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-27</Uid>
+</InstancePath>
+<Position>-0.010249999999999981 0.047400000000000025 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L3-4</Uid>
+</InstancePath>
+<Position>-0.085526414254431526 0.017577148707167034 -0.051000000000000018</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident23">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-27</Uid>
+</InstancePath>
+<Position>-0.010249999999999981 0.047400000000000025 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L3-4</Uid>
+</InstancePath>
+<Position>0 0 -0.051000000000000004</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric31">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-32</Uid>
+</InstancePath>
+<Position>-0.010249999999999981 0.047400000000000019 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L3-5</Uid>
+</InstancePath>
+<Position>-0.085526414254431457 0.01757714870716709 -0.05099999999999999</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident28">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-32</Uid>
+</InstancePath>
+<Position>-0.010249999999999981 0.047400000000000019 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L3-5</Uid>
+</InstancePath>
+<Position>0 0 -0.051000000000000004</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric38">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-36</Uid>
+</InstancePath>
+<Position>-0.010249999999999981 0.047400000000000012 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L3-6</Uid>
+</InstancePath>
+<Position>-0.085526414254431499 0.01757714870716709 -0.050999999999999962</Position>
+<Axis>0 -1.6653345369377348e-16 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident33">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-36</Uid>
+</InstancePath>
+<Position>-0.010249999999999981 0.047400000000000012 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L3-6</Uid>
+</InstancePath>
+<Position>0 0 -0.050999999999999962</Position>
+<Axis>0 -1.6653345369377348e-16 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric45">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-39</Uid>
+</InstancePath>
+<Position>-0.010250000000000009 0.047399999999999998 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L3-7</Uid>
+</InstancePath>
+<Position>-0.085526414254431457 0.017577148707167145 -0.050999999999999976</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident38">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-39</Uid>
+</InstancePath>
+<Position>-0.010250000000000009 0.047399999999999998 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L3-7</Uid>
+</InstancePath>
+<Position>0 0 -0.050999999999999962</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident14">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-7</Uid>
+</InstancePath>
+<Position>-0.010250000000000009 0.047399999999999998 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L1-2</Uid>
+</InstancePath>
+<Position>0.014241770666035825 -0.03512285129283288 0.014499999999999999</Position>
+<Axis>-3.4692313342971878e-16 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric11">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-7</Uid>
+</InstancePath>
+<Position>-0.010250000000000009 0.047399999999999998 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L1-2</Uid>
+</InstancePath>
+<Position>0 -0.032194636763367604 0</Position>
+<Axis>3.4692313342971873e-16 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident19">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-2</Uid>
+</InstancePath>
+<Position>-0.010249999999999995 0.047400000000000005 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L1-3</Uid>
+</InstancePath>
+<Position>0.014241770666035825 -0.03512285129283288 0.014499999999999999</Position>
+<Axis>-3.4694469519536147e-16 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric18">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-2</Uid>
+</InstancePath>
+<Position>-0.010249999999999995 0.047400000000000005 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L1-3</Uid>
+</InstancePath>
+<Position>0 -0.032194636763367604 0</Position>
+<Axis>3.4694469519536137e-16 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident24">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-4</Uid>
+</InstancePath>
+<Position>-0.010250000000000002 0.047400000000000005 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L1-4</Uid>
+</InstancePath>
+<Position>0.014241770666035825 -0.03512285129283288 0.014499999999999999</Position>
+<Axis>-3.4694469519536142e-16 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric25">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-4</Uid>
+</InstancePath>
+<Position>-0.010250000000000002 0.047400000000000005 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L1-4</Uid>
+</InstancePath>
+<Position>0 -0.032194636763367604 0</Position>
+<Axis>3.4694469519536142e-16 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident29">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-6</Uid>
+</InstancePath>
+<Position>-0.010250000000000009 0.047399999999999998 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L1-5</Uid>
+</InstancePath>
+<Position>0.014241770666035838 -0.03512285129283288 0.014500000000000009</Position>
+<Axis>-3.4694469519536162e-16 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric32">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-6</Uid>
+</InstancePath>
+<Position>-0.010250000000000009 0.047399999999999998 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L1-5</Uid>
+</InstancePath>
+<Position>0 -0.032194636763367597 0</Position>
+<Axis>3.4694469519536157e-16 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident34">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-8</Uid>
+</InstancePath>
+<Position>-0.010249999999999999 0.047400000000000005 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L1-6</Uid>
+</InstancePath>
+<Position>0.014241770666035825 -0.03512285129283288 0.014499999999999999</Position>
+<Axis>-3.1467859861841556e-16 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric39">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-8</Uid>
+</InstancePath>
+<Position>-0.010249999999999999 0.047400000000000005 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L1-6</Uid>
+</InstancePath>
+<Position>0 -0.032194636763367604 0</Position>
+<Axis>3.1467859861841551e-16 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident39">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Servo Motor MG996R-5</Uid>
+</InstancePath>
+<Position>-0.010250000000000006 0.047400000000000005 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>L1-7</Uid>
+</InstancePath>
+<Position>0.014241770666035825 -0.035122851292832866 0.014499999999999999</Position>
+<Axis>-3.4694469519536142e-16 0.99999999999999989 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric46">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Servo Motor MG996R-5</Uid>
+</InstancePath>
+<Position>-0.010250000000000006 0.047400000000000005 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>L1-7</Uid>
+</InstancePath>
+<Position>0 -0.03219463676336759 0</Position>
+<Axis>3.4694469519536142e-16 -0.99999999999999989 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric47">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot_Base-1</Uid>
+</InstancePath>
+<Position>-0.041999999999840283 -0.029000000000000001 -0.040000000000121064</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>RP-Lidar-1</Uid>
+</InstancePath>
+<Position>-0.048553263391177964 0.71969231955245294 0.112917570962768</Position>
+<Axis>5.2041704279304221e-15 1 5.2041704279304197e-15</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric48">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot_Base-1</Uid>
+</InstancePath>
+<Position>0.028000000000158728 -0.029000000000000001 -0.048000000000121057</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>RP-Lidar-1</Uid>
+</InstancePath>
+<Position>-0.11855326339117697 0.71969231955245294 0.10491757096276801</Position>
+<Axis>5.2041704279304221e-15 1 5.2041704279304197e-15</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident40">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot_Base-1</Uid>
+</InstancePath>
+<Position>-0.041999999999840269 -0.029000000000000001 -1.2105247360061355e-13</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>RP-Lidar-1</Uid>
+</InstancePath>
+<Position>-0.12145001473717695 0.71969231955245294 0.107427570962768</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric49">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot_Base-1</Uid>
+</InstancePath>
+<Position>0.038699455075160191 -0.034000000000000002 -0.052546466956665622</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>LidarCover-1</Uid>
+</InstancePath>
+<Position>0.065120066099297963 0.053999999999999999 -0.032546466956383635</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric50">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot_Base-1</Uid>
+</InstancePath>
+<Position>0.038674343229801234 -0.034000000000000002 0.012627472829595063</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>LidarCover-1</Uid>
+</InstancePath>
+<Position>0.065094954253938964 0.053999999999999999 0.032627472829877033</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident41">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot_Base-1</Uid>
+</InstancePath>
+<Position>-1.5959455978986625e-16 -0.0040000000000000001 -0.020000000000000212</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>LidarCover-1</Uid>
+</InstancePath>
+<Position>0 0.059999999999999998 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+</Constraints>
+</RootAssembly>
+<Assemblies>
+</Assemblies>
+<Parts>
+<Part name="L1" uid="L1*:*Default" version="684">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="L1.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.18171434032958583</Mass>
+<CenterOfMass>-0.049663846071110275 0.017577148707167114 0</CenterOfMass>
+<Inertia>0.0003487187600294417 0.000245844310567325 0.00027223104969617865 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="L1_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="L2" uid="L2*:*Default" version="200">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="L2.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.10398316130429178</Mass>
+<CenterOfMass>-0.00044478580472950434 0.032400000000000005 -0.0084921338103255226</CenterOfMass>
+<Inertia>6.0537821379863966e-05 0.0001627031646293671 0.00020458600435342179 0 3.8466759890020371e-06 0</Inertia>
+</MassProperties>
+<GeometryFile name="L2_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="L3" uid="L3*:*Default" version="783">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="L3.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.28161730764121828</Mass>
+<CenterOfMass>0.01384894921623811 0.017577148665292145 -7.6069491613269167e-13</CenterOfMass>
+<Inertia>0.00020458941481179676 0.0016742495881976228 0.0015127786747228381 1.7944328516501202e-11 -1.576497383437434e-13 -6.2309720640874582e-13</Inertia>
+</MassProperties>
+<GeometryFile name="L3_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="LidarCover" uid="LidarCover*:*Default" version="158">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="LidarCover.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.048387739544175717</Mass>
+<CenterOfMass>0.015547351042140464 0.027169940324625195 2.7425444700386185e-06</CenterOfMass>
+<Inertia>5.6747119592920762e-05 0.00010200831704337139 8.7319625219105745e-05 -5.1564760335517405e-09 -4.8780522773889253e-09 -2.4054348110096041e-06</Inertia>
+</MassProperties>
+<GeometryFile name="LidarCover_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="RP-Lidar" uid="RP-Lidar*:*Default" version="161">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="RP-Lidar.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.073083966375916673</Mass>
+<CenterOfMass>-0.078493002410629328 0.74442746160143658 0.13344964960583983</CenterOfMass>
+<Inertia>3.1706902749813282e-05 7.2012766443791654e-05 6.1527789785478156e-05 -3.7954478510578633e-07 5.9522161064432364e-07 6.531821099865845e-06</Inertia>
+</MassProperties>
+<GeometryFile name="RP-Lidar_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Robot_Base" uid="Robot_Base*:*Default" version="859">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Robot_Base.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.43231586775041786</Mass>
+<CenterOfMass>-0.001119630387651796 -0.00090633598695052356 -0.019996332029409831</CenterOfMass>
+<Inertia>0.0015444167255521564 0.0029118464370290341 0.0015339077503219833 -6.1100683757229514e-10 -7.6773113343977401e-08 -1.317078048230709e-06</Inertia>
+</MassProperties>
+<GeometryFile name="Robot_Base_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Servo Motor MG996R" uid="Servo Motor MG996R*:*Default" version="603">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Servo Motor MG996R.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.033876630295594151</Mass>
+<CenterOfMass>-0.00049032191241283089 0.020358074512903945 -1.2918440700039429e-09</CenterOfMass>
+<Inertia>5.8482510929244175e-06 6.0274552077711127e-06 9.587808059329852e-06 6.4718830444223234e-13 1.5672389690753557e-13 2.7277211248685729e-07</Inertia>
+</MassProperties>
+<GeometryFile name="Servo Motor MG996R_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.25098039215686274" g="0.25098039215686274" b="0.25098039215686274" a="1"/>
+<Diffuse r="0.25098039215686274" g="0.25098039215686274" b="0.25098039215686274" a="1"/>
+<Specular r="0.12549019607843137" g="0.12549019607843137" b="0.12549019607843137" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.40000000596046448</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimscapeMultibodyImportXML>

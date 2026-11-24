@@ -2,7 +2,7 @@
 
 **Objective.** Take the HexaLoam contributors mechanical hexapod from editable CAD to a reproducible, instrumented agricultural scouting experiment. A researcher should be able to reproduce the gait, payload, terrain and sensor results from a tagged revision. A student should be able to inspect one leg and reproduce a smaller experiment before moving on to the full robot.
 
-**First engineering priority.** Recover the complete multibody export and validate one leg. A visually correct mesh cannot establish a hinge axis, an independent degree of freedom or a motor torque requirement. Engine scene preparation and print-fit studies can proceed alongside this work.
+**First engineering priority.** Trace the free connections in the imported assembly and validate one leg. A visually correct mesh cannot establish a hinge axis, an independent degree of freedom or a motor torque requirement. Engine scene preparation and print-fit studies can proceed alongside this work.
 
 ## Starting evidence
 
@@ -10,7 +10,8 @@
 | --- | --- | --- |
 | Mechanical design | Main and leg assemblies opened in SOLIDWORKS. Five custom print designs make 20 pieces. | The separate battery reference lacks its spacer part. Payload capacity, stiffness, fatigue and real-world fit require tests. |
 | Visual interchange | Five part-level GLB files, their source STLs and a rebuild tool. | Record native Unity and Unreal Editor imports and integration tests. Assembly pivots and constraints require separate data. |
-| Dynamics | MATLAB R2025b, Simulink, Simscape Multibody and Multibody Link were available in the development environment. | The available robot XML ends inside the parts list. Complete the export, verify geometry and inspect the imported model. |
+| Locomotion | The CAD-derived tripod, ripple and wave demonstrations use the same stride and clearance. The footfall panel shows the stance and swing phases for each leg. [Walking sequences](walking.md) | Measure the available joint travel, check collisions and compare the prescribed foot paths with instrumented walking trials. |
+| Dynamics | The XML and seven geometry files imported and compiled in MATLAB R2025b. The generated model contains 18 revolute and 29 additional 6-DOF joints. | Trace free connections, verify rigid attachments, and check three independent physical axes per leg. |
 | Sensing and field work | The CAD includes an RP-Lidar reference model and a printable cover. | Measure the sensor pose and scan clearance, add timestamped data, and validate with the chosen hardware. |
 | Hardware | Chassis mounting holes and M3 nut pockets allow application-specific brackets, controllers and batteries. | Establish a configuration-specific BOM, wiring, power budget and test record. |
 
@@ -73,7 +74,7 @@ The sequence below is ordered by dependency. Advance a milestone when another co
 ## Where to contribute first
 
 - **Students and hobbyists** can import one GLB, measure its dimensions, or print an M3 fit coupon and report the printer, material and result.
-- **CAD and controls contributors** can resolve the full XML export, produce a one-leg frame map and run an independent joint sweep.
+- **CAD and controls contributors** can trace free connections in the full import, produce a one-leg frame map and run an independent joint sweep.
 - **Research groups** can define a repeatable slope or crop-row trial and share the inputs, ground truth, metrics and failure cases.
 
 See the [contribution guide](../CONTRIBUTING.md) for the evidence to include with each change.
