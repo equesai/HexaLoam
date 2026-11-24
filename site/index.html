@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HexaLoam: 3D-Printable Agricultural Hexapod Platform with LiDAR</title>
+  <meta name="description" content="HexaLoam is a modifiable 3D-printable agricultural hexapod robot platform with RP-Lidar mounting, controller-agnostic chassis, prescribed kinematic gaits, and Simscape Multibody analysis.">
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
+  <link rel="canonical" href="https://equesai.github.io/HexaLoam/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HexaLoam: 3D-Printable Agricultural Hexapod Platform with LiDAR">
+  <meta property="og:description" content="Modifiable six-legged robot platform with editable SOLIDWORKS CAD, 3D-printable parts, RP-Lidar mount, kinematic gait animations, and MATLAB Simscape compilation results.">
+  <meta property="og:url" content="https://equesai.github.io/HexaLoam/">
+  <meta property="og:image" content="https://equesai.github.io/HexaLoam/assets/assembly-hero.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:image:alt" content="Isometric assembly render of HexaLoam hexapod robot showing chassis, six legs, and central RP-Lidar mount">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HexaLoam: 3D-Printable Agricultural Hexapod Platform with LiDAR">
+  <meta name="twitter:description" content="Modifiable six-legged robot platform with editable SOLIDWORKS CAD, 3D-printable parts, RP-Lidar mount, kinematic gait animations, and MATLAB Simscape compilation results.">
+  <meta name="twitter:image" content="https://equesai.github.io/HexaLoam/assets/assembly-hero.png">
+
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="https://equesai.github.io/HexaLoam/" class="brand-link">HexaLoam contributors</a>
+      <nav class="nav-menu" aria-label="Project Navigation">
+        <a href="#chassis" class="nav-item">Hardware</a>
+        <a href="#gaits" class="nav-item">Gaits</a>
+        <a href="#simulation" class="nav-item">Simulation</a>
+        <a href="https://github.com/equesai/HexaLoam" class="nav-item nav-repo">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero-section">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">HexaLoam</h1>
+          <p class="hero-subhead">Agricultural hexapod with LiDAR</p>
+          <p class="hero-lede">
+            An editable, 3D-printable six-legged robot for crop scouting, mapping and locomotion research. Explore the SOLIDWORKS assembly, adapt the electronics bay, or compare three walking sequences from the same CAD model.
+          </p>
+          <div class="hero-actions">
+            <a href="https://github.com/equesai/HexaLoam/blob/main/Full_Robot_Assembly.SLDASM" class="cta-btn cta-primary">Explore the CAD</a>
+            <a href="#gaits" class="cta-btn cta-secondary">Watch the gaits</a>
+          </div>
+        </div>
+        <div class="hero-display">
+          <div class="hero-studio-field">
+            <img src="assets/assembly-hero.png" width="1280" height="720" alt="HexaLoam agricultural hexapod assembly with six legs and central LiDAR mount" class="hero-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="chassis" class="content-section chassis-section">
+      <div class="section-container">
+        <div class="editorial-split">
+          <div class="editorial-copy">
+            <h2 class="section-title">Adapt the chassis</h2>
+            <p>
+              The chassis, three leg links and LiDAR cover make five printable shapes and 20 printed pieces. The base spans about 203.5 × 208.9 mm in plan. Its central bay gives you room to arrange the controller and battery of your choice. Check their fit and cable paths in CAD.
+            </p>
+            <p>
+              Mounting holes and recessed M3 nut pockets give you several places to attach brackets, payloads or a controller adapter.
+            </p>
+            <p>
+              For greenhouse scouting, the assembly shows one way to mount an RP-Lidar. Add a camera for crop imagery, then check sensor sightlines, aisle clearance and foot placement for your plants. Field performance remains to be measured.
+            </p>
+            <p>
+              Print the individual <a href="https://github.com/equesai/HexaLoam/tree/main/Printables">STL parts</a> or start with the <a href="https://github.com/equesai/HexaLoam/blob/main/Printables/Full_Robot.3mf">six-plate Bambu Studio layout</a>. A working build also needs actuators, fasteners, power electronics and control firmware.
+            </p>
+            <p>
+              <a href="https://github.com/equesai/HexaLoam/blob/main/docs/gallery.md" class="text-link">Inspect the complete multi-angle CAD gallery on GitHub</a>
+            </p>
+          </div>
+          <div class="editorial-media">
+            <div class="mount-card">
+              <img src="assets/assembly-top.png" width="800" height="450" alt="Top view of HexaLoam chassis displaying central electronics deck and leg servo mounts" class="mount-img" loading="lazy">
+              <div class="mount-caption">Top view displaying central deck and leg actuator mounting geometry</div>
+            </div>
+            <div class="mount-card">
+              <img src="assets/assembly-underside.png" width="1280" height="720" alt="Underside CAD view of the assembled chassis and its six leg mounts" class="mount-img" loading="lazy">
+              <div class="mount-caption">Underside of the chassis and leg interfaces</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gaits" class="content-section gaits-section">
+      <div class="section-container">
+        <div class="gaits-header">
+          <h2 class="section-title section-title-contrast">Watch the walking gaits</h2>
+          <p class="gaits-intro">
+            Watch which feet lift and which stay planted. All three CAD animations use a 60 mm stride and 22 mm peak foot clearance. Each 10-second clip covers two cycles at 12 mm/s. The grid spacing is 50 mm.
+          </p>
+        </div>
+
+        <div class="gait-viewer">
+          <div class="gait-tabs" role="tablist" aria-label="Gait Selector">
+            <button type="button" role="tab" class="gait-tab active" aria-selected="true" aria-controls="panel-tripod" id="tab-tripod" data-target="panel-tripod">
+              <span class="tab-label">Tripod Gait</span>
+              <span class="tab-stance">Stance 3</span>
+            </button>
+            <button type="button" role="tab" class="gait-tab" aria-selected="false" aria-controls="panel-ripple" id="tab-ripple" data-target="panel-ripple">
+              <span class="tab-label">Ripple Gait</span>
+              <span class="tab-stance">Stance 4</span>
+            </button>
+            <button type="button" role="tab" class="gait-tab" aria-selected="false" aria-controls="panel-wave" id="tab-wave" data-target="panel-wave">
+              <span class="tab-label">Wave Gait</span>
+              <span class="tab-stance">Stance 5</span>
+            </button>
+          </div>
+
+          <div class="gait-panels">
+            <article class="gait-panel active" id="panel-tripod" role="tabpanel" aria-labelledby="tab-tripod">
+              <div class="gait-grid">
+                <div class="video-container">
+                  <video controls preload="metadata" poster="assets/gait-tripod.jpg" class="gait-player">
+                    <source src="assets/gait-tripod.mp4" type="video/mp4">
+                    <p>Playback unavailable. <a href="assets/gait-tripod.mp4">Download Tripod video</a></p>
+                  </video>
+                </div>
+                <div class="gait-narrative">
+                  <h3 class="gait-title">Tripod Locomotion</h3>
+                  <div class="stance-badge">Footfall stance count 3</div>
+                  <p class="gait-text">
+                    The left front, right middle and left rear lift together. The other three feet stay planted. Half a cycle later, the two groups exchange roles.
+                  </p>
+                  <p class="gait-direct">
+                    <a href="assets/gait-tripod.mp4" class="clip-link">Download Tripod MP4 clip</a>
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="gait-panel" id="panel-ripple" role="tabpanel" aria-labelledby="tab-ripple">
+              <div class="gait-grid">
+                <div class="video-container">
+                  <video controls preload="metadata" poster="assets/gait-ripple.jpg" class="gait-player">
+                    <source src="assets/gait-ripple.mp4" type="video/mp4">
+                    <p>Playback unavailable. <a href="assets/gait-ripple.mp4">Download Ripple video</a></p>
+                  </video>
+                </div>
+                <div class="gait-narrative">
+                  <h3 class="gait-title">Ripple Locomotion</h3>
+                  <div class="stance-badge">Footfall stance count 4</div>
+                  <p class="gait-text">
+                    The next leg lifts before the previous swing ends. Two feet move at once and four stay in stance. Follow the staggered lift-offs on the footfall diagram.
+                  </p>
+                  <p class="gait-direct">
+                    <a href="assets/gait-ripple.mp4" class="clip-link">Download Ripple MP4 clip</a>
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="gait-panel" id="panel-wave" role="tabpanel" aria-labelledby="tab-wave">
+              <div class="gait-grid">
+                <div class="video-container">
+                  <video controls preload="metadata" poster="assets/gait-wave.jpg" class="gait-player">
+                    <source src="assets/gait-wave.mp4" type="video/mp4">
+                    <p>Playback unavailable. <a href="assets/gait-wave.mp4">Download Wave video</a></p>
+                  </video>
+                </div>
+                <div class="gait-narrative">
+                  <h3 class="gait-title">Wave Locomotion</h3>
+                  <div class="stance-badge">Footfall stance count 5</div>
+                  <p class="gait-text">
+                    Follow one moving foot at a time, from rear to front along the left side and then along the right. Five feet remain in stance.
+                  </p>
+                  <p class="gait-direct">
+                    <a href="assets/gait-wave.mp4" class="clip-link">Download Wave MP4 clip</a>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="simulation" class="content-section sim-section">
+      <div class="section-container">
+        <h2 class="section-title">Simulate the mechanism</h2>
+        <div class="sim-grid">
+          <div class="sim-card">
+            <h3 class="sim-card-title">MATLAB and Simscape Analysis</h3>
+            <p>
+              The assembly XML and seven STEP files imported and compiled in MATLAB R2025b with Simscape Multibody. The model contains 18 revolute joint blocks and 29 additional 6-DOF joint blocks. Trace those free connections and verify each hinge axis before using the model to estimate torque or walking speed.
+            </p>
+          </div>
+          <div class="sim-card">
+            <h3 class="sim-card-title">Static loads and visualization</h3>
+            <p>
+              In the single-leg MATLAB example, a 5 N tip load at 0.25 m gives holding torques of 0, 1.10 and 0.60 N·m. For scene development, the project includes <a href="https://github.com/equesai/HexaLoam/tree/main/simulation/meshes">five static GLB meshes</a> for Unity and Unreal Engine. Native editor import tests and physical walking tests are pending.
+            </p>
+            <p>
+              <a href="https://github.com/equesai/HexaLoam/blob/main/docs/simulation-guide.md" class="text-link">Consult the complete simulation guide and MATLAB setup</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="citation" class="content-section citation-section">
+      <div class="section-container">
+        <h2 class="section-title">Cite the design</h2>
+        <p class="citation-intro">
+          If you build upon this mechanical architecture, reference the frozen design commit in your documentation or publication.
+        </p>
+        <div class="citation-wrapper">
+
+          <pre class="citation-box"><code>HexaLoam contributors. (2026). HexaLoam: 3D-Printable Hexapod Robot Platform with LiDAR. Commit 9ff03f0c9c558f973bb2e2860629756cdab8acc8. GitHub: https://github.com/equesai/HexaLoam</code></pre>
+        </div>
+        <p class="citation-links">
+          Machine-readable citation metadata is maintained in <a href="https://github.com/equesai/HexaLoam/blob/main/CITATION.cff">CITATION.cff</a>. Design snapshot <a href="https://github.com/equesai/HexaLoam/tree/9ff03f0c9c558f973bb2e2860629756cdab8acc8">9ff03f0</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col-left">
+        <span class="footer-title">HexaLoam contributors</span>
+        <span class="footer-note"><a href="https://github.com/equesai/HexaLoam/blob/main/CONTRIBUTING.md">Reuse and contribution terms</a></span>
+      </div>
+      <div class="footer-col-right">
+        <a href="https://github.com/equesai/HexaLoam/blob/main/Full_Robot_Assembly.SLDASM">Main Assembly CAD</a>
+        <a href="https://github.com/equesai/HexaLoam/tree/main/Printables">Printables</a>
+        <a href="https://github.com/equesai/HexaLoam/tree/main/simulation/cad-export">Simscape Files</a>
+        <a href="https://github.com/equesai/HexaLoam/blob/main/docs/walking.md">Walking Documentation</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="gaits.js"></script>
+</body>
+</html>

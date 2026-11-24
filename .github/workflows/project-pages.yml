@@ -1,0 +1,45 @@
+name: Publish project page
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'docs/media/assembly-*.png'
+      - 'docs/media/gait-*.mp4'
+      - '.github/workflows/project-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: project-pages
+  cancel-in-progress: false
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/configure-pages@v5
+      - name: Stage the CAD views and gait videos
+        run: |
+          mkdir -p site/assets
+          cp docs/media/assembly-{hero,top,underside}.png site/assets/
+          cp docs/media/gait-{tripod,ripple,wave}.mp4 site/assets/
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+  deploy:
+    needs: package
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -2,7 +2,7 @@
 
 **HexaLoam is a modifiable six-legged robot (hexabot) platform** for agriculture, inspection, mapping, education, and robotics research. The repository provides editable SOLIDWORKS CAD and 3D-print files for the chassis, six leg sets, and LiDAR cover. The reference assembly shows MG996R servos and an RP-Lidar sensor on the chassis.
 
-Published by **HexaLoam contributors**.
+Published by **HexaLoam contributors**. [Project homepage and research overview](https://equesai.github.io/HexaLoam/)
 
 [![Kinematic tripod walking animation with a live footfall diagram](docs/media/gait-tripod.gif)](docs/walking.md)
 

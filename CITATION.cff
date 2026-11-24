@@ -4,6 +4,7 @@ title: "HexaLoam: A modifiable 3D-printable hexapod robot platform with LiDAR"
 authors:
   - name: "HexaLoam contributors"
 repository-code: "https://github.com/equesai/HexaLoam"
+url: "https://equesai.github.io/HexaLoam/"
 keywords:
   - hexapod
   - agricultural robotics
