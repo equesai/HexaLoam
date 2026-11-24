@@ -14,7 +14,7 @@ The left front, right middle and left rear form one tripod. The right front, lef
 
 [![Animated tripod gait with alternating groups of three feet](media/gait-tripod.gif)](media/gait-tripod.mp4?raw=1)
 
-[Download the tripod video](media/gait-tripod.mp4?raw=1)
+[Download the tripod video](media/gait-tripod.mp4?raw=1) · [Watch the narrated tripod Short on YouTube](https://www.youtube.com/shorts/4rD9bK5iIl8)
 
 ## Ripple
 
@@ -22,7 +22,7 @@ The lift-off order is left rear, right middle, left front, right rear, left midd
 
 [![Animated ripple gait with staggered overlapping swings](media/gait-ripple.gif)](media/gait-ripple.mp4?raw=1)
 
-[Download the ripple video](media/gait-ripple.mp4?raw=1)
+[Download the ripple video](media/gait-ripple.mp4?raw=1) · [Watch the narrated ripple Short on YouTube](https://www.youtube.com/shorts/ggAerDmc-yU)
 
 ## Wave
 
@@ -30,7 +30,7 @@ Only one foot swings at a time. Follow the amber marker from rear to middle to f
 
 [![Animated wave gait with one foot in swing](media/gait-wave.gif)](media/gait-wave.mp4?raw=1)
 
-[Download the wave video](media/gait-wave.mp4?raw=1)
+[Download the wave video](media/gait-wave.mp4?raw=1) · [Watch the narrated wave Short on YouTube](https://www.youtube.com/shorts/ZopVjcM9axM)
 
 ## Model scope
 
