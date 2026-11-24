@@ -1,20 +1,38 @@
-# HexaLoam — Agricultural Hexapod Robot with LiDAR
+# HexaLoam — 3D-Printable Hexapod Robot Platform with LiDAR
 
-HexaLoam is a six-legged agricultural robot prototype, also called a hexabot. The design combines a **3D-printable chassis, leg links, and LiDAR cover** with MG996R servos and an RP-Lidar sensor modeled in the SOLIDWORKS assembly. The repository includes editable CAD, individual STL files, and a six-plate Bambu Studio project.
+**HexaLoam is a modifiable six-legged robot (hexabot) platform** for agriculture, inspection, mapping, education, and robotics research. The repository provides editable SOLIDWORKS CAD and 3D-print files for the chassis, six leg sets, and LiDAR cover. The reference assembly shows MG996R servos and an RP-Lidar sensor on the chassis.
 
-![SOLIDWORKS assembly of the HexaLoam agricultural hexapod showing the six legs and central chassis](docs/assembly-preview.png)
+Published by **HexaLoam contributors**.
 
-## Mechanical design and LiDAR configuration
+![Isometric SOLIDWORKS render of the HexaLoam hexapod with six legs around a central chassis](docs/assembly-preview.png)
 
-- **Chassis.** The central base provides the structure for all six legs.
-- **Legs.** Each leg uses the same three printed links, L1, L2, and L3. The leg assembly shows the link placement and servo interfaces in SOLIDWORKS.
-- **LiDAR.** The main assembly positions an RP-Lidar model on the central chassis. A separate printable cover is included. The LiDAR configuration is mechanical and shows how the sensor fits into the robot. Sensor wiring, calibration, and software integration are outside the scope of this design.
+This is a **mechanical starting point**. The designer is expected to finish the robot around the intended application, including the payload, mounting adapters, actuators, controller, battery, wiring, firmware, and validation.
 
-The design is intended as a mechanical starting point for agricultural robotics experiments such as testing six-legged mobility and evaluating LiDAR placement for obstacle sensing. Autonomous navigation and field performance have yet to be demonstrated in this repository.
+[Designer guide and examples](docs/designer-guide.md) · [Main SOLIDWORKS assembly](Full_Robot_Assembly.SLDASM) · [STL and 3MF print files](Printables/)
 
-## What is 3D printable?
+## Example applications
 
-Along with the editable CAD, the repository provides **20 printable part instances** for the chassis, six leg sets, and LiDAR cover.
+| Field | Example project | What the designer would add |
+| --- | --- | --- |
+| Agricultural robotics | Greenhouse or crop-row scouting | A camera or environmental sensor, a protective mount, and clearance for plants and soil |
+| Inspection | Visual checks in a workshop or equipment aisle | A camera, lighting, and a mount that keeps the payload clear of the legs |
+| Mapping | Indoor LiDAR scanning and mapping experiments | A controller or onboard computer, sensor integration, and mapping software |
+| Education | A classroom hexapod for studying gait and kinematics | A controller, servo power, and firmware for repeatable gait exercises |
+| Robotics research | Comparing locomotion on different surfaces | An IMU or other instrumentation, data logging, and repeatable test setups |
+
+These are example configurations for designing a build. The repository contains mechanical files and CAD reference components. Firmware, wiring, a complete purchasing bill of materials, and field-test results are outside its current scope.
+
+## Adapt the chassis
+
+The base is **controller-agnostic** by design. Its central area provides room to place a controller and batteries selected for the application. Multiple mounting holes and pockets for **M3 nuts** give designers options for attaching brackets, adapter plates, covers, and payloads. Choose the mounting locations that suit your layout, then check the actual controller, battery, and fastener dimensions in CAD before printing.
+
+![Isometric SOLIDWORKS render of the chassis showing the central equipment area, mounting holes, and nut pockets](docs/chassis-isometric.png)
+
+The reference CAD locates an RP-Lidar model on the chassis and includes an editable cover. Designers can adapt the mount for their own sensor and verify its field of view and cable clearance. See the [designer guide](docs/designer-guide.md) for mounting and integration steps.
+
+## Which parts are 3D printable?
+
+The files cover the **custom printed structure**. Five STL designs make up 20 printed pieces for one robot. A working build also needs separate servos, fasteners, a controller, batteries and power hardware, and any chosen sensors.
 
 | Part | Quantity | Approximate STL dimensions (X × Y × Z, mm) |
 | --- | ---: | --- |
@@ -24,26 +42,27 @@ Along with the editable CAD, the repository provides **20 printable part instanc
 | [Leg link L3](Printables/L3.STL) | 6 | 246.2 × 50.0 × 120.0 |
 | [LiDAR cover](Printables/LidarCover.STL) | 1 | 111.3 × 63.0 × 77.5 |
 
-The five STL meshes are watertight and consistently wound. Dimensions describe each mesh in its exported orientation. Rotation, supports, and adhesion can change the build-plate space required.
-
-A working robot also requires separate servos, a LiDAR sensor, fasteners, control electronics, and power hardware. The CAD is a mechanical prototype. Firmware, wiring diagrams, a complete purchasing bill of materials, and field-test results are outside the scope of this repository.
+The five STL meshes are watertight and consistently wound. The dimensions describe each part in its exported orientation. Review how rotation, supports, and adhesion affect the build volume for your printer.
 
 ## Print the parts
 
-1. Open [Full_Robot.3mf](Printables/Full_Robot.3mf) in Bambu Studio to see the six plate layouts. The embedded profile is for a Bambu Lab X1 Carbon with a 0.4 mm nozzle.
-2. Select the profile for your own printer and material and review the build volume, orientation, supports, and clearances. Pay particular attention to L3, which measures about 246 mm along its longest exported axis.
-3. For another slicer, import the five individual [STL files](Printables/) in millimeters and use the quantities above.
-4. Print a single leg set and check fit with your hardware before printing the remaining five.
+1. Open [Full_Robot.3mf](Printables/Full_Robot.3mf) in Bambu Studio. The file contains six plate layouts and a Bambu Lab X1 Carbon profile with a 0.4 mm nozzle.
+2. Select your printer and material profile, then check orientation, supports, and printability. L3 measures about 246 mm along its longest exported axis.
+3. For another slicer, import the [individual STLs](Printables/) in millimeters and use the quantities above.
+4. Print one leg set and check the fit with your actual hardware before printing the remaining five.
 
 ## Open and inspect the CAD
 
-1. Clone the repository or download its ZIP from the **Code** menu on GitHub.
-2. Keep the folder layout intact and open [Full_Robot_Assembly.SLDASM](Full_Robot_Assembly.SLDASM) in SOLIDWORKS.
-3. Open [LegMates.SLDASM](LegMates.SLDASM) to inspect one leg. SOLIDWORKS may request a rebuild when opening it.
-4. If SOLIDWORKS prompts for references, look in [Designed/](Designed/) for the robot parts and [Common/](Common/) for the servo, LiDAR, and battery reference models.
+1. Clone the repository or download its ZIP from GitHub's **Code** menu, keeping the folder layout intact.
+2. Open [Full_Robot_Assembly.SLDASM](Full_Robot_Assembly.SLDASM) in SOLIDWORKS. Use [LegMates.SLDASM](LegMates.SLDASM) to inspect a single leg. The leg assembly may prompt for a rebuild.
+3. Look in [Designed/](Designed/) for the editable robot parts and [Common/](Common/) for the servo, LiDAR, and battery reference models if SOLIDWORKS prompts for references.
 
-The repository includes all file dependencies reported for the main robot and leg assemblies. The separate 4S3P 18650 battery reference assembly expects `18650 cells Spacers.step.SLDPRT`, which is absent from the source folder. The main robot assembly can open without that reference assembly.
+The repository includes all dependencies reported for the main robot and leg assemblies. The separate 4S3P 18650 battery reference assembly expects `18650 cells Spacers.step.SLDPRT`, which is absent from the source folder. The main robot assembly opens independently of that reference assembly.
+
+## MATLAB and Simscape Multibody analysis
+
+The simulation design target is **18 revolute joints and 18 leg degrees of freedom**, with three single-axis joints per leg. The intended workflow is to import the assembly XML and its companion geometry into MATLAB and Simscape Multibody, then configure joint actuation and sensing to analyze angular position, speed, and required actuator torque for the intended gait and payload. A complete import with the expected joint count still needs verification. See the [simulation plan](docs/designer-guide.md#simulation-plan).
 
 ## Supporting CAD
 
-The battery and LiDAR CAD files were carried over from the `18650-li-ion-battery-6` and `rp-lidar-2` reference collections. The MG996R servo model came from the project team's reference CAD. The repository has no blanket open-source license.
+The battery and LiDAR CAD files came from the `18650-li-ion-battery-6` and `rp-lidar-2` reference collections. The MG996R servo model came from the project team's reference CAD. The repository has no blanket open-source license.
