@@ -1,0 +1,16 @@
+name: Verify visual assets
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  check-meshes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install mesh tools
+        run: python -m pip install -r tools/mesh-requirements.txt
+      - name: Check STL and GLB geometry and hashes
+        run: python tools/export_visual_meshes.py --check

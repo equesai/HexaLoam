@@ -1,0 +1,132 @@
+{
+  "coordinate_mapping": {
+    "basis_mapping": "[x, z, -y]",
+    "scale": 0.001,
+    "unit_in": "mm",
+    "unit_out": "m",
+    "description": "Interchange coordinates mapping STL nominal +Z up to glTF standard +Y up. x_out = x_stl * 0.001, y_out = z_stl * 0.001, z_out = -y_stl * 0.001. Robot forward is not inferred. Mesh origins preserved.",
+    "transform_matrix_4x4": [
+      [
+        0.001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.001,
+        0.0
+      ],
+      [
+        0.0,
+        -0.001,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "meshes": {
+    "Robot_Base": {
+      "source_file": "Printables/Robot_Base.STL",
+      "output_file": "simulation/meshes/Robot_Base.glb",
+      "input_sha256": "4b12ebff777b5ed277ad348027118dec575bb4e7748ae2a982a090d9a6fc2d10",
+      "output_sha256": "b17dc6e1638f51b1a492589898e15a37a0e6a6035633a575c718a5bb6a8fa130",
+      "triangle_count": 355910,
+      "output_bounds_m": {
+        "min": [
+          2.7418136596679688e-06,
+          0.0,
+          -0.068
+        ],
+        "max": [
+          0.20347125244140626,
+          0.2088999938964844,
+          0.0
+        ]
+      }
+    },
+    "LidarCover": {
+      "source_file": "Printables/LidarCover.STL",
+      "output_file": "simulation/meshes/LidarCover.glb",
+      "input_sha256": "ff5c77d3fe76bea4586d8e590a3efe54c9a761c9f4c41a5da7e318462ab30693",
+      "output_sha256": "7a7b07c298467a31549be9deb39dfb05ca13d879ce2e5fbcdc97704ecb2da490",
+      "triangle_count": 252542,
+      "output_bounds_m": {
+        "min": [
+          0.00032695382833480835,
+          0.0,
+          -0.063
+        ],
+        "max": [
+          0.11165788269042969,
+          0.07746270751953126,
+          0.0
+        ]
+      }
+    },
+    "L1": {
+      "source_file": "Printables/L1.STL",
+      "output_file": "simulation/meshes/L1.glb",
+      "input_sha256": "bf2a8cc3aec534c2a0d7238afea9171499d69c4624fb4aa3b545b229cc18797e",
+      "output_sha256": "c1e7ab5bc2c92e6d2eafe79af81615df442f8cd48a89edf8fe01e829caa90347",
+      "triangle_count": 128492,
+      "output_bounds_m": {
+        "min": [
+          5.252659320831299e-06,
+          0.0,
+          -0.12296928405761719
+        ],
+        "max": [
+          0.11991983795166015,
+          0.12,
+          0.0
+        ]
+      }
+    },
+    "L2": {
+      "source_file": "Printables/L2.STL",
+      "output_file": "simulation/meshes/L2.glb",
+      "input_sha256": "9cee6cc77b9b5b4346f30cb5c4ff1364ca253f0783e98bc4e4eea33bfbcf06da",
+      "output_sha256": "4fa05c02526cab6959e08e608d018f0d50b04309c2b7521b19a4e8ff8b2437df",
+      "triangle_count": 147168,
+      "output_bounds_m": {
+        "min": [
+          3.1813979148864746e-06,
+          3.203749656677246e-06,
+          -0.06480000305175782
+        ],
+        "max": [
+          0.15864434814453127,
+          0.03945151519775391,
+          3.469446951953614e-18
+        ]
+      }
+    },
+    "L3": {
+      "source_file": "Printables/L3.STL",
+      "output_file": "simulation/meshes/L3.glb",
+      "input_sha256": "f1ba08edc30779878ae3b2b47e17705efbf515d9b43981b68c46306416275aea",
+      "output_sha256": "7673f1c890bb7aba3d2cd1ab556db658fb100cd70a4505609e5f19579b8f7108",
+      "triangle_count": 95994,
+      "output_bounds_m": {
+        "min": [
+          0.0,
+          0.00022966787219047546,
+          -0.05
+        ],
+        "max": [
+          0.24618626403808594,
+          0.12022966766357422,
+          0.0
+        ]
+      }
+    }
+  }
+}

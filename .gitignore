@@ -9,3 +9,9 @@
 # Windows Explorer metadata
 Thumbs.db
 Desktop.ini
+
+# Local development outputs
+__pycache__/
+.venv/
+slprj/
+*.slxc

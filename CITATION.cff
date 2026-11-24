@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite HexaLoam and record the commit used for your experiment."
+title: "HexaLoam: A modifiable 3D-printable hexapod robot platform with LiDAR"
+authors:
+  - name: "HexaLoam contributors"
+repository-code: "https://github.com/equesai/HexaLoam"
+keywords:
+  - hexapod
+  - agricultural robotics
+  - 3D printing
+  - LiDAR
+  - multibody simulation
