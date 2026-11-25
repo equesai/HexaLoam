@@ -59,6 +59,8 @@ HexaLoam shares one canonical 18-joint mapping ([JOINT_MAPPING.md](control/robot
 | **D — RPi + 2× ESP32** | Raspberry Pi 4/5 + Left/Right ESP32s (`0x40` each) | 0.733 | 4.019 | 1.029 (47.7%) | 1.342 (62.2%) | 1.864 (86.4%) | **+1.88 kg** / **+0.50 kg** |
 
 - **Slicer-Verified Mass & Dual-Motor Torque (Simulation Validated):** Using Bambu Studio PLA+ G-code weights (support negated: `Robot_Base` `174.67 g`, `L1` `59.64 g × 6`, `L2` `48.33 g × 6`, `L3` `73.51 g × 6`, `LidarCover` `42.68 g` = `1.306 kg`) + 36 MG996R servos (`1.980 kg`, 2 motors/joint = `2.157 N·m` stall @ 6.0 V) + 3S 5000 mAh LiPo (`0.360 kg`). Ripple (`58.7%–62.2%`) and Wave (`45.0%–47.7%`) stay comfortably inside the `70%` continuous thermal limit with **`+0.50 to +2.11 kg`** of extra payload headroom.
+
+![Mirrored back-to-back MA1 and MA2 motor torque profiles for Joints A (Coxa), B (Femur), and C (Tibia)](demonstrations/motor_torque_profile.png)
 - **15 Engineering Wiring Diagrams (SVG / PNG / PDF / Netlist):** [electronics/wiring/](electronics/wiring/) · [Connection Tables](electronics/connection-tables/) · [Power & Fuse Engineering](electronics/power/POWER_ENGINEERING.md) · [BOM](electronics/bom/BOM.md)
 - **Firmware & Software:** [Arduino 01–14 Examples](firmware/arduino/examples/) · [ESP32 Generic Actuator Slave](firmware/esp32/actuator-slave/) · [Raspberry Pi Python & ROS2 Controller](software/raspberry-pi/) · [Protocol Spec](control/communication-protocol/README.md) · [URDF](simulation/urdf/hexaloam.urdf)
 - **Trajectories & Progressive Testing:** [Tripod / Ripple / Wave CSV & JSON](demonstrations/) · [11-Stage Hardware Commissioning](testing/) · [All 6 Edition Packages](packages/)
