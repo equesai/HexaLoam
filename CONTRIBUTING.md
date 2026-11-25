@@ -11,4 +11,4 @@ The platform is intended for modification. A useful contribution can be as small
 
 Start an [issue](https://github.com/equesai/HexaLoam/issues) for a design proposal or missing dependency. For a pull request, keep the editable source with the change and explain how a reviewer can reproduce it. Label values as measured, simulated, manufacturer-specified or assumed. Keep generated editor caches and personal paths out of the submission.
 
-Identify the author, source and applicable permissions for any third-party material you propose distributing. The project has no blanket open-source license. Ask HexaLoam contributors about reuse terms for a particular asset when needed.
+Identify the author, source and applicable permissions for any third-party material you propose distributing. HexaLoam is released under the [MIT License](LICENSE); contributions are accepted under the same license.

@@ -5,6 +5,7 @@ authors:
   - name: "HexaLoam contributors"
 repository-code: "https://github.com/equesai/HexaLoam"
 url: "https://equesai.github.io/HexaLoam/"
+license: MIT
 keywords:
   - HexaLoam
   - hexapod

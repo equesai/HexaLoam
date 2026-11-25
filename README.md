@@ -9,6 +9,7 @@
   <a href="docs/simulation-guide.md#full-robot-and-agricultural-scene"><img src="https://img.shields.io/badge/Simscape-18--DOF%20Multibody-0076A8" alt="18-DOF Simscape Multibody"></a>
   <a href="Printables/"><img src="https://img.shields.io/badge/CAD-STL%20%7C%203MF%20%7C%20GLB%20%7C%20SLDASM-d97706" alt="STL, 3MF, GLB, and SOLIDWORKS CAD"></a>
   <a href="docs/designer-guide.md"><img src="https://img.shields.io/badge/Sensor-RP--Lidar%20Ready-111827" alt="RP-Lidar Ready"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-16a34a" alt="MIT License"></a>
 </p>
 
 **HexaLoam is a modifiable six-legged robot (hexabot) platform** for agriculture, inspection, LiDAR/LOAM mapping, education, and robotics research. The repository provides editable SOLIDWORKS CAD and 3D-print files for the chassis, six leg sets, and LiDAR cover. The reference assembly shows MG996R servos and an RP-Lidar sensor on the chassis.
@@ -108,4 +109,8 @@ The assembly XML and seven STEP files imported and compiled in **MATLAB R2025b w
 
 ## Supporting CAD
 
-The battery and LiDAR CAD files came from the `18650-li-ion-battery-6` and `rp-lidar-2` reference collections. The MG996R servo model came from the project team's reference CAD. The repository has no blanket open-source license.
+The battery and LiDAR CAD files came from the `18650-li-ion-battery-6` and `rp-lidar-2` reference collections. The MG996R servo model came from the project team's reference CAD.
+
+## License
+
+Released under the [MIT License](LICENSE). Third-party reference CAD components remain subject to their respective source terms.
