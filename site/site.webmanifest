@@ -1,0 +1,28 @@
+{
+  "name": "HexaLoam — Modular 3D-Printable Hexapod Robot",
+  "short_name": "HexaLoam",
+  "description": "Modifiable 3D-printable 18-DOF hexapod robot platform with LiDAR mount, SOLIDWORKS CAD, gait demos, and Simscape Multibody files.",
+  "start_url": "/HexaLoam/",
+  "scope": "/HexaLoam/",
+  "display": "standalone",
+  "theme_color": "#985107",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/HexaLoam/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/HexaLoam/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/HexaLoam/assets/hexaloam-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

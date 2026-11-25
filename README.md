@@ -1,12 +1,23 @@
-# HexaLoam — 3D-Printable Hexapod Robot Platform with LiDAR
+<p align="center">
+  <img src="docs/media/hexaloam-logo.png" alt="HexaLoam modular hexapod robot and LiDAR emblem" width="140">
+</p>
 
-**HexaLoam is a modifiable six-legged robot (hexabot) platform** for agriculture, inspection, mapping, education, and robotics research. The repository provides editable SOLIDWORKS CAD and 3D-print files for the chassis, six leg sets, and LiDAR cover. The reference assembly shows MG996R servos and an RP-Lidar sensor on the chassis.
+# HexaLoam — Modular 3D-Printable Hexapod Robot Platform with LiDAR
+
+<p>
+  <a href="https://equesai.github.io/HexaLoam/"><img src="https://img.shields.io/badge/docs-GitHub%20Pages-985107?logo=githubpages&logoColor=white" alt="GitHub Pages"></a>
+  <a href="docs/simulation-guide.md#full-robot-and-agricultural-scene"><img src="https://img.shields.io/badge/Simscape-18--DOF%20Multibody-0076A8" alt="18-DOF Simscape Multibody"></a>
+  <a href="Printables/"><img src="https://img.shields.io/badge/CAD-STL%20%7C%203MF%20%7C%20GLB%20%7C%20SLDASM-d97706" alt="STL, 3MF, GLB, and SOLIDWORKS CAD"></a>
+  <a href="docs/designer-guide.md"><img src="https://img.shields.io/badge/Sensor-RP--Lidar%20Ready-111827" alt="RP-Lidar Ready"></a>
+</p>
+
+**HexaLoam is a modifiable six-legged robot (hexabot) platform** for agriculture, inspection, LiDAR/LOAM mapping, education, and robotics research. The repository provides editable SOLIDWORKS CAD and 3D-print files for the chassis, six leg sets, and LiDAR cover. The reference assembly shows MG996R servos and an RP-Lidar sensor on the chassis.
 
 Published by **HexaLoam contributors**. [Project homepage and research overview](https://equesai.github.io/HexaLoam/)
 
 [![Kinematic tripod walking animation with a live footfall diagram](docs/media/gait-tripod.gif)](docs/walking.md)
 
-**Watch the hexapod walk** · [Tripod gait](https://equesai.github.io/HexaLoam/videos/tripod/) · [Ripple gait](https://equesai.github.io/HexaLoam/videos/ripple/) · [Wave gait](https://equesai.github.io/HexaLoam/videos/wave/) · [Reproduce the animations](docs/walking.md#reproduce-the-videos)
+**Watch the hexapod walk** · [Gait comparison hub](https://equesai.github.io/HexaLoam/videos/) · [Tripod gait](https://equesai.github.io/HexaLoam/videos/tripod/) · [Ripple gait](https://equesai.github.io/HexaLoam/videos/ripple/) · [Wave gait](https://equesai.github.io/HexaLoam/videos/wave/) · [Reproduce the animations](docs/walking.md#reproduce-the-videos)
 
 [360° assembly video](docs/media/assembly-orbit.mp4?raw=1) · [Multi-angle CAD gallery](docs/gallery.md)
 

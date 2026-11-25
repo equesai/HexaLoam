@@ -1,34 +1,72 @@
 <?xml version='1.0' encoding='utf-8'?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://equesai.github.io/HexaLoam/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://equesai.github.io/HexaLoam/assets/assembly-hero.png</image:loc>
+      <image:title>HexaLoam 18-DOF hexapod CAD assembly isometric view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://equesai.github.io/HexaLoam/assets/assembly-top.png</image:loc>
+      <image:title>HexaLoam chassis top view with electronics bay and servo mounts</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://equesai.github.io/HexaLoam/assets/assembly-underside.png</image:loc>
+      <image:title>HexaLoam chassis underside and leg mounting geometry</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://equesai.github.io/HexaLoam/assets/hexaloam-logo.png</image:loc>
+      <image:title>HexaLoam brand emblem</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://equesai.github.io/HexaLoam/videos/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://equesai.github.io/HexaLoam/assets/gait-tripod.jpg</image:loc>
+      <image:title>HexaLoam tripod gait CAD animation frame</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://equesai.github.io/HexaLoam/assets/gait-ripple.jpg</image:loc>
+      <image:title>HexaLoam ripple gait CAD animation frame</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://equesai.github.io/HexaLoam/assets/gait-wave.jpg</image:loc>
+      <image:title>HexaLoam wave gait CAD animation frame</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://equesai.github.io/HexaLoam/videos/tripod/</loc>
+    <lastmod>2026-11-25</lastmod>
     <video:video>
       <video:thumbnail_loc>https://equesai.github.io/HexaLoam/assets/gait-tripod.jpg</video:thumbnail_loc>
       <video:title>Tripod gait of the HexaLoam hexapod</video:title>
-      <video:description>Two groups of three legs alternate stance and swing in this CAD animation.</video:description>
+      <video:description>Two groups of three legs alternate stance and swing in this CAD animation of the HexaLoam hexapod.</video:description>
       <video:content_loc>https://equesai.github.io/HexaLoam/assets/gait-tripod.mp4</video:content_loc>
       <video:duration>10</video:duration>
     </video:video>
   </url>
   <url>
     <loc>https://equesai.github.io/HexaLoam/videos/ripple/</loc>
+    <lastmod>2026-11-25</lastmod>
     <video:video>
       <video:thumbnail_loc>https://equesai.github.io/HexaLoam/assets/gait-ripple.jpg</video:thumbnail_loc>
       <video:title>Ripple gait of the HexaLoam hexapod</video:title>
-      <video:description>Two staggered swings overlap while four feet remain in stance in this CAD animation.</video:description>
+      <video:description>Two staggered swings overlap while four feet remain in stance in this CAD animation of the HexaLoam hexapod.</video:description>
       <video:content_loc>https://equesai.github.io/HexaLoam/assets/gait-ripple.mp4</video:content_loc>
       <video:duration>10</video:duration>
     </video:video>
   </url>
   <url>
     <loc>https://equesai.github.io/HexaLoam/videos/wave/</loc>
+    <lastmod>2026-11-25</lastmod>
     <video:video>
       <video:thumbnail_loc>https://equesai.github.io/HexaLoam/assets/gait-wave.jpg</video:thumbnail_loc>
       <video:title>Wave gait of the HexaLoam hexapod</video:title>
-      <video:description>One foot moves at a time, from rear to front along each side, in this CAD animation.</video:description>
+      <video:description>One foot moves at a time, from rear to front along each side, in this CAD animation of the HexaLoam hexapod.</video:description>
       <video:content_loc>https://equesai.github.io/HexaLoam/assets/gait-wave.mp4</video:content_loc>
       <video:duration>10</video:duration>
     </video:video>

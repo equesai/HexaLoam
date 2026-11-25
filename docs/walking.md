@@ -1,6 +1,6 @@
-# Three walking sequences
+# HexaLoam walking sequences
 
-These animations use the 57 CAD component instances and hip, pitch and knee axes from the assembly export. The body advances over a flat grid. A foot stays at its ground location through stance and moves forward and upward during swing. The diagram is viewed from above with the front at the top. Teal indicates stance and amber indicates swing.
+These animations of the [HexaLoam hexapod](../README.md) use the 57 CAD component instances and hip, pitch and knee axes from the assembly export. The body advances over a flat grid. A foot stays at its ground location through stance and moves forward and upward during swing. The diagram is viewed from above with the front at the top. Teal indicates stance and amber indicates swing. Also available on the [HexaLoam walking gait video hub](https://equesai.github.io/HexaLoam/videos/).
 
 | Gait | Feet in the stance phase | Visible difference |
 | --- | ---: | --- |

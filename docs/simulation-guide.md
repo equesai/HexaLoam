@@ -1,6 +1,6 @@
-# Simulation and engine interchange
+# HexaLoam simulation and engine interchange
 
-Start with the visual meshes to study packaging, or run the MATLAB leg example to explore a static load. The [engineering roadmap](development-roadmap.md) describes the additional work for a calibrated six-legged robot.
+Start with the [HexaLoam](../README.md) visual meshes to study packaging, or run the MATLAB leg example to explore a static load. The [engineering roadmap](development-roadmap.md) describes the additional work for a calibrated six-legged robot.
 
 | Workflow | What you can run or inspect | Validation status |
 | --- | --- | --- |

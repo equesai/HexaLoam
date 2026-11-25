@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="HexaLoam hexagon and LiDAR hexapod mark">
+  <!-- Hexagonal frame -->
+  <polygon points="32,3 57,17.5 57,46.5 32,61 7,46.5 7,17.5" fill="#111827" stroke="#985107" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Concentric LiDAR scan arcs -->
+  <g fill="none" stroke="#985107" stroke-linecap="round" opacity="0.85">
+    <path d="M 19.5 14.8 A 21 21 0 0 1 44.5 14.8" stroke-width="1.6"/>
+    <path d="M 44.5 49.2 A 21 21 0 0 1 19.5 49.2" stroke-width="1.6"/>
+    <path d="M 12.6 24.5 A 21 21 0 0 0 12.6 39.5" stroke-width="1.6"/>
+    <path d="M 51.4 24.5 A 21 21 0 0 1 51.4 39.5" stroke-width="1.6"/>
+    <circle cx="32" cy="32" r="15.5" stroke-dasharray="6 5" stroke-width="1.3" opacity="0.7"/>
+  </g>
+  <!-- Six articulated hexapod legs -->
+  <g fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left legs -->
+    <polyline points="24,25 18,21 20,14" stroke="#D97706"/>
+    <polyline points="23,32 15,32 12,40" stroke="#D97706"/>
+    <polyline points="24,39 17,42 19,50" stroke="#D97706"/>
+    <!-- Right legs -->
+    <polyline points="40,25 46,21 44,14" stroke="#985107"/>
+    <polyline points="41,32 49,32 52,40" stroke="#985107"/>
+    <polyline points="40,39 47,42 45,50" stroke="#985107"/>
+  </g>
+  <!-- Central chassis body with split amber shading -->
+  <polygon points="27,22 32,22 32,42 27,42 23,37 23,27" fill="#D97706"/>
+  <polygon points="32,22 37,22 41,27 41,37 37,42 32,42" fill="#985107"/>
+  <!-- Central LiDAR eyelet -->
+  <circle cx="32" cy="32" r="4.2" fill="#111827"/>
+  <circle cx="32" cy="32" r="1.4" fill="#D97706"/>
+</svg>

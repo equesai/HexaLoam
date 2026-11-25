@@ -1,6 +1,6 @@
 # HexaLoam engineering development roadmap
 
-**Objective.** Take the HexaLoam contributors mechanical hexapod from editable CAD to a reproducible, instrumented agricultural scouting experiment. A researcher should be able to reproduce the gait, payload, terrain and sensor results from a tagged revision. A student should be able to inspect one leg and reproduce a smaller experiment before moving on to the full robot.
+**Objective.** Take the HexaLoam contributors HexaLoam mechanical hexapod from editable CAD to a reproducible, instrumented agricultural scouting experiment. A researcher should be able to reproduce the gait, payload, terrain and sensor results from a tagged revision. A student should be able to inspect one leg and reproduce a smaller experiment before moving on to the full robot.
 
 **First engineering priority.** Trace the free connections in the imported assembly and validate one leg. A visually correct mesh cannot establish a hinge axis, an independent degree of freedom or a motor torque requirement. Engine scene preparation and print-fit studies can proceed alongside this work.
 

@@ -6,7 +6,10 @@ authors:
 repository-code: "https://github.com/equesai/HexaLoam"
 url: "https://equesai.github.io/HexaLoam/"
 keywords:
+  - HexaLoam
   - hexapod
+  - hexabot
+  - LOAM
   - agricultural robotics
   - 3D printing
   - LiDAR
