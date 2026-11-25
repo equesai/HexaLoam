@@ -556,54 +556,86 @@
           </div>
         </div>
 
-        <h3 style="margin-top:2rem;">Top-Payload Weight &amp; Motor Torque Comparison (Simulation Validated)</h3>
+        <h3 style="margin-top:2rem;">PLA+ Slicer Part Weights (Support Negated, Bambu Studio G-code)</h3>
         <p class="section-intro">
-          Computed from the CAD structure + 18 servos (<strong>4.949 kg</strong>) plus each configuration's top-mounted controllers, regulators, LiDAR, and 4S3P 18650 battery using the analytical 3R leg Jacobian at standing pose (<code>H = 185 mm</code>, <code>R_foot = 290 mm</code>, <code>1.25×</code> tripod dynamic factor) compared against one MG996R's 6.0 V stall torque (<strong>1.079 N·m / 11.0 kg·cm</strong>).
+          Extracted directly from the single-part Bambu Studio G-code plates (<code>PLA+</code>, <code>0.4 mm</code> nozzle, 2 walls, 15% gyroid infill), excluding support and brim filament:
+        </p>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.95rem;margin-bottom:1.5rem;">
+            <thead>
+              <tr style="border-bottom:2px solid #cbd5e1;text-align:left;">
+                <th style="padding:0.6rem;">Part</th>
+                <th style="padding:0.6rem;">Qty</th>
+                <th style="padding:0.6rem;">Total Sliced (g)</th>
+                <th style="padding:0.6rem;">Support + Brim (g)</th>
+                <th style="padding:0.6rem;">Part Only (g)</th>
+                <th style="padding:0.6rem;">Subtotal (g)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:0.6rem;"><code>Robot_Base.STL</code></td><td style="padding:0.6rem;">1</td><td style="padding:0.6rem;">324.22</td><td style="padding:0.6rem;">149.55</td><td style="padding:0.6rem;"><strong>174.67</strong></td><td style="padding:0.6rem;">174.67</td></tr>
+              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:0.6rem;"><code>L1.STL</code> (Coxa)</td><td style="padding:0.6rem;">6</td><td style="padding:0.6rem;">85.06</td><td style="padding:0.6rem;">25.42</td><td style="padding:0.6rem;"><strong>59.64</strong></td><td style="padding:0.6rem;">357.84</td></tr>
+              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:0.6rem;"><code>L2.STL</code> (Femur)</td><td style="padding:0.6rem;">6</td><td style="padding:0.6rem;">48.60</td><td style="padding:0.6rem;">0.27</td><td style="padding:0.6rem;"><strong>48.33</strong></td><td style="padding:0.6rem;">289.98</td></tr>
+              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:0.6rem;"><code>L3.STL</code> (Tibia)</td><td style="padding:0.6rem;">6</td><td style="padding:0.6rem;">97.87</td><td style="padding:0.6rem;">24.36</td><td style="padding:0.6rem;"><strong>73.51</strong></td><td style="padding:0.6rem;">441.06</td></tr>
+              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:0.6rem;"><code>LidarCover.STL</code></td><td style="padding:0.6rem;">1</td><td style="padding:0.6rem;">55.41</td><td style="padding:0.6rem;">12.73</td><td style="padding:0.6rem;"><strong>42.68</strong></td><td style="padding:0.6rem;">42.68</td></tr>
+              <tr style="border-bottom:2px solid #cbd5e1;background:#f8fafc;"><td style="padding:0.6rem;"><strong>Total PLA+ Structure (20 pcs) + 36× MG996R Servos (2/joint)</strong></td><td style="padding:0.6rem;">—</td><td style="padding:0.6rem;">—</td><td style="padding:0.6rem;">—</td><td style="padding:0.6rem;">1,306.23 g + 1,980.00 g</td><td style="padding:0.6rem;"><strong>3.286 kg</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin-top:2rem;">Top-Payload Weight, 3S 5000 mAh LiPo &amp; Dual-Motor Torque Comparison</h3>
+        <p class="section-intro">
+          Computed from the G-code PLA+ base + 36 MG996R servos (<strong>3.286 kg</strong>) plus a <strong>3S 5000 mAh LiPo (0.360 kg)</strong>, controllers, regulators, and RP-Lidar using the analytical 3R leg Jacobian (<code>H = 185 mm</code>, <code>R_foot = 290 mm</code>) against <strong>2× MG996R per joint</strong> (<strong>2.157 N·m</strong> stall @ 6.0 V; <code>70%</code> safe continuous = <strong>1.510 N·m</strong>).
         </p>
         <div style="overflow-x:auto;">
           <table style="width:100%;border-collapse:collapse;font-size:0.95rem;margin-bottom:1.5rem;">
             <thead>
               <tr style="border-bottom:2px solid #cbd5e1;text-align:left;">
                 <th style="padding:0.6rem;">Configuration</th>
-                <th style="padding:0.6rem;">Top Payload (kg)</th>
+                <th style="padding:0.6rem;">Top + LiPo (kg)</th>
                 <th style="padding:0.6rem;">Total Mass (kg)</th>
-                <th style="padding:0.6rem;">6-Leg Femur (N·m)</th>
-                <th style="padding:0.6rem;">3-Leg Tripod Peak Femur (N·m)</th>
-                <th style="padding:0.6rem;">Single MG996R Utilization</th>
+                <th style="padding:0.6rem;">Wave 5-Leg (N·m)</th>
+                <th style="padding:0.6rem;">Ripple 4-Leg (N·m)</th>
+                <th style="padding:0.6rem;">Tripod 3-Leg (N·m)</th>
+                <th style="padding:0.6rem;">Max Extra Top Payload (70% Safe)</th>
               </tr>
             </thead>
             <tbody>
               <tr style="border-bottom:1px solid #e2e8f0;">
                 <td style="padding:0.6rem;"><strong>A — Arduino Mega 2560</strong></td>
-                <td style="padding:0.6rem;">0.707</td>
-                <td style="padding:0.6rem;">5.656</td>
-                <td style="padding:0.6rem;">1.049</td>
-                <td style="padding:0.6rem;">2.623</td>
-                <td style="padding:0.6rem;">243.1% (requires dual/higher-torque upgrade)</td>
+                <td style="padding:0.6rem;">0.507</td>
+                <td style="padding:0.6rem;">3.793</td>
+                <td style="padding:0.6rem;">0.971 (45.0%)</td>
+                <td style="padding:0.6rem;">1.266 (58.7%)</td>
+                <td style="padding:0.6rem;">1.759 (81.5%)</td>
+                <td style="padding:0.6rem;"><strong>+2.11 kg</strong> (Wave) / <strong>+0.73 kg</strong> (Ripple)</td>
               </tr>
               <tr style="border-bottom:1px solid #e2e8f0;">
                 <td style="padding:0.6rem;"><strong>B — ESP32 + Dual PCA9685</strong></td>
-                <td style="padding:0.6rem;">0.719</td>
-                <td style="padding:0.6rem;">5.668</td>
-                <td style="padding:0.6rem;">1.051</td>
-                <td style="padding:0.6rem;">2.628</td>
-                <td style="padding:0.6rem;">243.6% (requires dual/higher-torque upgrade)</td>
+                <td style="padding:0.6rem;">0.519</td>
+                <td style="padding:0.6rem;">3.805</td>
+                <td style="padding:0.6rem;">0.974 (45.1%)</td>
+                <td style="padding:0.6rem;">1.270 (58.9%)</td>
+                <td style="padding:0.6rem;">1.764 (81.8%)</td>
+                <td style="padding:0.6rem;"><strong>+2.10 kg</strong> (Wave) / <strong>+0.72 kg</strong> (Ripple)</td>
               </tr>
               <tr style="border-bottom:1px solid #e2e8f0;">
                 <td style="padding:0.6rem;"><strong>C — RPi + Single ESP32 + LiDAR</strong></td>
-                <td style="padding:0.6rem;">0.903</td>
-                <td style="padding:0.6rem;">5.852</td>
-                <td style="padding:0.6rem;">1.085</td>
-                <td style="padding:0.6rem;">2.713</td>
-                <td style="padding:0.6rem;">251.5% (requires dual/higher-torque upgrade)</td>
+                <td style="padding:0.6rem;">0.703</td>
+                <td style="padding:0.6rem;">3.989</td>
+                <td style="padding:0.6rem;">1.021 (47.3%)</td>
+                <td style="padding:0.6rem;">1.332 (61.7%)</td>
+                <td style="padding:0.6rem;">1.850 (85.7%)</td>
+                <td style="padding:0.6rem;"><strong>+1.91 kg</strong> (Wave) / <strong>+0.53 kg</strong> (Ripple)</td>
               </tr>
               <tr style="border-bottom:1px solid #e2e8f0;">
                 <td style="padding:0.6rem;"><strong>D — RPi + Dual ESP32 + LiDAR</strong></td>
-                <td style="padding:0.6rem;">0.933</td>
-                <td style="padding:0.6rem;">5.882</td>
-                <td style="padding:0.6rem;">1.091</td>
-                <td style="padding:0.6rem;">2.727</td>
-                <td style="padding:0.6rem;">252.8% (requires dual/higher-torque upgrade)</td>
+                <td style="padding:0.6rem;">0.733</td>
+                <td style="padding:0.6rem;">4.019</td>
+                <td style="padding:0.6rem;">1.029 (47.7%)</td>
+                <td style="padding:0.6rem;">1.342 (62.2%)</td>
+                <td style="padding:0.6rem;">1.864 (86.4%)</td>
+                <td style="padding:0.6rem;"><strong>+1.88 kg</strong> (Wave) / <strong>+0.50 kg</strong> (Ripple)</td>
               </tr>
             </tbody>
           </table>

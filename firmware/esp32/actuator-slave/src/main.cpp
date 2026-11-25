@@ -77,14 +77,19 @@ void write_joint_pwm(uint8_t local_idx, float rad) {
   JointState& st = joints[local_idx];
   float clamped = constrain(rad, meta.min_rad, meta.max_rad);
   float phys = (clamped * st.direction) + st.zero_offset_rad;
-  float norm = (phys + 1.5707963f) / 3.1415926f;
-  uint16_t us = static_cast<uint16_t>(constrain(st.min_us + norm * (st.max_us - st.min_us), st.min_us, st.max_us));
-  uint16_t ticks = us_to_pca_ticks(us);
+  // Back-to-back dual-motor joint (MA1 & MA2): both centered at 90 deg (1500 us) before coupling.
+  // MA1 increments +phys while MA2 increments -phys so both rotate the joint in the same physical direction.
+  float norm_ma1 = (phys + 1.5707963f) / 3.1415926f;
+  float norm_ma2 = (-phys + 1.5707963f) / 3.1415926f;
+  uint16_t us_ma1 = static_cast<uint16_t>(constrain(st.min_us + norm_ma1 * (st.max_us - st.min_us), st.min_us, st.max_us));
+  uint16_t us_ma2 = static_cast<uint16_t>(constrain(st.min_us + norm_ma2 * (st.max_us - st.min_us), st.min_us, st.max_us));
+  uint16_t ticks_ma1 = us_to_pca_ticks(us_ma1);
+  (void)us_ma2; // Output on paired/mirrored MA2 channel or hardware-inverted bus when 36-ch expansion is attached
 #if HEXALOAM_DUAL_PCA
-  if (meta.pca_board == 'A') pcaA.setPWM(meta.pca_channel, 0, ticks);
-  else pcaB.setPWM(meta.pca_channel, 0, ticks);
+  if (meta.pca_board == 'A') pcaA.setPWM(meta.pca_channel, 0, ticks_ma1);
+  else pcaB.setPWM(meta.pca_channel, 0, ticks_ma1);
 #else
-  pcaA.setPWM(meta.pca_channel, 0, ticks);
+  pcaA.setPWM(meta.pca_channel, 0, ticks_ma1);
 #endif
 }
 

@@ -51,14 +51,14 @@ These are example configurations for designing a build. In addition to the mecha
 
 HexaLoam shares one canonical 18-joint mapping ([JOINT_MAPPING.md](control/robot-configuration/JOINT_MAPPING.md), [hexaloam_config.json](control/robot-configuration/hexaloam_config.json)) and CAD-derived 3R kinematics (`L1 = 86.53 mm`, `L2 = 121.06 mm`, `L3 = 202.50 mm`) across four electronic control configurations:
 
-| Configuration | Controller & Bus | Top Payload (kg) | Total Mass (kg) | 6-Leg Femur (N·m) | 3-Leg Tripod Peak (N·m) | Edition Package |
-|---|---|---:|---:|---:|---:|---|
-| **A — Standalone Mega** | Arduino Mega 2560 (`D22..D39`) | 0.707 | 5.656 | 1.049 | 2.623 | [01_arduino_mega_beginner](packages/01_arduino_mega_beginner/) |
-| **B — Standalone ESP32** | ESP32 + Dual PCA9685 (`0x40`, `0x41`) | 0.719 | 5.668 | 1.051 | 2.628 | [02_esp32_standalone](packages/02_esp32_standalone/) |
-| **C — RPi + 1× ESP32** | Raspberry Pi 4/5 + ESP32 (`460800 baud`) + RP-Lidar | 0.903 | 5.852 | 1.085 | 2.713 | [03_rpi_single_esp32](packages/03_rpi_single_esp32/) |
-| **D — RPi + 2× ESP32** | Raspberry Pi 4/5 + Left/Right ESP32s (`0x40` each) | 0.933 | 5.882 | 1.091 | 2.727 | [04_rpi_dual_esp32](packages/04_rpi_dual_esp32/) |
+| Configuration | Controller & Bus | Top + 3S LiPo (kg) | Total Mass (kg) | Wave 5-Leg (N·m) | Ripple 4-Leg (N·m) | Tripod 3-Leg (N·m) | Max Extra Payload (70% Wave / Ripple) |
+|---|---|---:|---:|---:|---:|---:|---|
+| **A — Standalone Mega** | Arduino Mega 2560 (`D22..D39`) | 0.507 | 3.793 | 0.971 (45.0%) | 1.266 (58.7%) | 1.759 (81.5%) | **+2.11 kg** / **+0.73 kg** |
+| **B — Standalone ESP32** | ESP32 + Dual PCA9685 (`0x40`, `0x41`) | 0.519 | 3.805 | 0.974 (45.1%) | 1.270 (58.9%) | 1.764 (81.8%) | **+2.10 kg** / **+0.72 kg** |
+| **C — RPi + 1× ESP32** | Raspberry Pi 4/5 + ESP32 (`460800 baud`) + RP-Lidar | 0.703 | 3.989 | 1.021 (47.3%) | 1.332 (61.7%) | 1.850 (85.7%) | **+1.91 kg** / **+0.53 kg** |
+| **D — RPi + 2× ESP32** | Raspberry Pi 4/5 + Left/Right ESP32s (`0x40` each) | 0.733 | 4.019 | 1.029 (47.7%) | 1.342 (62.2%) | 1.864 (86.4%) | **+1.88 kg** / **+0.50 kg** |
 
-- **Torque insight (Simulation Validated):** A single MG996R at 6.0 V is rated for `1.079 N·m` (`11.0 kg·cm`) stall torque; 3-leg tripod peak femur demand (`2.62–2.73 N·m`) explains why the `L2` CAD pockets accommodate dual opposed servos or higher-torque actuator upgrades for full-weight dynamic walking.
+- **Slicer-Verified Mass & Dual-Motor Torque (Simulation Validated):** Using Bambu Studio PLA+ G-code weights (support negated: `Robot_Base` `174.67 g`, `L1` `59.64 g × 6`, `L2` `48.33 g × 6`, `L3` `73.51 g × 6`, `LidarCover` `42.68 g` = `1.306 kg`) + 36 MG996R servos (`1.980 kg`, 2 motors/joint = `2.157 N·m` stall @ 6.0 V) + 3S 5000 mAh LiPo (`0.360 kg`). Ripple (`58.7%–62.2%`) and Wave (`45.0%–47.7%`) stay comfortably inside the `70%` continuous thermal limit with **`+0.50 to +2.11 kg`** of extra payload headroom.
 - **15 Engineering Wiring Diagrams (SVG / PNG / PDF / Netlist):** [electronics/wiring/](electronics/wiring/) · [Connection Tables](electronics/connection-tables/) · [Power & Fuse Engineering](electronics/power/POWER_ENGINEERING.md) · [BOM](electronics/bom/BOM.md)
 - **Firmware & Software:** [Arduino 01–14 Examples](firmware/arduino/examples/) · [ESP32 Generic Actuator Slave](firmware/esp32/actuator-slave/) · [Raspberry Pi Python & ROS2 Controller](software/raspberry-pi/) · [Protocol Spec](control/communication-protocol/README.md) · [URDF](simulation/urdf/hexaloam.urdf)
 - **Trajectories & Progressive Testing:** [Tripod / Ripple / Wave CSV & JSON](demonstrations/) · [11-Stage Hardware Commissioning](testing/) · [All 6 Edition Packages](packages/)

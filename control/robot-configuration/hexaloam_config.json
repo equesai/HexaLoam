@@ -38,8 +38,18 @@
       },
       "mass_per_servo_cad_kg": 0.033877,
       "mass_mg996r_datasheet_kg": 0.055,
+      "servos_per_joint": 2,
+      "total_servos": 36,
+      "slicer_pla_plus_parts_g": {
+        "Robot_Base": 174.67,
+        "L1_each": 59.64,
+        "L2_each": 48.33,
+        "L3_each": 73.51,
+        "LidarCover": 42.68,
+        "total_20_pieces_g": 1306.23
+      },
       "total_printed_and_servo_cad_mass_kg": 4.568882,
-      "total_printed_and_servo_physical_est_kg": 4.949096
+      "total_printed_and_servo_slicer_est_kg": 3.28623
     },
     "links": {
       "coxa": {
@@ -122,7 +132,7 @@
       "servo_pins": "D22..D39",
       "estop_pin": "D2",
       "vbat_adc_pin": "A0",
-      "top_payload_components_kg": {"arduino_mega_2560": 0.037, "buck_regulator_and_wiring": 0.110, "4s3p_18650_battery_est": 0.560}
+      "top_payload_components_kg": {"arduino_mega_2560": 0.037, "buck_regulator_and_wiring": 0.110, "3s_5000mah_lipo_battery": 0.360}
     },
     "B_esp32_standalone": {
       "name": "Configuration B — Standalone ESP32 with Dual PCA9685",
@@ -132,7 +142,7 @@
       "pca9685_addresses": ["0x40", "0x41"],
       "estop_gpio": 4,
       "vbat_adc_gpio": 34,
-      "top_payload_components_kg": {"esp32_devkit": 0.010, "dual_pca9685": 0.024, "imu_mpu6050_or_bno085": 0.005, "buck_regulator_and_wiring": 0.120, "4s3p_18650_battery_est": 0.560}
+      "top_payload_components_kg": {"esp32_devkit": 0.010, "dual_pca9685": 0.024, "imu_mpu6050_or_bno085": 0.005, "buck_regulator_and_wiring": 0.120, "3s_5000mah_lipo_battery": 0.360}
     },
     "C_rpi_single_esp32": {
       "name": "Configuration C — Raspberry Pi with Single ESP32 Slave",
@@ -142,7 +152,7 @@
       "i2c_scl_gpio": 22,
       "pca9685_addresses": ["0x40", "0x41"],
       "estop_gpio": 4,
-      "top_payload_components_kg": {"raspberry_pi_4_or_5": 0.046, "esp32_devkit": 0.010, "dual_pca9685": 0.024, "rplidar": 0.073084, "rgb_camera_and_imu": 0.030, "regulators_and_wiring": 0.160, "4s3p_18650_battery_est": 0.560}
+      "top_payload_components_kg": {"raspberry_pi_4_or_5": 0.046, "esp32_devkit": 0.010, "dual_pca9685": 0.024, "rplidar": 0.073084, "rgb_camera_and_imu": 0.030, "regulators_and_wiring": 0.160, "3s_5000mah_lipo_battery": 0.360}
     },
     "D_rpi_dual_esp32": {
       "name": "Configuration D — Raspberry Pi with Dual ESP32 Slaves",
@@ -153,7 +163,7 @@
       "pca9685_address_per_node": "0x40",
       "estop_gpio": 4,
       "sync_gpio": 18,
-      "top_payload_components_kg": {"raspberry_pi_4_or_5": 0.046, "dual_esp32_devkit": 0.020, "dual_pca9685": 0.024, "rplidar": 0.073084, "rgb_camera_and_imu": 0.030, "regulators_and_wiring": 0.180, "4s3p_18650_battery_est": 0.560}
+      "top_payload_components_kg": {"raspberry_pi_4_or_5": 0.046, "dual_esp32_devkit": 0.020, "dual_pca9685": 0.024, "rplidar": 0.073084, "rgb_camera_and_imu": 0.030, "regulators_and_wiring": 0.180, "3s_5000mah_lipo_battery": 0.360}
     }
   },
   "gaits": {

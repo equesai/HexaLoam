@@ -48,10 +48,16 @@ bool calibrated = false;
 unsigned long lastTick = 0;
 float phase = 0.0f;
 
-int radToUs(uint8_t idx, float rad) {{
+int radToUsMA1(uint8_t idx, float rad) {{
   float phys = rad * JOINT_DIR[idx];
   long us = 1500L + lroundf((phys / 1.5707963f) * 1000.0f);
   return constrain((int)us, 500, 2500);
+}}
+
+// Back-to-back opposing motor MA2: centered at 90 deg (1500 us) before coupling,
+// then incremented with opposite sign (-phys) so MA1 and MA2 aid rather than fight each other.
+int radToUsMA2(uint8_t idx, float rad) {{
+  return 3000 - radToUsMA1(idx, rad);
 }}
 
 void setup() {{
@@ -80,7 +86,8 @@ void loop() {{
     phase += 0.02f;
     if (phase >= 1.0f) phase -= 1.0f;
     for (uint8_t i = 0; i < 18; ++i) {{
-      servos[i].writeMicroseconds(radToUs(i, NEUTRAL_RAD[i]));
+      servos[i].writeMicroseconds(radToUsMA1(i, NEUTRAL_RAD[i]));
+      // Paired MA2 servo (if driven on a separate channel) uses radToUsMA2(i, NEUTRAL_RAD[i])
     }}
   }}
 }}

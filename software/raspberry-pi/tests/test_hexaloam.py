@@ -113,5 +113,5 @@ def test_torque_and_mass_analysis_all_configs() -> None:
     res = analyze_all_configurations()
     assert set(res.keys()) == {"A_arduino_mega", "B_esp32_standalone", "C_rpi_single_esp32", "D_rpi_dual_esp32"}
     for item in res.values():
-        assert item["total_mass_kg"] > 5.0
-        assert item["tripod_3leg_peak_torque_nm"]["femur"] > 0.0
+        assert 3.5 < item["total_mass_kg"] < 4.5
+        assert item["tripod_3leg_peak_torque_nm"]["femur"] < item["dual_mg996r_stall_torque_6v_nm"]
