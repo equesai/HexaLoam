@@ -290,9 +290,9 @@
             <span>HexaLoam contributors · Modular Robotics Platform</span>
           </div>
           <h1 class="hero-title">HexaLoam</h1>
-          <p class="hero-subhead">Modular 3D-printable hexapod with LiDAR</p>
+          <p class="hero-subhead">Modular 3D-printable 18-DOF hexapod with LiDAR</p>
           <p class="hero-lede">
-            An editable, 3D-printable 18-DOF six-legged robot for crop scouting, LiDAR mapping, and locomotion research. Explore the SOLIDWORKS assembly, adapt the electronics bay, or compare three walking sequences from the same CAD model.
+            An adaptable six-legged robotics platform for agricultural scouting, LiDAR/LOAM mapping, and legged locomotion research. Download the SOLIDWORKS CAD, PLA+ print files, 15 wiring diagrams, Arduino/ESP32 firmware, and Raspberry Pi/ROS2 controller in one unified repository.
           </p>
           <div class="hero-actions">
             <a href="https://github.com/equesai/HexaLoam/blob/main/docs/gallery.md" class="cta-btn cta-primary">Explore the CAD</a>
@@ -514,144 +514,197 @@
       </div>
     </section>
 
-    <section id="control" class="content-section">
+    <section id="control" class="content-section control-section">
       <div class="section-container">
         <h2 class="section-title">Control architectures, wiring &amp; torque analysis</h2>
         <p class="section-intro">
-          HexaLoam was evaluated in simulation and automated software tests across four electronic control configurations (Configs A–D) sharing one canonical 18-joint mapping (<code>LF_COXA..RR_TIBIA</code>, IDs 0–17), CAD-derived 3R kinematics (<code>L1 = 86.53 mm</code>, <code>L2 = 121.06 mm</code>, <code>L3 = 202.50 mm</code>), and 15 engineering wiring diagrams. Physical bench and full-robot hardware tests remain pending in the 11-stage commissioning checklists.
+          HexaLoam is engineered around one shared 18-joint mapping (<code>LF_COXA..RR_TIBIA</code>), CAD-derived 3R kinematics (<code>L1 = 86.53 mm</code>, <code>L2 = 121.06 mm</code>, <code>L3 = 202.50 mm</code>), and back-to-back mirrored dual-motor joints (<code>MA1</code> &amp; <code>MA2</code>). All four control configurations below are validated in software and analytical torque simulation; physical hardware commissioning is structured into 11 progressive checklists.
         </p>
+
+        <div class="metric-strip">
+          <div class="metric-card">
+            <span class="metric-value">1.306 kg</span>
+            <span class="metric-label">PLA+ printed structure (20 pcs, G-code verified, no support)</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-value">3.79–4.02 kg</span>
+            <span class="metric-label">Total robot mass with 36 servos, 3S 5000 mAh LiPo &amp; electronics</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-value">2.157 N·m</span>
+            <span class="metric-label">Dual-motor stall torque per joint (2× MG996R @ 6.0 V)</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-value">+1.88–2.11 kg</span>
+            <span class="metric-label">Extra top payload headroom in Wave gait (70% continuous limit)</span>
+          </div>
+        </div>
 
         <div class="gait-viewer config-viewer">
           <div class="gait-tabs" role="tablist" aria-label="Control configuration selector">
-            <button type="button" class="gait-tab active" role="tab" aria-selected="true" aria-controls="panel-cfg-a" id="tab-cfg-a" data-target="panel-cfg-a">Config A · Arduino Mega</button>
-            <button type="button" class="gait-tab" role="tab" aria-selected="false" aria-controls="panel-cfg-b" id="tab-cfg-b" data-target="panel-cfg-b">Config B · ESP32 Standalone</button>
-            <button type="button" class="gait-tab" role="tab" aria-selected="false" aria-controls="panel-cfg-c" id="tab-cfg-c" data-target="panel-cfg-c">Config C · RPi + 1× ESP32</button>
-            <button type="button" class="gait-tab" role="tab" aria-selected="false" aria-controls="panel-cfg-d" id="tab-cfg-d" data-target="panel-cfg-d">Config D · RPi + 2× ESP32</button>
+            <button type="button" class="gait-tab active" role="tab" aria-selected="true" aria-controls="panel-cfg-a" id="tab-cfg-a" data-target="panel-cfg-a">
+              <span class="tab-label">Config A · Arduino Mega</span>
+              <span class="tab-stance">3.793 kg · Beginner</span>
+            </button>
+            <button type="button" class="gait-tab" role="tab" aria-selected="false" aria-controls="panel-cfg-b" id="tab-cfg-b" data-target="panel-cfg-b">
+              <span class="tab-label">Config B · ESP32</span>
+              <span class="tab-stance">3.805 kg · Wireless</span>
+            </button>
+            <button type="button" class="gait-tab" role="tab" aria-selected="false" aria-controls="panel-cfg-c" id="tab-cfg-c" data-target="panel-cfg-c">
+              <span class="tab-label">Config C · RPi + 1× ESP32</span>
+              <span class="tab-stance">3.989 kg · Recommended</span>
+            </button>
+            <button type="button" class="gait-tab" role="tab" aria-selected="false" aria-controls="panel-cfg-d" id="tab-cfg-d" data-target="panel-cfg-d">
+              <span class="tab-label">Config D · RPi + 2× ESP32</span>
+              <span class="tab-stance">4.019 kg · Distributed</span>
+            </button>
           </div>
 
           <div class="gait-panels">
             <article class="gait-panel active" role="tabpanel" id="panel-cfg-a" aria-labelledby="tab-cfg-a">
-              <div class="gait-info">
+              <div class="config-panel-body">
                 <h3>Configuration A — Standalone Arduino Mega 2560</h3>
-                <p>Educational &amp; low-cost direct PWM control on pins <code>D22..D39</code> (Timer5 + Timer1), external 6.0 V servo PSU, E-Stop on <code>D2</code>, and 14 step-by-step <code>.ino</code> sketches. Top electronics + 3S 5000 mAh LiPo mass: <strong>0.507 kg</strong> (total robot: <strong>3.793 kg</strong>).</p>
-                <p><a href="https://github.com/equesai/HexaLoam/tree/main/firmware/arduino/examples">Arduino 01–14 Sketches</a> · <a href="https://github.com/equesai/HexaLoam/blob/main/electronics/wiring/01_arduino_mega_18_servos.svg">Wiring Diagram (SVG)</a> · <a href="https://github.com/equesai/HexaLoam/tree/main/packages/01_arduino_mega_beginner">Edition Package</a></p>
+                <p>Built for classrooms, low-cost prototyping, and direct hardware testing. Drives all 18 joint channels on pins <code>D22..D39</code> with an external 6.0 V servo supply, hardware E-stop on <code>D2</code>, and 14 step-by-step Arduino sketches. Electronics + 3S 5000 mAh LiPo add <strong>0.507 kg</strong> (total robot: <strong>3.793 kg</strong>).</p>
+                <div class="config-links">
+                  <a class="pill-link" href="https://github.com/equesai/HexaLoam/tree/main/firmware/arduino/examples">Arduino 01–14 Sketches</a>
+                  <a class="pill-link" href="https://github.com/equesai/HexaLoam/blob/main/electronics/wiring/01_arduino_mega_18_servos.svg">Wiring Diagram (SVG)</a>
+                  <a class="pill-link" href="https://github.com/equesai/HexaLoam/tree/main/packages/01_arduino_mega_beginner">Edition Package</a>
+                </div>
               </div>
             </article>
             <article class="gait-panel" role="tabpanel" id="panel-cfg-b" aria-labelledby="tab-cfg-b">
-              <div class="gait-info">
+              <div class="config-panel-body">
                 <h3>Configuration B — Standalone ESP32 + Dual PCA9685</h3>
-                <p>Single ESP32 DevKit driving dual PCA9685 boards over 3.3 V I2C (<code>GPIO21</code> SDA, <code>GPIO22</code> SCL, addresses <code>0x40</code> &amp; <code>0x41</code>) at 50 Hz with NVS calibration and optional IMU/foot-contact sensors. Top electronics + 3S 5000 mAh LiPo mass: <strong>0.519 kg</strong> (total robot: <strong>3.805 kg</strong>).</p>
-                <p><a href="https://github.com/equesai/HexaLoam/tree/main/firmware/esp32/actuator-slave">ESP32 Firmware</a> · <a href="https://github.com/equesai/HexaLoam/blob/main/electronics/wiring/02_esp32_dual_pca9685.svg">Wiring Diagram (SVG)</a> · <a href="https://github.com/equesai/HexaLoam/tree/main/packages/02_esp32_standalone">Edition Package</a></p>
+                <p>Compact single-microcontroller wireless platform driving two PCA9685 boards over 3.3 V I2C (<code>GPIO21</code> SDA, <code>GPIO22</code> SCL, addresses <code>0x40</code> &amp; <code>0x41</code>) at 50 Hz, with persistent NVS calibration and optional IMU/foot-contact inputs. Electronics + 3S 5000 mAh LiPo add <strong>0.519 kg</strong> (total robot: <strong>3.805 kg</strong>).</p>
+                <div class="config-links">
+                  <a class="pill-link" href="https://github.com/equesai/HexaLoam/tree/main/firmware/esp32/actuator-slave">ESP32 Firmware</a>
+                  <a class="pill-link" href="https://github.com/equesai/HexaLoam/blob/main/electronics/wiring/02_esp32_dual_pca9685.svg">Wiring Diagram (SVG)</a>
+                  <a class="pill-link" href="https://github.com/equesai/HexaLoam/tree/main/packages/02_esp32_standalone">Edition Package</a>
+                </div>
               </div>
             </article>
             <article class="gait-panel" role="tabpanel" id="panel-cfg-c" aria-labelledby="tab-cfg-c">
-              <div class="gait-info">
+              <div class="config-panel-body">
                 <h3>Configuration C — Raspberry Pi + Single ESP32 Slave (Recommended)</h3>
-                <p>Raspberry Pi 4/5 runs Python IK, Tripod/Ripple/Wave gaits, RP-Lidar SLAM, and ROS2, streaming CRC-16 binary packets at <code>460800 baud</code> to one ESP32 18-DOF slave. Top electronics + RP-Lidar + 3S 5000 mAh LiPo mass: <strong>0.703 kg</strong> (total robot: <strong>3.989 kg</strong>).</p>
-                <p><a href="https://github.com/equesai/HexaLoam/tree/main/software/raspberry-pi">Raspberry Pi Package</a> · <a href="https://github.com/equesai/HexaLoam/blob/main/electronics/wiring/03_rpi_single_esp32_dual_pca9685.svg">Wiring Diagram (SVG)</a> · <a href="https://github.com/equesai/HexaLoam/tree/main/packages/03_rpi_single_esp32">Edition Package</a></p>
+                <p>Recommended for autonomous agricultural scouting and LiDAR/LOAM research. A Raspberry Pi 4 or 5 runs Python inverse kinematics, Tripod/Ripple/Wave gaits, RP-Lidar SLAM, and ROS2, streaming CRC-16 binary packets at <code>460800 baud</code> to one ESP32 actuator slave. Electronics + RP-Lidar + 3S 5000 mAh LiPo add <strong>0.703 kg</strong> (total robot: <strong>3.989 kg</strong>).</p>
+                <div class="config-links">
+                  <a class="pill-link" href="https://github.com/equesai/HexaLoam/tree/main/software/raspberry-pi">Raspberry Pi &amp; ROS2 Package</a>
+                  <a class="pill-link" href="https://github.com/equesai/HexaLoam/blob/main/electronics/wiring/03_rpi_single_esp32_dual_pca9685.svg">Wiring Diagram (SVG)</a>
+                  <a class="pill-link" href="https://github.com/equesai/HexaLoam/tree/main/packages/03_rpi_single_esp32">Edition Package</a>
+                </div>
               </div>
             </article>
             <article class="gait-panel" role="tabpanel" id="panel-cfg-d" aria-labelledby="tab-cfg-d">
-              <div class="gait-info">
+              <div class="config-panel-body">
                 <h3>Configuration D — Raspberry Pi + Dual ESP32 Slaves (Left/Right)</h3>
-                <p>Distributed actuation with ESP32-A (Left <code>J0..J8</code>, <code>0x40</code>) and ESP32-B (Right <code>J9..J17</code>, <code>0x40</code>), synchronized timestamps, and coordinated dual-side E-Stop. Top electronics + RP-Lidar + 3S 5000 mAh LiPo mass: <strong>0.733 kg</strong> (total robot: <strong>4.019 kg</strong>).</p>
-                <p><a href="https://github.com/equesai/HexaLoam/tree/main/software/raspberry-pi">Dual-ESP32 Controller</a> · <a href="https://github.com/equesai/HexaLoam/blob/main/electronics/wiring/04_rpi_dual_esp32_single_pca9685_each.svg">Wiring Diagram (SVG)</a> · <a href="https://github.com/equesai/HexaLoam/tree/main/packages/04_rpi_dual_esp32">Edition Package</a></p>
+                <p>Distributed architecture assigning one ESP32 + PCA9685 (<code>0x40</code>) to each side of the robot (Left <code>J0..J8</code>, Right <code>J9..J17</code>), with synchronized execution timestamps and coordinated dual-side emergency stop. Electronics + RP-Lidar + 3S 5000 mAh LiPo add <strong>0.733 kg</strong> (total robot: <strong>4.019 kg</strong>).</p>
+                <div class="config-links">
+                  <a class="pill-link" href="https://github.com/equesai/HexaLoam/tree/main/software/raspberry-pi">Dual-ESP32 Controller</a>
+                  <a class="pill-link" href="https://github.com/equesai/HexaLoam/blob/main/electronics/wiring/04_rpi_dual_esp32_single_pca9685_each.svg">Wiring Diagram (SVG)</a>
+                  <a class="pill-link" href="https://github.com/equesai/HexaLoam/tree/main/packages/04_rpi_dual_esp32">Edition Package</a>
+                </div>
               </div>
             </article>
           </div>
         </div>
 
-        <h3 style="margin-top:2rem;">PLA+ Slicer Part Weights (Support Negated, Bambu Studio G-code)</h3>
+        <h3 class="subsection-title">PLA+ Slicer Part Weights (Support Negated)</h3>
         <p class="section-intro">
-          Extracted directly from the single-part Bambu Studio G-code plates (<code>PLA+</code>, <code>0.4 mm</code> nozzle, 2 walls, 15% gyroid infill), excluding support and brim filament:
+          Measured directly from the Bambu Studio single-part G-code plates (<code>PLA+</code>, <code>0.4 mm</code> nozzle, 2 walls, 15% gyroid infill), excluding support and brim filament:
         </p>
-        <div style="overflow-x:auto;">
-          <table style="width:100%;border-collapse:collapse;font-size:0.95rem;margin-bottom:1.5rem;">
+        <div class="table-card">
+          <table class="data-table">
             <thead>
-              <tr style="border-bottom:2px solid #cbd5e1;text-align:left;">
-                <th style="padding:0.6rem;">Part</th>
-                <th style="padding:0.6rem;">Qty</th>
-                <th style="padding:0.6rem;">Total Sliced (g)</th>
-                <th style="padding:0.6rem;">Support + Brim (g)</th>
-                <th style="padding:0.6rem;">Part Only (g)</th>
-                <th style="padding:0.6rem;">Subtotal (g)</th>
+              <tr>
+                <th>Part</th>
+                <th>Qty</th>
+                <th>Total Sliced (g)</th>
+                <th>Support + Brim (g)</th>
+                <th>Part Only (g)</th>
+                <th>Subtotal (g)</th>
               </tr>
             </thead>
             <tbody>
-              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:0.6rem;"><code>Robot_Base.STL</code></td><td style="padding:0.6rem;">1</td><td style="padding:0.6rem;">324.22</td><td style="padding:0.6rem;">149.55</td><td style="padding:0.6rem;"><strong>174.67</strong></td><td style="padding:0.6rem;">174.67</td></tr>
-              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:0.6rem;"><code>L1.STL</code> (Coxa)</td><td style="padding:0.6rem;">6</td><td style="padding:0.6rem;">85.06</td><td style="padding:0.6rem;">25.42</td><td style="padding:0.6rem;"><strong>59.64</strong></td><td style="padding:0.6rem;">357.84</td></tr>
-              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:0.6rem;"><code>L2.STL</code> (Femur)</td><td style="padding:0.6rem;">6</td><td style="padding:0.6rem;">48.60</td><td style="padding:0.6rem;">0.27</td><td style="padding:0.6rem;"><strong>48.33</strong></td><td style="padding:0.6rem;">289.98</td></tr>
-              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:0.6rem;"><code>L3.STL</code> (Tibia)</td><td style="padding:0.6rem;">6</td><td style="padding:0.6rem;">97.87</td><td style="padding:0.6rem;">24.36</td><td style="padding:0.6rem;"><strong>73.51</strong></td><td style="padding:0.6rem;">441.06</td></tr>
-              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:0.6rem;"><code>LidarCover.STL</code></td><td style="padding:0.6rem;">1</td><td style="padding:0.6rem;">55.41</td><td style="padding:0.6rem;">12.73</td><td style="padding:0.6rem;"><strong>42.68</strong></td><td style="padding:0.6rem;">42.68</td></tr>
-              <tr style="border-bottom:2px solid #cbd5e1;background:#f8fafc;"><td style="padding:0.6rem;"><strong>Total PLA+ Structure (20 pcs) + 36× MG996R Servos (2/joint)</strong></td><td style="padding:0.6rem;">—</td><td style="padding:0.6rem;">—</td><td style="padding:0.6rem;">—</td><td style="padding:0.6rem;">1,306.23 g + 1,980.00 g</td><td style="padding:0.6rem;"><strong>3.286 kg</strong></td></tr>
+              <tr><td><code>Robot_Base.STL</code></td><td>1</td><td>324.22</td><td>149.55</td><td><strong>174.67</strong></td><td>174.67</td></tr>
+              <tr><td><code>L1.STL</code> (Coxa)</td><td>6</td><td>85.06</td><td>25.42</td><td><strong>59.64</strong></td><td>357.84</td></tr>
+              <tr><td><code>L2.STL</code> (Femur)</td><td>6</td><td>48.60</td><td>0.27</td><td><strong>48.33</strong></td><td>289.98</td></tr>
+              <tr><td><code>L3.STL</code> (Tibia)</td><td>6</td><td>97.87</td><td>24.36</td><td><strong>73.51</strong></td><td>441.06</td></tr>
+              <tr><td><code>LidarCover.STL</code></td><td>1</td><td>55.41</td><td>12.73</td><td><strong>42.68</strong></td><td>42.68</td></tr>
+              <tr class="row-total"><td>Total PLA+ Structure (20 pcs) + 36× MG996R Servos (2/joint)</td><td>—</td><td>—</td><td>—</td><td>1,306.23 g + 1,980.00 g</td><td>3.286 kg</td></tr>
             </tbody>
           </table>
         </div>
 
-        <h3 style="margin-top:2rem;">Top-Payload Weight, 3S 5000 mAh LiPo &amp; Dual-Motor Torque Comparison</h3>
+        <h3 class="subsection-title">Weight, 3S 5000 mAh LiPo &amp; Dual-Motor Torque Comparison</h3>
         <p class="section-intro">
-          Computed from the G-code PLA+ base + 36 MG996R servos (<strong>3.286 kg</strong>) plus a <strong>3S 5000 mAh LiPo (0.360 kg)</strong>, controllers, regulators, and RP-Lidar using the analytical 3R leg Jacobian (<code>H = 185 mm</code>, <code>R_foot = 290 mm</code>) against <strong>2× MG996R per joint</strong> (<strong>2.157 N·m</strong> stall @ 6.0 V; <code>70%</code> safe continuous = <strong>1.510 N·m</strong>).
+          Analytical 3R leg Jacobian comparison (<code>H = 185 mm</code>, <code>R_foot = 290 mm</code>) for the G-code PLA+ robot + 36 servos (<strong>3.286 kg</strong>) plus controllers, RP-Lidar, and a <strong>3S 5000 mAh LiPo (0.360 kg)</strong> against <strong>2× MG996R per joint</strong> (<strong>2.157 N·m</strong> stall @ 6.0 V; <code>70%</code> safe continuous = <strong>1.510 N·m</strong>):
         </p>
-        <div style="overflow-x:auto;">
-          <table style="width:100%;border-collapse:collapse;font-size:0.95rem;margin-bottom:1.5rem;">
+        <div class="table-card">
+          <table class="data-table">
             <thead>
-              <tr style="border-bottom:2px solid #cbd5e1;text-align:left;">
-                <th style="padding:0.6rem;">Configuration</th>
-                <th style="padding:0.6rem;">Top + LiPo (kg)</th>
-                <th style="padding:0.6rem;">Total Mass (kg)</th>
-                <th style="padding:0.6rem;">Wave 5-Leg (N·m)</th>
-                <th style="padding:0.6rem;">Ripple 4-Leg (N·m)</th>
-                <th style="padding:0.6rem;">Tripod 3-Leg (N·m)</th>
-                <th style="padding:0.6rem;">Max Extra Top Payload (70% Safe)</th>
+              <tr>
+                <th>Configuration</th>
+                <th>Top + LiPo (kg)</th>
+                <th>Total Mass (kg)</th>
+                <th>Wave 5-Leg (N·m)</th>
+                <th>Ripple 4-Leg (N·m)</th>
+                <th>Tripod 3-Leg (N·m)</th>
+                <th>Max Extra Top Payload (70% Safe)</th>
               </tr>
             </thead>
             <tbody>
-              <tr style="border-bottom:1px solid #e2e8f0;">
-                <td style="padding:0.6rem;"><strong>A — Arduino Mega 2560</strong></td>
-                <td style="padding:0.6rem;">0.507</td>
-                <td style="padding:0.6rem;">3.793</td>
-                <td style="padding:0.6rem;">0.971 (45.0%)</td>
-                <td style="padding:0.6rem;">1.266 (58.7%)</td>
-                <td style="padding:0.6rem;">1.759 (81.5%)</td>
-                <td style="padding:0.6rem;"><strong>+2.11 kg</strong> (Wave) / <strong>+0.73 kg</strong> (Ripple)</td>
+              <tr>
+                <td><strong>A — Arduino Mega 2560</strong></td>
+                <td>0.507</td>
+                <td>3.793</td>
+                <td>0.971 (45.0%)</td>
+                <td>1.266 (58.7%)</td>
+                <td>1.759 (81.5%)</td>
+                <td><strong>+2.11 kg</strong> (Wave) · <strong>+0.73 kg</strong> (Ripple)</td>
               </tr>
-              <tr style="border-bottom:1px solid #e2e8f0;">
-                <td style="padding:0.6rem;"><strong>B — ESP32 + Dual PCA9685</strong></td>
-                <td style="padding:0.6rem;">0.519</td>
-                <td style="padding:0.6rem;">3.805</td>
-                <td style="padding:0.6rem;">0.974 (45.1%)</td>
-                <td style="padding:0.6rem;">1.270 (58.9%)</td>
-                <td style="padding:0.6rem;">1.764 (81.8%)</td>
-                <td style="padding:0.6rem;"><strong>+2.10 kg</strong> (Wave) / <strong>+0.72 kg</strong> (Ripple)</td>
+              <tr>
+                <td><strong>B — ESP32 + Dual PCA9685</strong></td>
+                <td>0.519</td>
+                <td>3.805</td>
+                <td>0.974 (45.1%)</td>
+                <td>1.270 (58.9%)</td>
+                <td>1.764 (81.8%)</td>
+                <td><strong>+2.10 kg</strong> (Wave) · <strong>+0.72 kg</strong> (Ripple)</td>
               </tr>
-              <tr style="border-bottom:1px solid #e2e8f0;">
-                <td style="padding:0.6rem;"><strong>C — RPi + Single ESP32 + LiDAR</strong></td>
-                <td style="padding:0.6rem;">0.703</td>
-                <td style="padding:0.6rem;">3.989</td>
-                <td style="padding:0.6rem;">1.021 (47.3%)</td>
-                <td style="padding:0.6rem;">1.332 (61.7%)</td>
-                <td style="padding:0.6rem;">1.850 (85.7%)</td>
-                <td style="padding:0.6rem;"><strong>+1.91 kg</strong> (Wave) / <strong>+0.53 kg</strong> (Ripple)</td>
+              <tr>
+                <td><strong>C — RPi + Single ESP32 + LiDAR</strong></td>
+                <td>0.703</td>
+                <td>3.989</td>
+                <td>1.021 (47.3%)</td>
+                <td>1.332 (61.7%)</td>
+                <td>1.850 (85.7%)</td>
+                <td><strong>+1.91 kg</strong> (Wave) · <strong>+0.53 kg</strong> (Ripple)</td>
               </tr>
-              <tr style="border-bottom:1px solid #e2e8f0;">
-                <td style="padding:0.6rem;"><strong>D — RPi + Dual ESP32 + LiDAR</strong></td>
-                <td style="padding:0.6rem;">0.733</td>
-                <td style="padding:0.6rem;">4.019</td>
-                <td style="padding:0.6rem;">1.029 (47.7%)</td>
-                <td style="padding:0.6rem;">1.342 (62.2%)</td>
-                <td style="padding:0.6rem;">1.864 (86.4%)</td>
-                <td style="padding:0.6rem;"><strong>+1.88 kg</strong> (Wave) / <strong>+0.50 kg</strong> (Ripple)</td>
+              <tr>
+                <td><strong>D — RPi + Dual ESP32 + LiDAR</strong></td>
+                <td>0.733</td>
+                <td>4.019</td>
+                <td>1.029 (47.7%)</td>
+                <td>1.342 (62.2%)</td>
+                <td>1.864 (86.4%)</td>
+                <td><strong>+1.88 kg</strong> (Wave) · <strong>+0.50 kg</strong> (Ripple)</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <figure style="margin:1.5rem 0;">
-          <img src="assets/motor_torque_profile.png" alt="Mirrored back-to-back MA1 and MA2 motor torque profiles for Joints A (Coxa), B (Femur), and C (Tibia) across Wave, Ripple, and Tripod gaits" width="1050" height="850" loading="lazy" style="width:100%;height:auto;border:1px solid #e2e8f0;border-radius:8px;">
-          <figcaption style="font-size:0.9rem;color:#475569;margin-top:0.5rem;">Mirrored back-to-back motor torque profiles (<code>MA1 = +τ/2</code>, <code>MA2 = -τ/2</code>) for Joint A (Coxa), Joint B (Femur), and Joint C (Tibia) at Config C (3.989 kg) across Wave, Ripple, and Tripod gaits.</figcaption>
+
+        <figure class="figure-card">
+          <img src="assets/motor_torque_profile.png" alt="Mirrored back-to-back MA1 and MA2 motor torque profiles for Joints A (Coxa), B (Femur), and C (Tibia) across Wave, Ripple, and Tripod gaits" width="1050" height="850" loading="lazy">
+          <figcaption>Mirrored back-to-back motor torque profiles (<code>MA1 = +τ/2</code> solid, <code>MA2 = -τ/2</code> dashed) for Joint A (Coxa), Joint B (Femur), and Joint C (Tibia) in Configuration C (3.989 kg) across Wave, Ripple, and Tripod gaits.</figcaption>
         </figure>
-        <p class="section-intro">
-          Downloadable trajectory datasets: <a href="https://github.com/equesai/HexaLoam/tree/main/demonstrations/tripod">Tripod CSV/JSON</a> · <a href="https://github.com/equesai/HexaLoam/tree/main/demonstrations/ripple">Ripple CSV/JSON</a> · <a href="https://github.com/equesai/HexaLoam/tree/main/demonstrations/wave">Wave CSV/JSON</a> · <a href="https://github.com/equesai/HexaLoam/blob/main/electronics/power/POWER_ENGINEERING.md">Power &amp; Fuse Engineering</a>
-        </p>
+
+        <div class="config-links">
+          <a class="pill-link" href="https://github.com/equesai/HexaLoam/tree/main/demonstrations/tripod">Tripod CSV / JSON</a>
+          <a class="pill-link" href="https://github.com/equesai/HexaLoam/tree/main/demonstrations/ripple">Ripple CSV / JSON</a>
+          <a class="pill-link" href="https://github.com/equesai/HexaLoam/tree/main/demonstrations/wave">Wave CSV / JSON</a>
+          <a class="pill-link" href="https://github.com/equesai/HexaLoam/blob/main/electronics/power/POWER_ENGINEERING.md">Power &amp; Fuse Engineering</a>
+          <a class="pill-link" href="https://github.com/equesai/HexaLoam/tree/main/testing">11-Stage Commissioning Tests</a>
+        </div>
       </div>
     </section>
 

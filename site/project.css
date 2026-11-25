@@ -761,3 +761,392 @@ section[id] { scroll-margin-top: calc(var(--header-height) + 0.75rem); }
   .header-container { min-height: var(--header-height); height: auto; flex-wrap: wrap; gap: .25rem; padding-block: .5rem; }
   .nav-menu { flex-wrap: wrap; }
 }
+
+
+/* ==========================================================================
+   Brand Lockup, Workflow Cards, FAQ Accordion, Control Selector & Data Tables
+   ========================================================================== */
+
+.brand-mark {
+  border-radius: 5px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.brand-divider {
+  color: var(--ink-400);
+  font-weight: 400;
+}
+
+.brand-org {
+  color: var(--ink-600);
+  font-weight: 500;
+  font-size: 0.92rem;
+}
+
+.hero-brand-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.3rem 0.75rem 0.3rem 0.35rem;
+  margin-bottom: 1.15rem;
+  background-color: var(--amber-50);
+  border: 1px solid var(--amber-100);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #985107;
+  letter-spacing: 0.01em;
+}
+
+.hero-logo-mark {
+  border-radius: 999px;
+  display: block;
+}
+
+.section-intro {
+  margin: 0 0 1.75rem;
+  max-width: 780px;
+  font-size: 1.02rem;
+  line-height: 1.68;
+  color: var(--ink-700);
+}
+
+/* Metric Summary Strip */
+.metric-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0 0 2rem;
+}
+
+.metric-card {
+  background-color: var(--surface-pure);
+  border: 1px solid var(--border-hairline);
+  border-top: 3px solid var(--amber-600);
+  border-radius: 6px;
+  padding: 1.1rem 1.25rem;
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--ink-950);
+  font-variant-numeric: tabular-nums;
+}
+
+.metric-label {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.82rem;
+  color: var(--ink-600);
+  line-height: 1.35;
+}
+
+/* Control Section & Light Config Viewer */
+.control-section {
+  background-color: var(--surface-base);
+}
+
+.config-viewer {
+  background-color: var(--surface-pure);
+  border: 1px solid var(--border-fine);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+}
+
+.config-viewer .gait-tabs {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.config-viewer .gait-tab {
+  background-color: var(--surface-base);
+  border: 1px solid var(--border-hairline);
+  color: var(--ink-700);
+  padding: 0.85rem 1rem;
+}
+
+.config-viewer .gait-tab:hover {
+  background-color: var(--surface-studio);
+  color: var(--ink-950);
+  border-color: var(--border-fine);
+}
+
+.config-viewer .gait-tab.active {
+  background-color: var(--ink-950);
+  border-color: var(--ink-950);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.config-viewer .gait-tab.active .tab-stance {
+  color: var(--amber-400);
+}
+
+.config-viewer .tab-stance {
+  color: #985107;
+}
+
+.config-panel-body {
+  padding: 0.5rem 0.25rem 0.25rem;
+}
+
+.config-panel-body h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--ink-950);
+  letter-spacing: -0.015em;
+}
+
+.config-panel-body p {
+  margin: 0 0 0.85rem;
+  color: var(--ink-700);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.config-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.pill-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42rem 0.85rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink-900);
+  background-color: var(--surface-base);
+  border: 1px solid var(--border-fine);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.pill-link:hover {
+  border-color: var(--amber-600);
+  color: #985107;
+  background-color: var(--amber-50);
+}
+
+/* Engineering Data Tables & Figures */
+.subsection-title {
+  margin: 2.5rem 0 0.6rem;
+  font-size: 1.32rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink-950);
+}
+
+.table-card {
+  background-color: var(--surface-pure);
+  border: 1px solid var(--border-hairline);
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.data-table th {
+  padding: 0.8rem 0.9rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-600);
+  background-color: var(--surface-base);
+  border-bottom: 1px solid var(--border-fine);
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 0.78rem 0.9rem;
+  color: var(--ink-800);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.data-table tbody tr:hover {
+  background-color: var(--surface-base);
+}
+
+.data-table tr.row-total td {
+  background-color: var(--amber-50);
+  font-weight: 700;
+  color: var(--ink-950);
+  border-top: 2px solid var(--border-fine);
+  border-bottom: none;
+}
+
+.figure-card {
+  margin: 1.75rem 0;
+  background-color: var(--surface-pure);
+  border: 1px solid var(--border-hairline);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.figure-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.figure-card figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  color: var(--ink-600);
+  line-height: 1.55;
+}
+
+/* Build Workflow & FAQ Section */
+.faq-section {
+  background-color: var(--surface-pure);
+}
+
+.workflow-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.workflow-step {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.workflow-step-num {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #985107;
+  background-color: var(--amber-50);
+  border: 1px solid var(--amber-100);
+  padding: 0.18rem 0.55rem;
+  border-radius: 3px;
+  margin-bottom: 0.75rem;
+}
+
+.workflow-step-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink-950);
+}
+
+.workflow-step p {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--ink-700);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  transition: border-color 0.15s ease;
+}
+
+.faq-item[open] {
+  border-color: var(--border-fine);
+  background-color: var(--surface-pure);
+}
+
+.faq-question {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink-950);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question::after {
+  content: "+";
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  color: #985107;
+  flex-shrink: 0;
+}
+
+.faq-item[open] .faq-question::after {
+  content: "−";
+}
+
+.faq-answer {
+  margin: 0.85rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-hairline);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--ink-700);
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background-color: var(--surface-studio);
+  color: var(--ink-900);
+  padding: 0.12em 0.38em;
+  border-radius: 3px;
+}
+
+@media (max-width: 960px) {
+  .metric-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .config-viewer .gait-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .workflow-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .metric-strip {
+    grid-template-columns: 1fr;
+  }
+  .config-viewer .gait-tabs {
+    grid-template-columns: 1fr;
+  }
+}
