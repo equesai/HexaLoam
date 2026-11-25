@@ -8,6 +8,8 @@
 | PWM Driver | PCA9685 16-Ch 12-bit Module | 2 | 0x40 (default), 0x41 (A0 jumper) |
 | Compute (Config C/D) | Raspberry Pi 4 or 5 (4GB+) | 1 | USB Serial + RP-Lidar + ROS2 |
 | LiDAR | Slamtec RP-Lidar A1/A2 | 1 | Mounted on `-Z` underside |
-| Power | 6.0V 25A+ Buck + 5.0V 5A Buck | 1 each | Separate actuator & logic rails |
-| Protection | 30A Main Fuse + 2x 15A Branch + NC E-Stop | 1 set | Hardware power isolation |
+| Power | 6.0V 35A+ (or 2× 20A) Buck + 5.0V 5A Buck | 1 set | Separate 6V actuator & 5V logic rails |
+| Battery | 3S 5000 mAh 30C–50C LiPo (~360 g) | 1 | 11.1 V nominal, 12.6 V max, XT60 |
+| Protection | 40A Main Fuse + 2× 20A Branch + NC E-Stop | 1 set | Hardware power isolation |
+| Signal Reverser | Inline PWM Servo Signal Reverser (for MA2) | 18 (or 3× PCA9685) | Mirrors back-to-back MA2 from 18-ch bus |
 | Bulk Cap | 4700 uF 16V Low-ESR Electrolytic | 2 | Across servo power buses |

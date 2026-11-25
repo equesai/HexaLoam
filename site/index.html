@@ -125,8 +125,7 @@
         "image": [
           "https://equesai.github.io/HexaLoam/assets/assembly-hero.png",
           "https://equesai.github.io/HexaLoam/assets/assembly-top.png",
-          "https://equesai.github.io/HexaLoam/assets/assembly-underside.png",
-          "https://equesai.github.io/HexaLoam/assets/hexaloam-logo.png"
+          "https://equesai.github.io/HexaLoam/assets/assembly-underside.png"
         ],
         "creator": {
           "@id": "https://equesai.github.io/HexaLoam/#organization"
@@ -637,7 +636,7 @@
 
         <h3 class="subsection-title">Weight, 3S 5000 mAh LiPo &amp; Dual-Motor Torque Comparison</h3>
         <p class="section-intro">
-          Analytical 3R leg Jacobian comparison (<code>H = 185 mm</code>, <code>R_foot = 290 mm</code>) for the G-code PLA+ robot + 36 servos (<strong>3.286 kg</strong>) plus controllers, RP-Lidar, and a <strong>3S 5000 mAh LiPo (0.360 kg)</strong> against <strong>2× MG996R per joint</strong> (<strong>2.157 N·m</strong> stall @ 6.0 V; <code>70%</code> safe continuous = <strong>1.510 N·m</strong>):
+          Analytical 3R leg Jacobian comparison (<code>H = 185 mm</code>, <code>R_foot = 290 mm</code>) for the G-code PLA+ robot + 36 servos (<strong>3.286 kg</strong>) plus controllers, RP-Lidar (2D planar SLAM; 3D LOAM requires a 3D LiDAR upgrade), and a <strong>3S 5000 mAh LiPo (0.360 kg)</strong> against <strong>2× MG996R per joint</strong> (<strong>2.157 N·m</strong> stall @ 6.0 V; analytical <code>70%</code> continuous target = <strong>1.510 N·m</strong>, pending bench thermal validation). Each 18-channel controller drives <code>MA1</code> directly and opposing <code>MA2</code> via an inline PWM signal reverser (or optional 36-channel 3× PCA9685 / Mega <code>D22..D57</code>):
         </p>
         <div class="table-card">
           <table class="data-table">
