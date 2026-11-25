@@ -1,0 +1,27 @@
+{
+  "diagram": "13_estop_power_isolation",
+  "title": "13. Hardware Emergency-Stop & Power Isolation",
+  "format": "hexaloam-kicad-netlist-v1",
+  "blocks": [
+    {
+      "label": "Battery / Main PSU",
+      "color": "#7C2D12"
+    },
+    {
+      "label": "Mushroom E-Stop (NC) + High-Side Relay/MOSFET",
+      "color": "#991B1B"
+    },
+    {
+      "label": "Servo Power Bus ONLY (Logic stays powered for telemetry)",
+      "color": "#1E293B"
+    }
+  ],
+  "connections": [
+    {
+      "signal": "30A Main"
+    },
+    {
+      "signal": "Switched 6V"
+    }
+  ]
+}

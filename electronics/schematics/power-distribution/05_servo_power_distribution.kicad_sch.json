@@ -1,0 +1,34 @@
+{
+  "diagram": "05_servo_power_distribution",
+  "title": "05. Servo Power Distribution (6.0V High-Current Bus)",
+  "format": "hexaloam-kicad-netlist-v1",
+  "blocks": [
+    {
+      "label": "4S3P Li-ion / 24V Lab PSU",
+      "color": "#7C2D12"
+    },
+    {
+      "label": "Main Fuse (30A) + E-Stop NC Contactor / MOSFET",
+      "color": "#991B1B"
+    },
+    {
+      "label": "6.0V 25A Buck + 4700uF Cap + 5V 5A Pi Buck",
+      "color": "#985107"
+    },
+    {
+      "label": "Left Bus (15A) / Right Bus (15A)",
+      "color": "#0F172A"
+    }
+  ],
+  "connections": [
+    {
+      "signal": "10 AWG"
+    },
+    {
+      "signal": "10 AWG"
+    },
+    {
+      "signal": "14 AWG"
+    }
+  ]
+}

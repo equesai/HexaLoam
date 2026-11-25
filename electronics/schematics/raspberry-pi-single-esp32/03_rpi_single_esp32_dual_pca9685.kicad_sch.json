@@ -1,0 +1,34 @@
+{
+  "diagram": "03_rpi_single_esp32_dual_pca9685",
+  "title": "03. Raspberry Pi 4/5 -> Single ESP32 -> Dual PCA9685",
+  "format": "hexaloam-kicad-netlist-v1",
+  "blocks": [
+    {
+      "label": "Raspberry Pi 4/5 (5V 5A USB-C PSU) Kinematics, SLAM, ROS2",
+      "color": "#312E81"
+    },
+    {
+      "label": "ESP32 Slave (460800 baud) GPIO21=SDA GPIO22=SCL",
+      "color": "#1E293B"
+    },
+    {
+      "label": "PCA9685-A (0x40) + B (0x41) 50Hz 18-Ch PWM",
+      "color": "#0F766E"
+    },
+    {
+      "label": "Independent 6.0V Servo PSU + Common GND Star",
+      "color": "#7C2D12"
+    }
+  ],
+  "connections": [
+    {
+      "signal": "USB Serial"
+    },
+    {
+      "signal": "I2C 3.3V"
+    },
+    {
+      "signal": "6.0V V+"
+    }
+  ]
+}

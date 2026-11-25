@@ -1,0 +1,12 @@
+{
+  "edition": "01_arduino_mega_beginner",
+  "title": "HexaLoam Arduino Mega 2560 Beginner Edition",
+  "includes": [
+    "firmware/arduino/examples/",
+    "firmware/shared/hexaloam_joint_map.h",
+    "electronics/wiring/01_arduino_mega_18_servos.pdf",
+    "electronics/connection-tables/01_arduino_mega_18_servos.md",
+    "control/calibration/"
+  ],
+  "license_notice": "See CONTRIBUTING.md \u2014 modifiable mechanical & software starting point; no blanket open-source license."
+}

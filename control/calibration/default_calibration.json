@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "calibrated": false,
+  "calibration_note": "Run 02_Servo_Calibration.ino or hexaloam-calibrate before arming full gait.",
+  "joints": [
+    {"id": 0,  "name": "LF_COXA",  "zero_offset_rad": 0.0, "direction": 1,  "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 1,  "name": "LF_FEMUR", "zero_offset_rad": 0.0, "direction": 1,  "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 2,  "name": "LF_TIBIA", "zero_offset_rad": 0.0, "direction": 1,  "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 3,  "name": "LM_COXA",  "zero_offset_rad": 0.0, "direction": 1,  "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 4,  "name": "LM_FEMUR", "zero_offset_rad": 0.0, "direction": 1,  "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 5,  "name": "LM_TIBIA", "zero_offset_rad": 0.0, "direction": 1,  "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 6,  "name": "LR_COXA",  "zero_offset_rad": 0.0, "direction": 1,  "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 7,  "name": "LR_FEMUR", "zero_offset_rad": 0.0, "direction": 1,  "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 8,  "name": "LR_TIBIA", "zero_offset_rad": 0.0, "direction": 1,  "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 9,  "name": "RF_COXA",  "zero_offset_rad": 0.0, "direction": -1, "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 10, "name": "RF_FEMUR", "zero_offset_rad": 0.0, "direction": -1, "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 11, "name": "RF_TIBIA", "zero_offset_rad": 0.0, "direction": -1, "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 12, "name": "RM_COXA",  "zero_offset_rad": 0.0, "direction": -1, "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 13, "name": "RM_FEMUR", "zero_offset_rad": 0.0, "direction": -1, "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 14, "name": "RM_TIBIA", "zero_offset_rad": 0.0, "direction": -1, "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 15, "name": "RR_COXA",  "zero_offset_rad": 0.0, "direction": -1, "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 16, "name": "RR_FEMUR", "zero_offset_rad": 0.0, "direction": -1, "min_pulse_us": 500, "max_pulse_us": 2500},
+    {"id": 17, "name": "RR_TIBIA", "zero_offset_rad": 0.0, "direction": -1, "min_pulse_us": 500, "max_pulse_us": 2500}
+  ]
+}

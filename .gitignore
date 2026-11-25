@@ -16,3 +16,9 @@ __pycache__/
 slprj/
 *.slxc
 .render-cache/
+
+# PlatformIO & Python test caches
+.pio/
+.pytest_cache/
+__pycache__/
+*.pyc

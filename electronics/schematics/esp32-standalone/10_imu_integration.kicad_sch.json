@@ -1,0 +1,20 @@
+{
+  "diagram": "10_imu_integration",
+  "title": "10. IMU Integration (BNO085 / MPU6050 on 3.3V I2C)",
+  "format": "hexaloam-kicad-netlist-v1",
+  "blocks": [
+    {
+      "label": "ESP32 (GPIO21 SDA, GPIO22 SCL)",
+      "color": "#1E293B"
+    },
+    {
+      "label": "IMU 0x4A/0x68 (3.3V VCC)",
+      "color": "#0284C7"
+    }
+  ],
+  "connections": [
+    {
+      "signal": "3.3V I2C + 4.7k Pull-ups"
+    }
+  ]
+}

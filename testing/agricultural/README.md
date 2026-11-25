@@ -1,0 +1,15 @@
+# Stage 11 — Agricultural Terrain Evaluation
+
+**Objective:** Evaluate flat soil, loose loam, gravel, grass, slopes, and payload effects after lab sign-off.
+
+## Validation Status
+- Current Status: `Not tested` (hardware required; software/simulation prerequisites validated).
+- Allowed status labels: `Not tested`, `Software validated`, `Simulation validated`, `Bench hardware validated`, `Full robot validated`, `Field validated`, `Failed`.
+
+## Results Template
+
+| Check | Expected | Measured | Status |
+|---|---|---|---|
+| Supply voltage | 6.0 V ± 0.1 V | _TBD_ | `Not tested` |
+| E-stop cutoff | Immediate servo power isolation | _TBD_ | `Not tested` |
+| Thermal / current | Within MG996R spec | _TBD_ | `Not tested` |

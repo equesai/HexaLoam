@@ -1,0 +1,37 @@
+{
+  "diagram": "01_arduino_mega_18_servos",
+  "title": "01. Arduino Mega 2560 \u2014 18 Direct PWM Servos (D22..D39)",
+  "format": "hexaloam-kicad-netlist-v1",
+  "blocks": [
+    {
+      "label": "Arduino Mega 2560 (5V Logic, USB)",
+      "color": "#1E293B"
+    },
+    {
+      "label": "External 6.0V 20A-30A Regulated Servo PSU",
+      "color": "#7C2D12"
+    },
+    {
+      "label": "Servo Bus Bar + E-Stop (30A Fuse, Common GND)",
+      "color": "#985107"
+    },
+    {
+      "label": "18x MG996R Servos J0..J17 (D22..D39) Brown=GND Red=+6V Orn=PWM",
+      "color": "#0F172A"
+    }
+  ],
+  "connections": [
+    {
+      "signal": "D22..D39 PWM (5V)"
+    },
+    {
+      "signal": "+6V / GND (12 AWG)"
+    },
+    {
+      "signal": "6.0V Bus + Common GND"
+    },
+    {
+      "signal": "Common Signal GND"
+    }
+  ]
+}

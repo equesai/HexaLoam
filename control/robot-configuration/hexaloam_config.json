@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0.0",
+  "robot": {
+    "name": "HexaLoam",
+    "publisher": "HexaLoam contributors",
+    "repository": "https://github.com/equesai/HexaLoam",
+    "homepage": "https://equesai.github.io/HexaLoam/",
+    "dof": 18,
+    "legs": 6,
+    "joints_per_leg": 3,
+    "units": {
+      "length": "meter",
+      "angle": "radian",
+      "mass": "kilogram",
+      "force": "newton",
+      "torque": "newton_meter",
+      "time": "second",
+      "pulse_width": "microsecond"
+    },
+    "coordinate_frame": {
+      "ros_standard": "+X forward, +Y left, +Z up",
+      "cad_xml_frame": "+X forward, +Y up, +Z right",
+      "xml_to_ros_axis_map": "x_ros = x_xml, y_ros = -z_xml, z_ros = y_xml"
+    }
+  },
+  "cad_geometry": {
+    "source": "simulation/cad-export/Full_Robot_Assembly.xml",
+    "chassis": {
+      "hex_mount_radius_m": 0.09,
+      "thickness_m": 0.068,
+      "mass_robot_base_kg": 0.432316,
+      "mass_lidar_cover_kg": 0.048388,
+      "mass_rplidar_kg": 0.073084,
+      "mass_per_leg_links_kg": {
+        "L1_coxa": 0.181714,
+        "L2_femur": 0.103983,
+        "L3_tibia": 0.281617
+      },
+      "mass_per_servo_cad_kg": 0.033877,
+      "mass_mg996r_datasheet_kg": 0.055,
+      "total_printed_and_servo_cad_mass_kg": 4.568882,
+      "total_printed_and_servo_physical_est_kg": 4.949096
+    },
+    "links": {
+      "coxa": {
+        "cad_part": "L1",
+        "radial_length_m": 0.0865264,
+        "lateral_offset_m": -0.051,
+        "vertical_rise_from_yaw_shaft_m": 0.0527,
+        "vertical_rise_from_concentric_m": 0.0497718
+      },
+      "femur": {
+        "cad_part": "L2",
+        "length_m": 0.1210616,
+        "lateral_offset_m": 0.0
+      },
+      "tibia": {
+        "cad_part": "L3",
+        "length_m": 0.2025,
+        "lateral_offset_m": 0.051,
+        "foot_sphere_radius_m": 0.025
+      },
+      "net_lateral_offset_m": 0.0
+    },
+    "leg_mounts": [
+      {"leg": "LF", "side": "left",  "cad_index": 7, "mount_angle_deg": 30.0,   "mount_angle_rad": 0.5235987756,  "mount_radius_m": 0.09, "hip_yaw_z_offset_m": -0.0496718},
+      {"leg": "LM", "side": "left",  "cad_index": 2, "mount_angle_deg": 90.0,   "mount_angle_rad": 1.5707963268,  "mount_radius_m": 0.09, "hip_yaw_z_offset_m": -0.0496718},
+      {"leg": "LR", "side": "left",  "cad_index": 3, "mount_angle_deg": 150.0,  "mount_angle_rad": 2.617993878,   "mount_radius_m": 0.09, "hip_yaw_z_offset_m": -0.0496718},
+      {"leg": "RF", "side": "right", "cad_index": 6, "mount_angle_deg": -30.0,  "mount_angle_rad": -0.5235987756, "mount_radius_m": 0.09, "hip_yaw_z_offset_m": -0.0496718},
+      {"leg": "RM", "side": "right", "cad_index": 5, "mount_angle_deg": -90.0,  "mount_angle_rad": -1.5707963268, "mount_radius_m": 0.09, "hip_yaw_z_offset_m": -0.0496718},
+      {"leg": "RR", "side": "right", "cad_index": 4, "mount_angle_deg": -150.0, "mount_angle_rad": -2.617993878,  "mount_radius_m": 0.09, "hip_yaw_z_offset_m": -0.0496718}
+    ]
+  },
+  "servo_actuator": {
+    "model": "MG996R",
+    "pwm_frequency_hz": 50,
+    "min_pulse_us": 500,
+    "neutral_pulse_us": 1500,
+    "max_pulse_us": 2500,
+    "operating_voltage_min_v": 4.8,
+    "operating_voltage_nominal_v": 6.0,
+    "operating_voltage_max_v": 7.2,
+    "stall_torque_4v8_kgcm": 9.4,
+    "stall_torque_6v0_kgcm": 11.0,
+    "stall_torque_6v0_nm": 1.0787,
+    "idle_current_ma": 10.0,
+    "running_no_load_current_ma": 170.0,
+    "typical_loaded_current_ma": 750.0,
+    "stall_current_6v0_ma": 2500.0,
+    "default_max_velocity_rad_s": 4.5,
+    "default_max_acceleration_rad_s2": 18.0
+  },
+  "joint_limits": {
+    "coxa":  {"min_rad": -0.785398, "max_rad": 0.785398,  "neutral_rad": 0.0},
+    "femur": {"min_rad": -1.221730, "max_rad": 1.221730,  "neutral_rad": 0.349066},
+    "tibia": {"min_rad": -2.356194, "max_rad": -0.261799, "neutral_rad": -1.570796}
+  },
+  "joints": [
+    {"id": 0,  "name": "LF_COXA",  "leg": "LF", "joint": "coxa",  "side": "left",  "mega_pin": 22, "mega_pin_label": "D22", "pca_board": "A", "pca_addr_single_esp32": "0x40", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "A", "pca_channel": 0, "direction": 1,  "min_rad": -0.785398, "max_rad": 0.785398,  "neutral_rad": 0.0},
+    {"id": 1,  "name": "LF_FEMUR", "leg": "LF", "joint": "femur", "side": "left",  "mega_pin": 23, "mega_pin_label": "D23", "pca_board": "A", "pca_addr_single_esp32": "0x40", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "A", "pca_channel": 1, "direction": 1,  "min_rad": -1.221730, "max_rad": 1.221730,  "neutral_rad": 0.349066},
+    {"id": 2,  "name": "LF_TIBIA", "leg": "LF", "joint": "tibia", "side": "left",  "mega_pin": 24, "mega_pin_label": "D24", "pca_board": "A", "pca_addr_single_esp32": "0x40", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "A", "pca_channel": 2, "direction": 1,  "min_rad": -2.094395, "max_rad": -0.261799, "neutral_rad": -1.570796},
+    {"id": 3,  "name": "LM_COXA",  "leg": "LM", "joint": "coxa",  "side": "left",  "mega_pin": 25, "mega_pin_label": "D25", "pca_board": "A", "pca_addr_single_esp32": "0x40", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "A", "pca_channel": 3, "direction": 1,  "min_rad": -0.785398, "max_rad": 0.785398,  "neutral_rad": 0.0},
+    {"id": 4,  "name": "LM_FEMUR", "leg": "LM", "joint": "femur", "side": "left",  "mega_pin": 26, "mega_pin_label": "D26", "pca_board": "A", "pca_addr_single_esp32": "0x40", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "A", "pca_channel": 4, "direction": 1,  "min_rad": -1.221730, "max_rad": 1.221730,  "neutral_rad": 0.349066},
+    {"id": 5,  "name": "LM_TIBIA", "leg": "LM", "joint": "tibia", "side": "left",  "mega_pin": 27, "mega_pin_label": "D27", "pca_board": "A", "pca_addr_single_esp32": "0x40", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "A", "pca_channel": 5, "direction": 1,  "min_rad": -2.094395, "max_rad": -0.261799, "neutral_rad": -1.570796},
+    {"id": 6,  "name": "LR_COXA",  "leg": "LR", "joint": "coxa",  "side": "left",  "mega_pin": 28, "mega_pin_label": "D28", "pca_board": "A", "pca_addr_single_esp32": "0x40", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "A", "pca_channel": 6, "direction": 1,  "min_rad": -0.785398, "max_rad": 0.785398,  "neutral_rad": 0.0},
+    {"id": 7,  "name": "LR_FEMUR", "leg": "LR", "joint": "femur", "side": "left",  "mega_pin": 29, "mega_pin_label": "D29", "pca_board": "A", "pca_addr_single_esp32": "0x40", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "A", "pca_channel": 7, "direction": 1,  "min_rad": -1.221730, "max_rad": 1.221730,  "neutral_rad": 0.349066},
+    {"id": 8,  "name": "LR_TIBIA", "leg": "LR", "joint": "tibia", "side": "left",  "mega_pin": 30, "mega_pin_label": "D30", "pca_board": "A", "pca_addr_single_esp32": "0x40", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "A", "pca_channel": 8, "direction": 1,  "min_rad": -2.094395, "max_rad": -0.261799, "neutral_rad": -1.570796},
+    {"id": 9,  "name": "RF_COXA",  "leg": "RF", "joint": "coxa",  "side": "right", "mega_pin": 31, "mega_pin_label": "D31", "pca_board": "B", "pca_addr_single_esp32": "0x41", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "B", "pca_channel": 0, "direction": -1, "min_rad": -0.785398, "max_rad": 0.785398,  "neutral_rad": 0.0},
+    {"id": 10, "name": "RF_FEMUR", "leg": "RF", "joint": "femur", "side": "right", "mega_pin": 32, "mega_pin_label": "D32", "pca_board": "B", "pca_addr_single_esp32": "0x41", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "B", "pca_channel": 1, "direction": -1, "min_rad": -1.221730, "max_rad": 1.221730,  "neutral_rad": 0.349066},
+    {"id": 11, "name": "RF_TIBIA", "leg": "RF", "joint": "tibia", "side": "right", "mega_pin": 33, "mega_pin_label": "D33", "pca_board": "B", "pca_addr_single_esp32": "0x41", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "B", "pca_channel": 2, "direction": -1, "min_rad": -2.094395, "max_rad": -0.261799, "neutral_rad": -1.570796},
+    {"id": 12, "name": "RM_COXA",  "leg": "RM", "joint": "coxa",  "side": "right", "mega_pin": 34, "mega_pin_label": "D34", "pca_board": "B", "pca_addr_single_esp32": "0x41", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "B", "pca_channel": 3, "direction": -1, "min_rad": -0.785398, "max_rad": 0.785398,  "neutral_rad": 0.0},
+    {"id": 13, "name": "RM_FEMUR", "leg": "RM", "joint": "femur", "side": "right", "mega_pin": 35, "mega_pin_label": "D35", "pca_board": "B", "pca_addr_single_esp32": "0x41", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "B", "pca_channel": 4, "direction": -1, "min_rad": -1.221730, "max_rad": 1.221730,  "neutral_rad": 0.349066},
+    {"id": 14, "name": "RM_TIBIA", "leg": "RM", "joint": "tibia", "side": "right", "mega_pin": 36, "mega_pin_label": "D36", "pca_board": "B", "pca_addr_single_esp32": "0x41", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "B", "pca_channel": 5, "direction": -1, "min_rad": -2.094395, "max_rad": -0.261799, "neutral_rad": -1.570796},
+    {"id": 15, "name": "RR_COXA",  "leg": "RR", "joint": "coxa",  "side": "right", "mega_pin": 37, "mega_pin_label": "D37", "pca_board": "B", "pca_addr_single_esp32": "0x41", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "B", "pca_channel": 6, "direction": -1, "min_rad": -0.785398, "max_rad": 0.785398,  "neutral_rad": 0.0},
+    {"id": 16, "name": "RR_FEMUR", "leg": "RR", "joint": "femur", "side": "right", "mega_pin": 38, "mega_pin_label": "D38", "pca_board": "B", "pca_addr_single_esp32": "0x41", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "B", "pca_channel": 7, "direction": -1, "min_rad": -1.221730, "max_rad": 1.221730,  "neutral_rad": 0.349066},
+    {"id": 17, "name": "RR_TIBIA", "leg": "RR", "joint": "tibia", "side": "right", "mega_pin": 39, "mega_pin_label": "D39", "pca_board": "B", "pca_addr_single_esp32": "0x41", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "B", "pca_channel": 8, "direction": -1, "min_rad": -2.094395, "max_rad": -0.261799, "neutral_rad": -1.570796}
+  ],
+  "control_configurations": {
+    "A_arduino_mega": {
+      "name": "Configuration A — Standalone Arduino Mega 2560",
+      "controller": "Arduino Mega 2560 (ATmega2560, 5V logic)",
+      "servo_pins": "D22..D39",
+      "estop_pin": "D2",
+      "vbat_adc_pin": "A0",
+      "top_payload_components_kg": {"arduino_mega_2560": 0.037, "buck_regulator_and_wiring": 0.110, "4s3p_18650_battery_est": 0.560}
+    },
+    "B_esp32_standalone": {
+      "name": "Configuration B — Standalone ESP32 with Dual PCA9685",
+      "controller": "ESP32 DevKit (3.3V logic)",
+      "i2c_sda_gpio": 21,
+      "i2c_scl_gpio": 22,
+      "pca9685_addresses": ["0x40", "0x41"],
+      "estop_gpio": 4,
+      "vbat_adc_gpio": 34,
+      "top_payload_components_kg": {"esp32_devkit": 0.010, "dual_pca9685": 0.024, "imu_mpu6050_or_bno085": 0.005, "buck_regulator_and_wiring": 0.120, "4s3p_18650_battery_est": 0.560}
+    },
+    "C_rpi_single_esp32": {
+      "name": "Configuration C — Raspberry Pi with Single ESP32 Slave",
+      "controller": "Raspberry Pi 4/5 + ESP32 DevKit + Dual PCA9685",
+      "serial_baud": 460800,
+      "i2c_sda_gpio": 21,
+      "i2c_scl_gpio": 22,
+      "pca9685_addresses": ["0x40", "0x41"],
+      "estop_gpio": 4,
+      "top_payload_components_kg": {"raspberry_pi_4_or_5": 0.046, "esp32_devkit": 0.010, "dual_pca9685": 0.024, "rplidar": 0.073084, "rgb_camera_and_imu": 0.030, "regulators_and_wiring": 0.160, "4s3p_18650_battery_est": 0.560}
+    },
+    "D_rpi_dual_esp32": {
+      "name": "Configuration D — Raspberry Pi with Dual ESP32 Slaves",
+      "controller": "Raspberry Pi 4/5 + 2x ESP32 DevKit + 2x PCA9685 (Left/Right)",
+      "serial_baud": 460800,
+      "i2c_sda_gpio": 21,
+      "i2c_scl_gpio": 22,
+      "pca9685_address_per_node": "0x40",
+      "estop_gpio": 4,
+      "sync_gpio": 18,
+      "top_payload_components_kg": {"raspberry_pi_4_or_5": 0.046, "dual_esp32_devkit": 0.020, "dual_pca9685": 0.024, "rplidar": 0.073084, "rgb_camera_and_imu": 0.030, "regulators_and_wiring": 0.180, "4s3p_18650_battery_est": 0.560}
+    }
+  },
+  "gaits": {
+    "default_body_height_m": 0.185,
+    "default_standing_foot_radius_m": 0.290,
+    "default_stride_m": 0.06,
+    "default_swing_height_m": 0.022,
+    "tripod": {"duty_factor": 0.5,    "cycle_s": 2.0, "phase_offsets": {"LF": 0.0, "RM": 0.0, "LR": 0.0, "RF": 0.5, "LM": 0.5, "RR": 0.5}},
+    "ripple": {"duty_factor": 0.6667, "cycle_s": 3.0, "phase_offsets": {"LR": 0.0, "RM": 0.1667, "LF": 0.3333, "RR": 0.5, "LM": 0.6667, "RF": 0.8333}},
+    "wave":   {"duty_factor": 0.835,  "cycle_s": 6.0, "phase_offsets": {"LR": 0.0, "LM": 0.1667, "LF": 0.3333, "RR": 0.5, "RM": 0.6667, "RF": 0.8333}}
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "diagram": "04_rpi_dual_esp32_single_pca9685_each",
+  "title": "04. Raspberry Pi 4/5 -> Dual ESP32 (Left/Right 0x40)",
+  "format": "hexaloam-kicad-netlist-v1",
+  "blocks": [
+    {
+      "label": "Raspberry Pi 4/5 udev: /dev/hexaloam_left udev: /dev/hexaloam_right",
+      "color": "#312E81"
+    },
+    {
+      "label": "ESP32-A (Left, ID=1) PCA9685-A (0x40) Ch0..8",
+      "color": "#1E293B"
+    },
+    {
+      "label": "ESP32-B (Right, ID=2) PCA9685-B (0x40) Ch0..8",
+      "color": "#1E293B"
+    },
+    {
+      "label": "Left/Right 6V Bus + E-Stop",
+      "color": "#7C2D12"
+    }
+  ],
+  "connections": [
+    {
+      "signal": "USB-A 460800"
+    },
+    {
+      "signal": "USB-B 460800"
+    },
+    {
+      "signal": "J0..J8"
+    },
+    {
+      "signal": "J9..J17"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "diagram": "14_battery_voltage_monitoring",
+  "title": "14. Battery Voltage Divider (4S Li-ion 16.8V -> 3.3V ADC)",
+  "format": "hexaloam-kicad-netlist-v1",
+  "blocks": [
+    {
+      "label": "4S Battery (+12V..16.8V)",
+      "color": "#7C2D12"
+    },
+    {
+      "label": "R1=47k / R2=10k Divider (Max 2.95V @ 16.8V) + 100nF",
+      "color": "#985107"
+    },
+    {
+      "label": "ESP32 GPIO34 (ADC) / Mega A0 (5V)",
+      "color": "#1E293B"
+    }
+  ],
+  "connections": [
+    {
+      "signal": "VBAT"
+    },
+    {
+      "signal": "<=2.95V"
+    }
+  ]
+}

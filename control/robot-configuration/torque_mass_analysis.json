@@ -1,0 +1,82 @@
+{
+  "A_arduino_mega": {
+    "name": "Configuration A \u2014 Standalone Arduino Mega 2560",
+    "base_structure_and_servos_kg": 4.949,
+    "top_controllers_and_battery_kg": 0.707,
+    "total_mass_kg": 5.656,
+    "total_weight_n": 55.47,
+    "six_leg_stance_torque_nm": {
+      "coxa": 0.0,
+      "femur": 1.049,
+      "tibia": 0.009
+    },
+    "tripod_3leg_peak_torque_nm": {
+      "coxa": 0.0,
+      "femur": 2.623,
+      "tibia": 0.022
+    },
+    "mg996r_stall_torque_6v_nm": 1.0787,
+    "femur_utilization_tripod_pct": 243.1,
+    "tibia_utilization_tripod_pct": 2.1
+  },
+  "B_esp32_standalone": {
+    "name": "Configuration B \u2014 Standalone ESP32 with Dual PCA9685",
+    "base_structure_and_servos_kg": 4.949,
+    "top_controllers_and_battery_kg": 0.719,
+    "total_mass_kg": 5.668,
+    "total_weight_n": 55.59,
+    "six_leg_stance_torque_nm": {
+      "coxa": 0.0,
+      "femur": 1.051,
+      "tibia": 0.009
+    },
+    "tripod_3leg_peak_torque_nm": {
+      "coxa": 0.0,
+      "femur": 2.628,
+      "tibia": 0.023
+    },
+    "mg996r_stall_torque_6v_nm": 1.0787,
+    "femur_utilization_tripod_pct": 243.6,
+    "tibia_utilization_tripod_pct": 2.1
+  },
+  "C_rpi_single_esp32": {
+    "name": "Configuration C \u2014 Raspberry Pi with Single ESP32 Slave",
+    "base_structure_and_servos_kg": 4.949,
+    "top_controllers_and_battery_kg": 0.903,
+    "total_mass_kg": 5.852,
+    "total_weight_n": 57.39,
+    "six_leg_stance_torque_nm": {
+      "coxa": 0.0,
+      "femur": 1.085,
+      "tibia": 0.009
+    },
+    "tripod_3leg_peak_torque_nm": {
+      "coxa": 0.0,
+      "femur": 2.713,
+      "tibia": 0.023
+    },
+    "mg996r_stall_torque_6v_nm": 1.0787,
+    "femur_utilization_tripod_pct": 251.5,
+    "tibia_utilization_tripod_pct": 2.2
+  },
+  "D_rpi_dual_esp32": {
+    "name": "Configuration D \u2014 Raspberry Pi with Dual ESP32 Slaves",
+    "base_structure_and_servos_kg": 4.949,
+    "top_controllers_and_battery_kg": 0.933,
+    "total_mass_kg": 5.882,
+    "total_weight_n": 57.68,
+    "six_leg_stance_torque_nm": {
+      "coxa": 0.0,
+      "femur": 1.091,
+      "tibia": 0.009
+    },
+    "tripod_3leg_peak_torque_nm": {
+      "coxa": 0.0,
+      "femur": 2.727,
+      "tibia": 0.023
+    },
+    "mg996r_stall_torque_6v_nm": 1.0787,
+    "femur_utilization_tripod_pct": 252.8,
+    "tibia_utilization_tripod_pct": 2.2
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "edition": "05_matlab_sim_and_control",
+  "title": "HexaLoam MATLAB Simulation & Hardware Control Edition",
+  "includes": [
+    "simulation/matlab/",
+    "simulation/cad-export/",
+    "demonstrations/",
+    "control/robot-configuration/hexaloam_config.json",
+    "control/robot-configuration/torque_mass_analysis.json"
+  ],
+  "license_notice": "See CONTRIBUTING.md \u2014 modifiable mechanical & software starting point; no blanket open-source license."
+}

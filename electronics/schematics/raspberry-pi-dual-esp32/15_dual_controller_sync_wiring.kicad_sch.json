@@ -1,0 +1,27 @@
+{
+  "diagram": "15_dual_controller_sync_wiring",
+  "title": "15. Optional Dual-ESP32 Hardware SYNC Line (GPIO18)",
+  "format": "hexaloam-kicad-netlist-v1",
+  "blocks": [
+    {
+      "label": "Raspberry Pi GPIO17 (10 Hz / Frame Sync Pulse)",
+      "color": "#312E81"
+    },
+    {
+      "label": "ESP32-A GPIO18 (3.3V)",
+      "color": "#1E293B"
+    },
+    {
+      "label": "ESP32-B GPIO18 (3.3V)",
+      "color": "#1E293B"
+    }
+  ],
+  "connections": [
+    {
+      "signal": "SYNC 3.3V + GND"
+    },
+    {
+      "signal": "SYNC 3.3V + GND"
+    }
+  ]
+}

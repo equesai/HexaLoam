@@ -45,7 +45,23 @@ This is a **mechanical starting point**. The designer is expected to finish the 
 | Education | A classroom hexapod for studying gait and kinematics | A controller, servo power, and firmware for repeatable gait exercises |
 | Robotics research | Comparing locomotion on different surfaces | An IMU or other instrumentation, data logging, and repeatable test setups |
 
-These are example configurations for designing a build. The repository contains mechanical files and CAD reference components. Firmware, wiring, a complete purchasing bill of materials, and field-test results are outside its current scope.
+These are example configurations for designing a build. In addition to the mechanical CAD, the repository now includes complete electronics schematics, firmware, Raspberry Pi control software, URDF, and progressive testing guides—with software/simulation checks validated and physical hardware tests marked pending until bench assembly.
+
+## Electronics, firmware, wiring & torque analysis
+
+HexaLoam shares one canonical 18-joint mapping ([JOINT_MAPPING.md](control/robot-configuration/JOINT_MAPPING.md), [hexaloam_config.json](control/robot-configuration/hexaloam_config.json)) and CAD-derived 3R kinematics (`L1 = 86.53 mm`, `L2 = 121.06 mm`, `L3 = 202.50 mm`) across four electronic control configurations:
+
+| Configuration | Controller & Bus | Top Payload (kg) | Total Mass (kg) | 6-Leg Femur (N·m) | 3-Leg Tripod Peak (N·m) | Edition Package |
+|---|---|---:|---:|---:|---:|---|
+| **A — Standalone Mega** | Arduino Mega 2560 (`D22..D39`) | 0.707 | 5.656 | 1.049 | 2.623 | [01_arduino_mega_beginner](packages/01_arduino_mega_beginner/) |
+| **B — Standalone ESP32** | ESP32 + Dual PCA9685 (`0x40`, `0x41`) | 0.719 | 5.668 | 1.051 | 2.628 | [02_esp32_standalone](packages/02_esp32_standalone/) |
+| **C — RPi + 1× ESP32** | Raspberry Pi 4/5 + ESP32 (`460800 baud`) + RP-Lidar | 0.903 | 5.852 | 1.085 | 2.713 | [03_rpi_single_esp32](packages/03_rpi_single_esp32/) |
+| **D — RPi + 2× ESP32** | Raspberry Pi 4/5 + Left/Right ESP32s (`0x40` each) | 0.933 | 5.882 | 1.091 | 2.727 | [04_rpi_dual_esp32](packages/04_rpi_dual_esp32/) |
+
+- **Torque insight (Simulation Validated):** A single MG996R at 6.0 V is rated for `1.079 N·m` (`11.0 kg·cm`) stall torque; 3-leg tripod peak femur demand (`2.62–2.73 N·m`) explains why the `L2` CAD pockets accommodate dual opposed servos or higher-torque actuator upgrades for full-weight dynamic walking.
+- **15 Engineering Wiring Diagrams (SVG / PNG / PDF / Netlist):** [electronics/wiring/](electronics/wiring/) · [Connection Tables](electronics/connection-tables/) · [Power & Fuse Engineering](electronics/power/POWER_ENGINEERING.md) · [BOM](electronics/bom/BOM.md)
+- **Firmware & Software:** [Arduino 01–14 Examples](firmware/arduino/examples/) · [ESP32 Generic Actuator Slave](firmware/esp32/actuator-slave/) · [Raspberry Pi Python & ROS2 Controller](software/raspberry-pi/) · [Protocol Spec](control/communication-protocol/README.md) · [URDF](simulation/urdf/hexaloam.urdf)
+- **Trajectories & Progressive Testing:** [Tripod / Ripple / Wave CSV & JSON](demonstrations/) · [11-Stage Hardware Commissioning](testing/) · [All 6 Edition Packages](packages/)
 
 ## Adapt the chassis
 

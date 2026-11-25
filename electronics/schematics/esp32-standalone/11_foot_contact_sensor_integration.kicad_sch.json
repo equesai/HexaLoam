@@ -1,0 +1,20 @@
+{
+  "diagram": "11_foot_contact_sensor_integration",
+  "title": "11. Foot Contact Switches (6x GPIO Pull-Up Inputs)",
+  "format": "hexaloam-kicad-netlist-v1",
+  "blocks": [
+    {
+      "label": "ESP32 / Dual ESP32 GPIO Inputs (3.3V Internal Pull-up)",
+      "color": "#1E293B"
+    },
+    {
+      "label": "6x Tactile/FSR Foot Switches (LF..RR -> GND on Contact)",
+      "color": "#0F766E"
+    }
+  ],
+  "connections": [
+    {
+      "signal": "6x Signal + GND"
+    }
+  ]
+}

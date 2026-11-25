@@ -1,0 +1,49 @@
+{
+  "protocol_name": "HexaLoam Binary & Debug Serial Protocol",
+  "version": 1,
+  "baud_rates": {"debug_default": 115200, "runtime_recommended": 460800},
+  "framing": {
+    "sync_bytes": ["0xAA", "0x55"],
+    "byte_order": "little_endian",
+    "checksum": "CRC-16/CCITT-FALSE",
+    "max_packet_bytes": 256,
+    "watchdog_timeout_ms": 500,
+    "angle_unit": "milliradian_int16 (1 mrad = 0.001 rad, range +/-32.767 rad)"
+  },
+  "commands": {
+    "0x01": "HELLO",
+    "0x02": "GET_VERSION",
+    "0x03": "GET_CAPABILITIES",
+    "0x04": "GET_CONFIGURATION",
+    "0x05": "SET_CONFIGURATION",
+    "0x10": "ARM",
+    "0x11": "DISARM",
+    "0x12": "SET_JOINT",
+    "0x13": "SET_JOINTS",
+    "0x14": "SET_TRAJECTORY",
+    "0x15": "SET_SPEED_LIMIT",
+    "0x16": "SET_ACCELERATION_LIMIT",
+    "0x17": "SET_NEUTRAL_POSE",
+    "0x20": "GET_STATUS",
+    "0x21": "GET_SENSOR_DATA",
+    "0x22": "GET_POWER_STATUS",
+    "0x23": "CALIBRATE",
+    "0x30": "HEARTBEAT",
+    "0x40": "EMERGENCY_STOP",
+    "0x41": "CLEAR_FAULT",
+    "0x50": "SYNC_TIME"
+  },
+  "responses": {"0x80": "ACK", "0x81": "NACK", "0x82": "FAULT", "0x83": "TELEMETRY"},
+  "error_codes": {
+    "0": "OK",
+    "1": "BAD_CRC",
+    "2": "BAD_LENGTH",
+    "3": "UNKNOWN_CMD",
+    "4": "NOT_ARMED",
+    "5": "OUT_OF_RANGE",
+    "6": "ESTOP_ACTIVE",
+    "7": "WATCHDOG_TIMEOUT",
+    "8": "I2C_FAULT",
+    "9": "INVALID_STATE"
+  }
+}

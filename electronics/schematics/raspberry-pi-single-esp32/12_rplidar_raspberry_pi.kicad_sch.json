@@ -1,0 +1,27 @@
+{
+  "diagram": "12_rplidar_raspberry_pi",
+  "title": "12. RP-Lidar Connection to Raspberry Pi 4/5",
+  "format": "hexaloam-kicad-netlist-v1",
+  "blocks": [
+    {
+      "label": "Raspberry Pi 4/5 (USB3 /dev/rplidar)",
+      "color": "#312E81"
+    },
+    {
+      "label": "CP2102 USB-UART Bridge (5V Regulated)",
+      "color": "#1E293B"
+    },
+    {
+      "label": "RP-Lidar A1/A2 (Mounted on -Z Underside)",
+      "color": "#985107"
+    }
+  ],
+  "connections": [
+    {
+      "signal": "USB"
+    },
+    {
+      "signal": "TX/RX + 5V"
+    }
+  ]
+}

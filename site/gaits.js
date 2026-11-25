@@ -6,10 +6,7 @@
 (function () {
   'use strict';
 
-  function initGaitViewer() {
-    var viewer = document.querySelector('.gait-viewer');
-    if (!viewer) return;
-
+  function initTabViewer(viewer) {
     var tabs = viewer.querySelectorAll('.gait-tab');
     var panels = viewer.querySelectorAll('.gait-panel');
     if (!tabs.length || !panels.length) return;
@@ -58,9 +55,13 @@
     });
   }
 
+  function initAllViewers() {
+    document.querySelectorAll('.gait-viewer').forEach(initTabViewer);
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initGaitViewer);
+    document.addEventListener('DOMContentLoaded', initAllViewers);
   } else {
-    initGaitViewer();
+    initAllViewers();
   }
 })();

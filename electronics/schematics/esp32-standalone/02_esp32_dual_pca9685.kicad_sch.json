@@ -1,0 +1,37 @@
+{
+  "diagram": "02_esp32_dual_pca9685",
+  "title": "02. Standalone ESP32 DevKit + Dual PCA9685 (0x40, 0x41)",
+  "format": "hexaloam-kicad-netlist-v1",
+  "blocks": [
+    {
+      "label": "ESP32 DevKit (3.3V) GPIO21=SDA GPIO22=SCL GPIO4=E-Stop GPIO34=VBAT",
+      "color": "#1E293B"
+    },
+    {
+      "label": "PCA9685 Board A (0x40) Ch0..8: LF/LM/LR",
+      "color": "#0F766E"
+    },
+    {
+      "label": "PCA9685 Board B (0x41) A0 Jumper, Ch0..8: RF/RM/RR",
+      "color": "#0F766E"
+    },
+    {
+      "label": "6.0V Servo PSU -> V+ (3.3V VCC Logic)",
+      "color": "#7C2D12"
+    }
+  ],
+  "connections": [
+    {
+      "signal": "I2C 3.3V SDA/SCL"
+    },
+    {
+      "signal": "I2C 3.3V SDA/SCL"
+    },
+    {
+      "signal": "J0..J8 PWM 50Hz"
+    },
+    {
+      "signal": "J9..J17 PWM 50Hz"
+    }
+  ]
+}

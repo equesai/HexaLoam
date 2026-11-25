@@ -1,0 +1,27 @@
+{
+  "diagram": "09_eighteen_servo_full_test",
+  "title": "09. Full 18-Servo Supported Test (J0..J17)",
+  "format": "hexaloam-kicad-netlist-v1",
+  "blocks": [
+    {
+      "label": "6.0V 25A PSU + 30A Fuse + E-Stop",
+      "color": "#7C2D12"
+    },
+    {
+      "label": "Dual PCA9685 (0x40 + 0x41)",
+      "color": "#1E293B"
+    },
+    {
+      "label": "All 18 MG996R Servos",
+      "color": "#0F766E"
+    }
+  ],
+  "connections": [
+    {
+      "signal": "Dual 15A Buses"
+    },
+    {
+      "signal": "18x PWM 50Hz"
+    }
+  ]
+}

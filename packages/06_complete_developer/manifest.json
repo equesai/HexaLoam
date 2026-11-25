@@ -1,0 +1,16 @@
+{
+  "edition": "06_complete_developer",
+  "title": "HexaLoam Complete Developer Edition",
+  "includes": [
+    "control/",
+    "electronics/",
+    "firmware/",
+    "software/",
+    "simulation/",
+    "demonstrations/",
+    "testing/",
+    "Printables/",
+    "Full_Robot_Assembly.SLDASM"
+  ],
+  "license_notice": "See CONTRIBUTING.md \u2014 modifiable mechanical & software starting point; no blanket open-source license."
+}
