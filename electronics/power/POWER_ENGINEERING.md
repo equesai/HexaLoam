@@ -1,14 +1,15 @@
 # HexaLoam Servo Power Supply & Electrical Engineering
 
-## 1. MG996R Electrical & Mechanical Reference Limits
+## 1. MG996R Electrical & Mechanical Reference Limits (18 Joints × 2 Back-to-Back Motors = 36 Servos)
 - **Nominal Operating Voltage:** 4.8 V – 7.2 V (design target: **6.0 V regulated**).
-- **Idle Current:** ~10 mA/servo (`18 × 10 mA = 0.18 A` total).
-- **No-Load Running Current:** ~170 mA/servo (`18 × 170 mA = 3.06 A`).
-- **Typical Loaded Walking Current:** ~500–750 mA/servo active (`~9–13.5 A` typical walking).
-- **Worst-Case Stall Current (@ 6.0 V):** ~2.5 A/servo (`18 × 2.5 A = 45.0 A` simultaneous stall).
-- **Stall Torque (@ 6.0 V):** 11.0 kg·cm (`1.0787 N·m`).
+- **Actuator Pairing:** Each of the 18 logical joints uses two opposing back-to-back MG996R servos (`MA1` and `MA2`), centered at `1500 us` (90°) before mechanical coupling and driven with mirrored offsets (`MA1 = 1500 + Δus`, `MA2 = 3000 - MA1`).
+- **Idle Current:** ~10 mA/servo (`36 × 10 mA = 0.36 A` total).
+- **No-Load Running Current:** ~170 mA/servo (`36 × 170 mA = 6.12 A`).
+- **Typical Loaded Walking Current:** ~400–650 mA/active servo (`~12–20 A` typical walking across stance legs).
+- **Worst-Case Simultaneous Stall (@ 6.0 V):** ~2.5 A/servo (conservative bus design uses **30 A main fuse + dual 15 A Left/Right branch fuses** with a 3S 5000 mAh 30C–50C LiPo capable of `150–250 A` burst discharge).
+- **Dual-Motor Stall Torque per Joint (@ 6.0 V):** `2 × 11.0 kg·cm = 22.0 kg·cm` (**`2.157 N·m`**; `70%` safe continuous = **`1.510 N·m`**).
 
-> **CRITICAL:** Never route 18-servo actuator current through an Arduino Mega regulator, ESP32 5V/3.3V pin, solderless breadboard, or a single PCA9685 V+ screw terminal without heavy-gauge external bus bars.
+> **CRITICAL:** Never route 36-servo actuator current through an Arduino Mega regulator, ESP32 5V/3.3V pin, solderless breadboard, or a single PCA9685 V+ screw terminal without heavy-gauge external bus bars.
 
 ## 2. Three Supported Power Configurations
 

@@ -2,7 +2,7 @@
 
 | Category | Component | Qty (Max Config) | Notes |
 |---|---|---:|---|
-| Actuators | MG996R Metal-Gear Servo | 18 | Verify wire color pinout before plugging |
+| Actuators | MG996R Metal-Gear Servo | 36 (2 per joint × 18 joints) | Back-to-back mirrored `MA1`/`MA2` pairs; center both at `1500 us` (90°) before coupling; verify wire color pinout |
 | Controller (Config A) | Arduino Mega 2560 | 1 | D22–D39 direct PWM |
 | Controller (Config B/C/D) | ESP32 DevKit (30/38-pin) | 1–2 | GPIO21 SDA, GPIO22 SCL |
 | PWM Driver | PCA9685 16-Ch 12-bit Module | 2 | 0x40 (default), 0x41 (A0 jumper) |
