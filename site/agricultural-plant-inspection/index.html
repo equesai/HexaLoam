@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agricultural plant inspection with the HexaLoam hexapod robot: camera, vision and MATLAB guide | HexaLoam</title>
+  <meta name="description" content="How to use the open-source, 3D-printable HexaLoam hexapod (SOLIDWORKS, MG996R, RP-Lidar, MATLAB Simscape) for crop and greenhouse plant inspection: camera mount, YOLO pipeline, SLAM geotagging. Honest limitations.">
+  <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+  <link rel="canonical" href="https://equesai.github.io/HexaLoam/agricultural-plant-inspection/">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#985107">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="HexaLoam">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Agricultural plant inspection with the HexaLoam hexapod robot: camera, vision and MATLAB guide">
+  <meta property="og:description" content="How to use the open-source, 3D-printable HexaLoam hexapod (SOLIDWORKS, MG996R, RP-Lidar, MATLAB Simscape) for crop and greenhouse plant inspection: camera mount, YOLO pipeline, SLAM geotagging. Honest limitations.">
+  <meta property="og:url" content="https://equesai.github.io/HexaLoam/agricultural-plant-inspection/">
+  <meta property="og:image" content="https://equesai.github.io/HexaLoam/assets/assembly-hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Agricultural plant inspection with the HexaLoam hexapod robot: camera, vision and MATLAB guide">
+  <meta name="twitter:description" content="How to use the open-source, 3D-printable HexaLoam hexapod (SOLIDWORKS, MG996R, RP-Lidar, MATLAB Simscape) for crop and greenhouse plant inspection: camera mount, YOLO pipeline, SLAM geotagging. Honest limitations.">
+  <meta name="twitter:image" content="https://equesai.github.io/HexaLoam/assets/assembly-hero.png">
+  <link rel="stylesheet" href="../project.css">
+  <link rel="stylesheet" href="../videos/watch.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://equesai.github.io/HexaLoam/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Agricultural plant inspection",
+          "item": "https://equesai.github.io/HexaLoam/agricultural-plant-inspection/"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://equesai.github.io/HexaLoam/agricultural-plant-inspection/#article",
+      "headline": "Agricultural plant inspection with the HexaLoam hexapod robot",
+      "description": "How to use the open-source, 3D-printable HexaLoam hexapod (SOLIDWORKS, MG996R, RP-Lidar, MATLAB Simscape) for crop and greenhouse plant inspection: camera mount, YOLO pipeline, SLAM geotagging. Honest limitations.",
+      "url": "https://equesai.github.io/HexaLoam/agricultural-plant-inspection/",
+      "inLanguage": "en",
+      "dateModified": "2026-11-27",
+      "image": "https://equesai.github.io/HexaLoam/assets/assembly-hero.png",
+      "about": {
+        "@id": "https://equesai.github.io/HexaLoam/#software"
+      },
+      "author": {
+        "@id": "https://equesai.github.io/HexaLoam/#organization"
+      },
+      "publisher": {
+        "@id": "https://equesai.github.io/HexaLoam/#organization"
+      },
+      "keywords": "hexapod robot, agricultural robot, plant disease detection, SOLIDWORKS, MATLAB Simscape, ROS 2, RP-Lidar, MG996R"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../" class="brand-link">
+        <img src="../assets/hexaloam-logo.png" width="28" height="28" alt="" aria-hidden="true" class="brand-mark">
+        <span class="brand-name">HexaLoam</span>
+        <span class="brand-divider" aria-hidden="true">&middot;</span>
+        <span class="brand-org">Open hardware</span>
+      </a>
+      <nav class="nav-menu" aria-label="Project Navigation">
+        <a href="../" class="nav-item">Home</a>
+        <a href="../videos/" class="nav-item">Videos</a>
+        <a href="https://github.com/equesai/HexaLoam" class="nav-item nav-repo">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" class="watch-main">
+    <div class="watch-container">
+      <nav class="watch-nav-breadcrumb" aria-label="Breadcrumb">
+        <a href="../">Home</a>
+        <span class="watch-separator">/</span>
+        <span>Agricultural plant inspection</span>
+      </nav>
+      <h1 class="watch-heading">HexaLoam for agricultural plant inspection</h1>
+<p>This guide is for a graduation project, thesis or research prototype that needs an <strong>open-source hexapod (hexabot) for crop or greenhouse scouting</strong>, with a camera that finds plant defects, an editable SOLIDWORKS design, MATLAB simulation files, and a low-cost, fully 3D-printed body. It says what HexaLoam already provides, what you must add, and how to add it. Nothing here claims more than the repository contains.</p>
+<blockquote>
+<p><strong>Honest status.</strong> HexaLoam has <strong>no camera mount in the CAD yet and no plant-vision code</strong>. Everything in sections 3 to 5 is a design path for you to build, not a feature that ships. Physical bench tests of the robot are still pending (see <a href="#8-limitations">section 8</a>).</p>
+</blockquote>
+<h2 id="1-why-hexaloam-fits-this-use-case">1. Why HexaLoam fits this use case</h2>
+<div class="table-card"><table class="data-table">
+<thead>
+<tr>
+<th>Your requirement</th>
+<th>What the repository provides</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Editable SOLIDWORKS design</td>
+<td>Native parts and assemblies: <a href="https://github.com/equesai/HexaLoam/blob/main/Full_Robot_Assembly.SLDASM">Full_Robot_Assembly.SLDASM</a>, <a href="https://github.com/equesai/HexaLoam/blob/main/LegMates.SLDASM">LegMates.SLDASM</a>, <a href="https://github.com/equesai/HexaLoam/tree/main/Designed">Designed/</a></td>
+</tr>
+<tr>
+<td>Fully 3D-printable body</td>
+<td>5 STL designs = 20 printed pieces (chassis, 6x L1, 6x L2, 6x L3, LiDAR cover), PLA+ printed mass 1.306 kg (Bambu Studio, supports excluded). <a href="https://github.com/equesai/HexaLoam/tree/main/Printables">STL, 3MF</a>, GLB and STEP also included</td>
+</tr>
+<tr>
+<td>Cheap servos</td>
+<td>18 joints (3 per leg) driven by 36 MG996R servos, two back-to-back per joint</td>
+</tr>
+<tr>
+<td>LiDAR</td>
+<td>RP-Lidar (2D) mount and cover are already in the chassis CAD</td>
+</tr>
+<tr>
+<td>MATLAB simulation</td>
+<td>Simscape Multibody XML export + STEP, single-leg static study, gait trajectory replay, URDF for <code>importrobot</code> (<a href="https://github.com/equesai/HexaLoam/blob/main/docs/simulation-guide.md">simulation guide</a>)</td>
+</tr>
+<tr>
+<td>Electronics and software</td>
+<td>Four controller configurations (A-D), 15 wiring diagrams, Arduino and ESP32 firmware, Raspberry Pi Python and ROS 2 controller, 3S 5000 mAh LiPo</td>
+</tr>
+<tr>
+<td>Torque check</td>
+<td>Mass and required torque per configuration and gait (<a href="../#control">README table</a>)</td>
+</tr>
+<tr>
+<td>License</td>
+<td><a href="https://github.com/equesai/HexaLoam/blob/main/LICENSE">MIT</a>: modify, print and publish your derivative</td>
+</tr>
+</tbody>
+</table></div>
+<p>The robot was <strong>tested in four controller configurations (A-D) by simulation parameters and analysis</strong>: the mass of each configuration's controllers and top-mounted parts was compared with the torque each set of motors needs. This is analytical testing, not a physical bench test. Wave and ripple gaits stay within 70 % of continuous torque in all four; tripod needs 81-86 %.</p>
+<h2 id="2-pick-a-configuration">2. Pick a configuration</h2>
+<p>A camera plus on-board inference needs a computer, so use <strong>Configuration C (Raspberry Pi 4/5 + 1 ESP32 + RP-Lidar)</strong> or <strong>D (Raspberry Pi + 2 ESP32)</strong>. They also run the ROS 2 controller. Configurations A and B (Arduino Mega, ESP32) have no computer for vision, though they can still walk.</p>
+<p>Budget the camera mass: a Raspberry Pi Camera Module 3 with its bracket is a few tens of grams, well inside the payload headroom listed for configurations C and D in wave and ripple gaits (README table). Re-run the torque estimate if you add a heavier payload such as a battery for a second computer or a Jetson.</p>
+<h2 id="3-add-a-camera">3. Add a camera</h2>
+<ol>
+<li><strong>Camera choice.</strong> Raspberry Pi Camera Module 3 (CSI, autofocus, about 66-75 degree field of view depending on variant) is the simplest with a Raspberry Pi. A USB camera is easier to swap and to test on a laptop first.</li>
+<li><strong>Placement.</strong> Mount it at the front edge of the chassis deck, looking forward and down. Use the existing <strong>M3 holes and nut pockets</strong> of <a href="https://github.com/equesai/HexaLoam/blob/main/Designed/Robot_Base.SLDPRT">Robot_Base.SLDPRT</a> for a printed bracket; measure them in the CAD, do not guess.</li>
+<li><strong>Field of view versus legs.</strong> In SOLIDWORKS, sweep the front legs through their full gait range (see <a href="https://github.com/equesai/HexaLoam/blob/main/LegMates.SLDASM">LegMates.SLDASM</a>) and check that no foot, coxa or tibia crosses the camera cone. Raise the camera on a short mast if the front legs enter the frame.</li>
+<li><strong>Tilt.</strong> Plants are on the ground ahead, so tilt 20-40 degrees down and use an adjustable bracket (slotted M3 holes) so you can tune it on the bench. For leaf-underside checks you need a different, lower or sideways mount.</li>
+<li><strong>Vibration and cable.</strong> Use a rigid bracket, strain-relieve the ribbon cable, and keep the LiDAR scan plane clear of the camera mount. Prefer slow wave or ripple gaits for sharper frames.</li>
+<li><strong>Print and publish.</strong> Add the bracket to the CAD as a new part, print one, and contribute it back (see <a href="https://github.com/equesai/HexaLoam/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>).</li>
+</ol>
+<h2 id="4-perception-pipeline-to-build">4. Perception pipeline (to build)</h2>
+<ol>
+<li><strong>Data collection.</strong> Drive or walk the robot along real rows, or photograph plants by hand. Record images with the robot's pose (section 4.4). Use many plants, lighting conditions and growth stages; keep a held-out test set from different plants.</li>
+<li><strong>Label.</strong> Annotate leaf defects in a tool such as CVAT or Label Studio. Decide the classes first (for example healthy, spots, blight, pest damage).</li>
+<li><strong>Train a detector or segmenter.</strong> YOLO-family detection is quick to train and runs on a Raspberry Pi with a small model; use instance segmentation if you need leaf area. Report precision, recall and per-class results on the held-out set, and say plainly that results from one crop or greenhouse do not transfer to another without retraining.</li>
+<li><strong>Severity by affected area.</strong> With a segmentation mask, severity = defect pixels / leaf pixels (a simple, explainable score you can bin into low, medium, high). A camera at a known height and tilt lets you convert pixels to approximate area, but calibrate it.</li>
+<li><strong>Geotag with the SLAM pose.</strong> The RP-Lidar supports <strong>2D SLAM</strong> (for example <code>slam_toolbox</code> in ROS 2) in a row or greenhouse. Log each detection with the map pose and a timestamp to build a defect map.</li>
+<li><strong>ROS 2 wiring.</strong> The existing node publishes <code>joint_states</code> and subscribes to <code>cmd_vel</code> (<a href="https://github.com/equesai/HexaLoam/blob/main/software/raspberry-pi/hexaloam_controller/ros2/hexaloam_ros2_node.py">hexaloam_ros2_node.py</a>). A typical design adds your own camera node publishing <code>/image_raw</code>, a detector node publishing a detection message with severity, and a logger that joins detections with the SLAM pose (<code>/map</code> and TF). These extra nodes are yours to write.</li>
+</ol>
+<h2 id="5-matlab-and-simulink-digital-twin-path">5. MATLAB and Simulink digital-twin path</h2>
+<p>Use this to validate gait, sensing and the inspection route before printing anything.</p>
+<ul>
+<li><strong>Body and legs.</strong> Simscape Multibody from the CAD export (<code>simulation/cad-export/</code>) imports and compiles in MATLAB R2025b, but contains <strong>29 extra 6-DOF joints</strong> from missing CAD mates. Until the mates are fixed, use <a href="https://github.com/equesai/HexaLoam/blob/main/simulation/urdf/hexaloam.urdf"><code>simulation/urdf/hexaloam.urdf</code></a> with <code>importrobot</code> as the clean 18-joint kinematic model. <code>python tools/check_cad_mates.py simulation/cad-export/Full_Robot_Assembly.xml</code> explains the extra joints.</li>
+<li><strong>Existing scripts.</strong> <a href="https://github.com/equesai/HexaLoam/blob/main/simulation/matlab/legStaticStudy.m"><code>legStaticStudy.m</code></a> (foot force to joint torque) and <a href="https://github.com/equesai/HexaLoam/blob/main/simulation/matlab/replay_gait_trajectory.m"><code>replay_gait_trajectory.m</code></a> (gait replay).</li>
+<li><strong>Agricultural scene.</strong> MathWorks pairs R2025b with Unreal Engine 5.3 and its Robotics System Toolbox Interface for Unreal Engine Projects. Start from a MathWorks example scene, then build one crop row, one known robot pose and one sensor target (<a href="https://github.com/equesai/HexaLoam/blob/main/docs/simulation-guide.md#full-robot-and-agricultural-scene">simulation guide</a>).</li>
+<li><strong>Sensors.</strong> Use the camera and lidar sensor blocks of the Unreal co-simulation (or Simulation 3D blocks) to generate synthetic images and scans, and test the perception pipeline's interfaces. Synthetic leaves are not real disease, so train and evaluate on real photographs.</li>
+<li><strong>Assessment files.</strong> Keep your model, the scenario script, the test cases and a short results table together so a supervisor can rerun them.</li>
+</ul>
+<h2 id="6-which-gait-for-inspection">6. Which gait for inspection</h2>
+<div class="table-card"><table class="data-table">
+<thead>
+<tr>
+<th>Gait</th>
+<th>Feet on ground</th>
+<th>Required torque (configs A-D)</th>
+<th>Use for inspection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wave</td>
+<td>5</td>
+<td>45-48 % of stall</td>
+<td>Slowest, steadiest, lowest vibration; best for image capture</td>
+</tr>
+<tr>
+<td>Ripple</td>
+<td>4</td>
+<td>59-62 %</td>
+<td>Good balance of speed and smoothness; within the 70 % continuous limit</td>
+</tr>
+<tr>
+<td>Tripod</td>
+<td>3</td>
+<td>81-86 %</td>
+<td>Fastest, but above the 70 % limit; short unloaded runs only</td>
+</tr>
+</tbody>
+</table></div>
+<p>The Raspberry Pi controller and quickstart default to tripod; select ripple or wave before adding a camera and computer. Stop walking for the exposure if your camera needs sharp, still frames.</p>
+<h2 id="7-suggested-project-plan">7. Suggested project plan</h2>
+<ol>
+<li>Print one leg set, then the rest; assemble and run the staged <a href="https://github.com/equesai/HexaLoam/tree/main/testing">testing guides</a>.</li>
+<li>Design and print the camera bracket; check clearances in CAD, then on the bench.</li>
+<li>Collect and label data; train and evaluate the detector.</li>
+<li>Build the ROS 2 detection and logging nodes; test indoors with potted plants.</li>
+<li>Build the MATLAB digital twin and compare its predicted torque and gait with measurements.</li>
+<li>Document results honestly, including failures, and cite the project (<a href="https://github.com/equesai/HexaLoam/blob/main/CITATION.cff">CITATION.cff</a>).</li>
+</ol>
+<h2 id="8-limitations">8. Limitations</h2>
+<ul>
+<li><strong>No camera mount in the CAD and no plant-vision code</strong> are included. You design and write them.</li>
+<li><strong>The Simscape import has 29 extra 6-DOF joints</strong> until the missing CAD mates are added; use the URDF for a clean kinematic model.</li>
+<li><strong>URDF and Gazebo/Isaac dynamics are not verified</strong> against the hardware; the URDF is a kinematic model.</li>
+<li><strong>Physical validation is pending.</strong> Weight and torque figures are analytical estimates from slicer-reported masses, not bench measurements.</li>
+<li><strong>MG996R servos are hobby servos.</strong> Two per joint give 2.157 N.m stall at 6 V, but continuous load, heat, backlash and gear wear matter in the field; the 70 % continuous limit is a design margin, not a guarantee. Rough, wet or muddy ground is not validated.</li>
+<li><strong>2D LiDAR only.</strong> The RP-Lidar supports 2D SLAM; "LOAM" in the project name is not a claim of 3D LOAM odometry.</li>
+</ul>
+<h2 id="related">Related</h2>
+<p><a href="https://github.com/equesai/HexaLoam/blob/main/README.md">README</a> · <a href="https://github.com/equesai/HexaLoam/blob/main/docs/designer-guide.md">Designer guide</a> · <a href="https://github.com/equesai/HexaLoam/blob/main/docs/simulation-guide.md">Simulation guide</a> · <a href="https://github.com/equesai/HexaLoam/blob/main/docs/walking.md">Walking gaits</a> · <a href="https://github.com/equesai/HexaLoam/blob/main/electronics/bom/BOM.md">BOM</a> · <a href="https://github.com/equesai/HexaLoam/tree/main/electronics/wiring">Wiring diagrams</a></p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col-left">
+        <span class="footer-title">HexaLoam &middot; Open hardware</span>
+        <span class="footer-note"><a href="https://github.com/equesai/HexaLoam">HexaLoam Hexapod Project</a> &middot; MIT license</span>
+      </div>
+      <div class="footer-col-right">
+        <a href="../">Home</a>
+        <a href="../videos/">Videos</a>
+        <a href="https://github.com/equesai/HexaLoam/blob/main/docs/agricultural-plant-inspection.md">Guide on GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

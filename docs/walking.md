@@ -14,7 +14,7 @@ The left front, right middle and left rear form one tripod. The right front, lef
 
 [![Animated tripod gait with alternating groups of three feet](media/gait-tripod.gif)](media/gait-tripod.mp4?raw=1)
 
-[Download the tripod video](media/gait-tripod.mp4?raw=1) · [Watch the narrated tripod Short on YouTube](https://www.youtube.com/shorts/4rD9bK5iIl8)
+[Download the tripod video](media/gait-tripod.mp4?raw=1)
 
 ## Ripple
 
@@ -22,7 +22,7 @@ The lift-off order is left rear, right middle, left front, right rear, left midd
 
 [![Animated ripple gait with staggered overlapping swings](media/gait-ripple.gif)](media/gait-ripple.mp4?raw=1)
 
-[Download the ripple video](media/gait-ripple.mp4?raw=1) · [Watch the narrated ripple Short on YouTube](https://www.youtube.com/shorts/ggAerDmc-yU)
+[Download the ripple video](media/gait-ripple.mp4?raw=1)
 
 ## Wave
 
@@ -30,9 +30,11 @@ Only one foot swings at a time. Follow the amber marker from rear to middle to f
 
 [![Animated wave gait with one foot in swing](media/gait-wave.gif)](media/gait-wave.mp4?raw=1)
 
-[Download the wave video](media/gait-wave.mp4?raw=1) · [Watch the narrated wave Short on YouTube](https://www.youtube.com/shorts/ZopVjcM9axM)
+[Download the wave video](media/gait-wave.mp4?raw=1)
 
 ## Model scope
+
+The animations use a common 5-second cycle for every gait so they can be compared side by side; the controller cycle times (2 s tripod, 3 s ripple, 6 s wave) are in `control/robot-configuration/hexaloam_config.json`.
 
 Each 10-second clip shows two five-second cycles at 24 frames per second. All three use the same prescribed 60 mm stride per cycle, 12 mm/s chassis speed and 22 mm peak foot clearance. The grid spacing is 50 mm. Across all 240 frames per gait, the CAD foot centers moved less than 0.001 mm between consecutive stance samples.
 

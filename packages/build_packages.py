@@ -28,7 +28,7 @@ def main() -> None:
     for slug, title, includes in EDITIONS:
         d = PKG_DIR / slug
         d.mkdir(parents=True, exist_ok=True)
-        (d / "manifest.json").write_text(json.dumps({"edition": slug, "title": title, "includes": includes, "license_notice": "See CONTRIBUTING.md — modifiable mechanical & software starting point; no blanket open-source license."}, indent=2) + "\n", encoding="utf-8")
+        (d / "manifest.json").write_text(json.dumps({"edition": slug, "title": title, "includes": includes, "license_notice": "Released under the MIT License (see LICENSE). See CONTRIBUTING.md for how to contribute."}, indent=2) + "\n", encoding="utf-8")
         lines = [f"# {title}", "", "## Included Files & Folders", ""] + [f"- `{p}`" for p in includes] + ["", "## Quickstart", "1. Verify wiring against `electronics/wiring/` and `electronics/power/POWER_ENGINEERING.md`.", "2. Calibrate servos at 1500 us neutral before assembling horns (`control/calibration/README.md`).", "3. Follow `testing/electrical/` through `testing/locomotion/` progressively."]
         (d / "README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Generated {len(EDITIONS)} downloadable edition packages.")

@@ -4,19 +4,19 @@
   "format": "hexaloam-kicad-netlist-v1",
   "blocks": [
     {
-      "label": "4S3P Li-ion / 24V Lab PSU",
+      "label": "3S 5000 mAh LiPo (12.6V full) or 6V 35A Lab PSU",
       "color": "#7C2D12"
     },
     {
-      "label": "Main Fuse (30A) + E-Stop NC Contactor / MOSFET",
+      "label": "Main Fuse (40A) + E-Stop NC Contactor / MOSFET",
       "color": "#991B1B"
     },
     {
-      "label": "6.0V 25A Buck + 4700uF Cap + 5V 5A Pi Buck",
+      "label": "6.0V 35A Buck (or 2x20A) + 4700uF Cap + 5V 5A Pi Buck",
       "color": "#985107"
     },
     {
-      "label": "Left Bus (15A) / Right Bus (15A)",
+      "label": "Left Bus (20A) / Right Bus (20A) 18 servos each",
       "color": "#0F172A"
     }
   ],

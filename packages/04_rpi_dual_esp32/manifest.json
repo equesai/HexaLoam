@@ -9,5 +9,5 @@
     "electronics/wiring/04_rpi_dual_esp32_single_pca9685_each.pdf",
     "electronics/wiring/15_dual_controller_sync_wiring.pdf"
   ],
-  "license_notice": "See CONTRIBUTING.md \u2014 modifiable mechanical & software starting point; no blanket open-source license."
+  "license_notice": "Released under the MIT License (see LICENSE). See CONTRIBUTING.md for how to contribute."
 }

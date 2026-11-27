@@ -1,10 +1,10 @@
 {
   "diagram": "09_eighteen_servo_full_test",
-  "title": "09. Full 18-Servo Supported Test (J0..J17)",
+  "title": "09. Full 36-Servo Supported Test (18 Joints, J0..J17)",
   "format": "hexaloam-kicad-netlist-v1",
   "blocks": [
     {
-      "label": "6.0V 25A PSU + 30A Fuse + E-Stop",
+      "label": "6.0V 35A PSU + 40A Main Fuse + E-Stop",
       "color": "#7C2D12"
     },
     {
@@ -12,16 +12,16 @@
       "color": "#1E293B"
     },
     {
-      "label": "All 18 MG996R Servos",
+      "label": "All 36 MG996R Servos (MA1 direct, MA2 via reverser)",
       "color": "#0F766E"
     }
   ],
   "connections": [
     {
-      "signal": "Dual 15A Buses"
+      "signal": "Dual 20A Branch Buses"
     },
     {
-      "signal": "18x PWM 50Hz"
+      "signal": "18x PWM 50Hz (+18 reversed)"
     }
   ]
 }

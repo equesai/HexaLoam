@@ -11,5 +11,6 @@
 | Power | 6.0V 35A+ (or 2× 20A) Buck + 5.0V 5A Buck | 1 set | Separate 6V actuator & 5V logic rails |
 | Battery | 3S 5000 mAh 30C–50C LiPo (~360 g) | 1 | 11.1 V nominal, 12.6 V max, XT60 |
 | Protection | 40A Main Fuse + 2× 20A Branch + NC E-Stop | 1 set | Hardware power isolation |
-| Signal Reverser | Inline PWM Servo Signal Reverser (for MA2) | 18 (or 3× PCA9685) | Mirrors back-to-back MA2 from 18-ch bus |
+| Signal Reverser | Inline PWM Servo Signal Reverser (for MA2) | 18 | Mirrors back-to-back MA2 from the 18-ch bus (one per joint; MA2 = 3000 - MA1 us) |
+| Battery Sense | 33 kΩ + 10 kΩ 1% resistors, 100 nF capacitor | 1 set | 3S battery divider, x4.3 scale, 2.93 V at 12.6 V |
 | Bulk Cap | 4700 uF 16V Low-ESR Electrolytic | 2 | Across servo power buses |

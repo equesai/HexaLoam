@@ -1,9 +1,9 @@
-# Stage 03 — Single Leg (3 Servos) Test
+# Stage 03 — Single Leg (3 Joints, 6 Servos) Test
 
 **Objective:** Verify LF leg (J0..J2) on a support fixture; validate FK/IK, travel limits, and collision clearance.
 
 ## Validation Status
-- Current Status: `Not tested` (hardware required; software/simulation prerequisites validated).
+- Current Status: `Not tested` (hardware required; no hardware test has been run).
 - Allowed status labels: `Not tested`, `Software validated`, `Simulation validated`, `Bench hardware validated`, `Full robot validated`, `Field validated`, `Failed`.
 
 ## Results Template

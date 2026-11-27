@@ -1,17 +1,36 @@
 cff-version: 1.2.0
 message: "If you use HexaLoam in your research, coursework, or robot build, please cite it using the metadata below."
-title: "HexaLoam: Modular 3D-Printable 18-DOF Hexapod Robot Platform with LiDAR"
+title: "HexaLoam: Open-Source 3D-Printable Hexapod Robot Platform (SOLIDWORKS, MG996R, LiDAR, MATLAB)"
+type: software
+version: 1.0.2
+date-released: 2026-11-27
 authors:
   - name: "HexaLoam contributors"
 repository-code: "https://github.com/equesai/HexaLoam"
 url: "https://equesai.github.io/HexaLoam/"
 license: MIT
+abstract: >-
+  HexaLoam is an open-source, fully 3D-printable hexapod robot with native editable SOLIDWORKS CAD.
+  It has 18 joints (3 per leg) driven by 36 MG996R servos, two back-to-back per joint, and a PLA+
+  structure of 5 STL designs (20 printed pieces, 1.306 kg as sliced). The chassis CAD integrates an
+  RP-Lidar (2D) mount and cover. The repository provides STEP, STL, 3MF and GLB files, MATLAB Simscape
+  Multibody and URDF models, four controller configurations (Arduino Mega, ESP32, Raspberry Pi with one
+  or two ESP32), wiring diagrams, firmware, a Raspberry Pi Python and ROS 2 controller, and a
+  mass-versus-torque analysis per configuration and gait. The design was tested by simulation and
+  analysis; physical tests are pending. It has no camera mount or plant-vision code yet; a guide
+  describes how to add them for agricultural plant inspection.
 keywords:
   - HexaLoam
   - hexapod
   - hexabot
-  - LOAM
   - agricultural robotics
+  - plant inspection
+  - SOLIDWORKS
+  - MATLAB
+  - Simscape
+  - ROS 2
   - 3D printing
+  - MG996R
   - LiDAR
+  - legged robot
   - multibody simulation

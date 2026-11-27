@@ -2,5 +2,5 @@
 
 | Signal / Net | Description |
 |---|---|
-| `30A Main` | Verified in `13_estop_power_isolation.svg` / `.png` / `.pdf` |
+| `40A Main` | Verified in `13_estop_power_isolation.svg` / `.png` / `.pdf` |
 | `Switched 6V` | Verified in `13_estop_power_isolation.svg` / `.png` / `.pdf` |

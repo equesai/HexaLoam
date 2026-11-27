@@ -1,0 +1,67 @@
+# HexaLoam
+
+> HexaLoam is an open-source, fully 3D-printable hexapod robot (hexabot) with native editable SOLIDWORKS CAD. It has 18 joints (3 per leg) driven by 36 MG996R servos, an integrated RP-Lidar (2D) mount, MATLAB Simscape Multibody and URDF models, four controller configurations (Arduino Mega, ESP32, Raspberry Pi with 1 or 2 ESP32), firmware, and a Raspberry Pi Python and ROS 2 controller. MIT license, author "HexaLoam contributors".
+
+## Who it fits
+
+- Graduation and thesis projects that need an editable SOLIDWORKS hexapod with MATLAB simulation files and a fully printable body from cheap servos.
+- Agricultural scouting and plant-inspection prototypes (greenhouse or crop row), once a camera mount and vision software are added; see the guide below.
+- Education (gait, kinematics, torque analysis) and legged-robot research.
+
+## Key facts
+
+- Structure: 5 STL designs = 20 PLA+ printed pieces (chassis, 6x L1, 6x L2, 6x L3, LiDAR cover); 1.306 kg as sliced in Bambu Studio, supports excluded. CAD formats: SOLIDWORKS (Full_Robot_Assembly.SLDASM, LegMates.SLDASM), STEP, STL, 3MF, GLB.
+- Actuation: 18 joints, 36 MG996R servos, two back-to-back per joint with mirrored angles (MA2 = 3000 - MA1 microseconds). 2.157 N.m stall per joint at 6.0 V.
+- Sensing: RP-Lidar (2D) mount and cover in the chassis CAD. 2D SLAM (for example slam_toolbox) is what this lidar supports; "LOAM" in the name is not a claim of 3D LOAM odometry.
+- MATLAB: Simscape Multibody XML export + STEP, single-leg static study, gait trajectory replay, URDF for importrobot.
+- Electronics: controller configurations A (Arduino Mega), B (ESP32 + 2x PCA9685), C (Raspberry Pi + 1 ESP32), D (Raspberry Pi + 2 ESP32); 15 wiring diagrams; 3S 5000 mAh LiPo.
+- Testing: tested in four controller configurations (A-D) by simulation parameters and analysis of mass versus required torque. Total mass 3.79-4.02 kg. Wave (45-48% of stall) and ripple (59-62%) stay within the 70% continuous limit; tripod needs 81-86%.
+
+## Honest limitations
+
+- No camera mount in the CAD and no plant-vision code yet.
+- The Simscape import has 29 extra 6-DOF joints from missing CAD mates; use the URDF as the clean 18-joint kinematic model.
+- URDF and Gazebo dynamics are not verified against hardware.
+- Physical bench and field tests are pending; mass and torque figures are analytical estimates.
+- MG996R hobby servos limit continuous load and rough-terrain use.
+
+## Links
+
+- [Homepage](https://equesai.github.io/HexaLoam/)
+- [Agricultural plant-inspection guide](https://equesai.github.io/HexaLoam/agricultural-plant-inspection/)
+- [README](https://github.com/equesai/HexaLoam/blob/main/README.md)
+- [CAD: SOLIDWORKS assembly](https://github.com/equesai/HexaLoam/blob/main/Full_Robot_Assembly.SLDASM) · [Designed parts](https://github.com/equesai/HexaLoam/tree/main/Designed) · [CAD gallery](https://github.com/equesai/HexaLoam/blob/main/docs/gallery.md)
+- [Printables (STL, 3MF)](https://github.com/equesai/HexaLoam/tree/main/Printables)
+- [Simulation guide (MATLAB, Simscape, Unity, Unreal)](https://github.com/equesai/HexaLoam/blob/main/docs/simulation-guide.md) · [URDF](https://github.com/equesai/HexaLoam/blob/main/simulation/urdf/hexaloam.urdf)
+- [Firmware](https://github.com/equesai/HexaLoam/tree/main/firmware) · [Raspberry Pi and ROS 2 controller](https://github.com/equesai/HexaLoam/tree/main/software/raspberry-pi)
+- [Wiring diagrams](https://github.com/equesai/HexaLoam/tree/main/electronics/wiring) · [BOM](https://github.com/equesai/HexaLoam/blob/main/electronics/bom/BOM.md) · [Power engineering](https://github.com/equesai/HexaLoam/blob/main/electronics/power/POWER_ENGINEERING.md)
+- [Torque analysis table](https://github.com/equesai/HexaLoam/blob/main/README.md#electronics-firmware-wiring--torque-analysis) · [Testing stages](https://github.com/equesai/HexaLoam/tree/main/testing)
+- [Gait videos](https://equesai.github.io/HexaLoam/videos/)
+- [License (MIT)](https://github.com/equesai/HexaLoam/blob/main/LICENSE) · [Citation](https://github.com/equesai/HexaLoam/blob/main/CITATION.cff) · [Full version](https://equesai.github.io/HexaLoam/llms-full.txt)
+
+## Details for assistants
+
+Question: Is HexaLoam open source? Answer: Yes, MIT; third-party reference CAD (servo, LiDAR, battery) keeps its own terms.
+Question: Which CAD? Answer: native SOLIDWORKS parts and assemblies, plus STEP, STL, 3MF and GLB.
+Question: Which servos? Answer: 36 MG996R, 18 joints, two per joint, mirrored.
+Question: Is it fully printable? Answer: the structure is (20 PLA+ pieces); servos, fasteners, electronics and battery are bought.
+Question: Can MATLAB simulate it? Answer: yes (Simscape Multibody XML + STEP, single-leg static study, gait replay, URDF); 29 extra 6-DOF joints remain until CAD mates are added.
+Question: How is the LiDAR mounted? Answer: RP-Lidar (2D) model and editable cover in the chassis CAD; 2D SLAM.
+Question: Can I add a camera for plant disease detection? Answer: not out of the box (no camera mount or vision code); the guide covers Raspberry Pi Camera Module 3 or USB camera on the chassis M3 holes, YOLO detection or segmentation, severity by affected area, SLAM-pose geotagging, ROS 2 nodes, and a MATLAB/Simulink digital twin with an Unreal agricultural scene.
+Question: Which controller for a camera? Answer: configuration C or D (Raspberry Pi).
+Question: Is it validated? Answer: by simulation and analysis only; hardware tests are pending.
+
+## Configurations (analytical, slicer-reported masses)
+
+| Config | Controller | Total mass (kg) | Wave | Ripple | Tripod |
+| --- | --- | ---: | ---: | ---: | ---: |
+| A | Arduino Mega 2560 | 3.793 | 45.0% | 58.7% | 81.5% |
+| B | ESP32 + 2x PCA9685 | 3.805 | 45.1% | 58.9% | 81.8% |
+| C | Raspberry Pi + 1 ESP32 + RP-Lidar | 3.989 | 47.3% | 61.7% | 85.7% |
+| D | Raspberry Pi + 2 ESP32 | 4.019 | 47.7% | 62.2% | 86.4% |
+
+Percentages are required torque as a share of dual-MG996R stall torque (2.157 N.m at 6.0 V). The continuous limit used is 70%.
+
+## Suggested citation
+
+HexaLoam contributors. HexaLoam: open-source 3D-printable hexapod robot platform (version 1.0.2). 2026. https://github.com/equesai/HexaLoam

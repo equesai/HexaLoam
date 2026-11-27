@@ -22,6 +22,13 @@
 #ifndef HEXALOAM_BAUD
 #define HEXALOAM_BAUD 460800
 #endif
+// MA1/MA2 mirrored drive of each back-to-back joint (MA2 = 3000 us - MA1 us, both set at 90 deg / 1500 us before coupling).
+// 0 (default): MA2 is fed by an inline PWM signal reverser on the MA1 channel, so 18 PWM channels drive 36 servos.
+// 1: MA2 is driven in software on companion PCA9685 boards at the same channel numbers
+//    (board A 0x40 -> MA2 board 0x42, board B 0x41 -> MA2 board 0x43). No reverser is needed then.
+#ifndef HEXALOAM_MA2_SOFTWARE
+#define HEXALOAM_MA2_SOFTWARE 0
+#endif
 
 constexpr uint8_t PIN_SDA = 21;
 constexpr uint8_t PIN_SCL = 22;
@@ -33,6 +40,12 @@ constexpr float PCA_OSC_HZ = 25000000.0f;
 Adafruit_PWMServoDriver pcaA(0x40);
 #if HEXALOAM_DUAL_PCA
 Adafruit_PWMServoDriver pcaB(0x41);
+#endif
+#if HEXALOAM_MA2_SOFTWARE
+Adafruit_PWMServoDriver pcaA_ma2(0x42);
+#if HEXALOAM_DUAL_PCA
+Adafruit_PWMServoDriver pcaB_ma2(0x43);
+#endif
 #endif
 Preferences prefs;
 
@@ -83,25 +96,46 @@ void write_joint_pwm(uint8_t local_idx, float rad) {
   float norm_ma2 = (-phys + 1.5707963f) / 3.1415926f;
   uint16_t us_ma1 = static_cast<uint16_t>(constrain(st.min_us + norm_ma1 * (st.max_us - st.min_us), st.min_us, st.max_us));
   uint16_t us_ma2 = static_cast<uint16_t>(constrain(st.min_us + norm_ma2 * (st.max_us - st.min_us), st.min_us, st.max_us));
+  // SERVO_MIN_US + SERVO_MAX_US = 3000, so us_ma2 == 3000 - us_ma1: exactly what the hardware reverser outputs.
   uint16_t ticks_ma1 = us_to_pca_ticks(us_ma1);
-  (void)us_ma2; // Output on paired/mirrored MA2 channel or hardware-inverted bus when 36-ch expansion is attached
+  uint16_t ticks_ma2 = us_to_pca_ticks(us_ma2);
 #if HEXALOAM_DUAL_PCA
-  if (meta.pca_board == 'A') pcaA.setPWM(meta.pca_channel, 0, ticks_ma1);
-  else pcaB.setPWM(meta.pca_channel, 0, ticks_ma1);
+  bool on_a = (meta.pca_board == 'A');
 #else
-  pcaA.setPWM(meta.pca_channel, 0, ticks_ma1);
+  bool on_a = true;
+#endif
+  if (on_a) pcaA.setPWM(meta.pca_channel, 0, ticks_ma1);
+#if HEXALOAM_DUAL_PCA
+  else pcaB.setPWM(meta.pca_channel, 0, ticks_ma1);
+#endif
+#if HEXALOAM_MA2_SOFTWARE
+  if (on_a) pcaA_ma2.setPWM(meta.pca_channel, 0, ticks_ma2);
+#if HEXALOAM_DUAL_PCA
+  else pcaB_ma2.setPWM(meta.pca_channel, 0, ticks_ma2);
+#endif
+#else
+  (void)ticks_ma2;  // hardware reverser derives MA2 from the MA1 channel
 #endif
 }
 
 void enter_safe_stop() {
   armed = false;
   for (uint8_t i = 0; i < HEXALOAM_NUM_JOINTS; ++i) {
-#if HEXALOAM_DUAL_PCA
     const auto& meta = hexaloam::JOINT_MAP[HEXALOAM_JOINT_OFFSET + i];
-    if (meta.pca_board == 'A') pcaA.setPWM(meta.pca_channel, 0, 0);
-    else pcaB.setPWM(meta.pca_channel, 0, 0);
+#if HEXALOAM_DUAL_PCA
+    bool on_a = (meta.pca_board == 'A');
 #else
-    pcaA.setPWM(hexaloam::JOINT_MAP[HEXALOAM_JOINT_OFFSET + i].pca_channel, 0, 0);
+    bool on_a = true;
+#endif
+    if (on_a) pcaA.setPWM(meta.pca_channel, 0, 0);
+#if HEXALOAM_DUAL_PCA
+    else pcaB.setPWM(meta.pca_channel, 0, 0);
+#endif
+#if HEXALOAM_MA2_SOFTWARE
+    if (on_a) pcaA_ma2.setPWM(meta.pca_channel, 0, 0);
+#if HEXALOAM_DUAL_PCA
+    else pcaB_ma2.setPWM(meta.pca_channel, 0, 0);
+#endif
 #endif
   }
 }
@@ -191,6 +225,16 @@ void setup() {
   pcaB.begin();
   pcaB.setOscillatorFrequency(PCA_OSC_HZ);
   pcaB.setPWMFreq(hexaloam::SERVO_PWM_HZ);
+#endif
+#if HEXALOAM_MA2_SOFTWARE
+  pcaA_ma2.begin();
+  pcaA_ma2.setOscillatorFrequency(PCA_OSC_HZ);
+  pcaA_ma2.setPWMFreq(hexaloam::SERVO_PWM_HZ);
+#if HEXALOAM_DUAL_PCA
+  pcaB_ma2.begin();
+  pcaB_ma2.setOscillatorFrequency(PCA_OSC_HZ);
+  pcaB_ma2.setPWMFreq(hexaloam::SERVO_PWM_HZ);
+#endif
 #endif
   prefs.begin("hexaloam", false);
   for (uint8_t i = 0; i < HEXALOAM_NUM_JOINTS; ++i) {

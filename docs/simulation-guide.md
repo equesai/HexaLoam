@@ -9,7 +9,7 @@ Start with the [HexaLoam](../README.md) visual meshes to study packaging, or run
 | Unity | Import the same GLBs with Unity glTFast | Documented static-asset workflow. Native editor test pending. |
 | Unreal Engine | Import the same GLBs as static meshes | Documented static-asset workflow. Native editor and co-simulation tests pending. |
 | MATLAB | Calculate idealized one-leg position, Jacobian and holding torque | Two tests passed on MATLAB R2025b, including a finite-difference check. |
-| Simscape Multibody | Full assembly XML and seven STEP files | Imported and compiled in R2025b. The generated model contains 18 revolute joints and 29 additional 6-DOF joints. |
+| Simscape Multibody | Full assembly XML and seven STEP files | Imported and compiled in R2025b. The generated model contains 18 revolute joints and 29 additional 6-DOF joints because of missing CAD mates (see below). Use `simulation/urdf/hexaloam.urdf` (`importrobot`) for the clean 18-joint kinematic model. |
 
 ## Visual meshes
 
@@ -65,6 +65,18 @@ free = find_system(name,'ReferenceBlock','sm_lib/Joints/6-DOF Joint');
 disp([numel(revolute), numel(free)])   % Observed: 18, 29
 ```
 
-The generated parameter file associates twelve revolute joints with the six L1 links and six with the six L3 links. The additional 6-DOF joints require a mechanical review. Trace each one to its connected bodies, check which connections should be rigid, and compare the remaining joint axes with the assembled hardware before using the model for gait or torque estimates. [Joint acceptance test](development-roadmap.md#2-establish-one-leg-then-all-18-leg-axes) · [MathWorks model import](https://www.mathworks.com/help/sm/ref/smimport.html)
+The generated parameter file associates twelve revolute joints with the six L1 links and six with the six L3 links. The additional 6-DOF joints are caused by missing mates in the SOLIDWORKS assembly, not by the importer.
+
+Cause (`tools/check_cad_mates.py`): 11 of the 36 servos have no SOLIDWORKS mates at all, and each leg is three islands that are not attached to the chassis (L1 with 2 servos, L2 with 1 servo, L3 with 1 servo). 6 × 3 + 11 = 29 floating groups, and Simscape gives each one a 6-DOF joint.
+
+Reproduce it:
+
+```bash
+python tools/check_cad_mates.py simulation/cad-export/Full_Robot_Assembly.xml
+```
+
+The script lists every floating group and the servos without mates (`--strict` exits non-zero while any remain; CI runs it non-strict).
+
+**Fix:** in SOLIDWORKS fix each servo case to the part that carries it, mate each horn axis to the next link, re-export with Simscape Multibody Link, and run the check again until it reports no additional floating groups. **Until that re-export is done**, do not use the Simscape import for gait or torque estimates. Use the clean 18-joint kinematic model in `simulation/urdf/hexaloam.urdf` instead (MATLAB: `importrobot('simulation/urdf/hexaloam.urdf')`). Compare the remaining joint axes with the assembled hardware before relying on any dynamics. [Joint acceptance test](development-roadmap.md#2-establish-one-leg-then-all-18-leg-axes) · [MathWorks model import](https://www.mathworks.com/help/sm/ref/smimport.html)
 
 The development machine reported MATLAB R2025b with Simulink, Simscape Multibody, Multibody Link and Robotics System Toolbox. The installed support-package inventory listed Arduino packages only. For the agricultural scene, MathWorks pairs R2025b with **Unreal Engine 5.3** and requires its **Robotics System Toolbox Interface for Unreal Engine Projects** for custom scenes. On Windows, confirm a supported Visual Studio 2022 C++ toolchain before building the project. The first scene milestone is one crop row, one known robot pose and one sensor target. [MathWorks compatibility table](https://www.mathworks.com/help/robotics/ug/unreal-engine-simulation-environment-requirements-and-limitations.html)

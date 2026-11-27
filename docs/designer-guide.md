@@ -30,7 +30,7 @@ The six plates below are taken from the [Bambu Studio project](../Printables/Ful
 
 ## Simulation plan
 
-The R2025b import compiled with 18 Revolute Joint blocks and 29 additional 6-DOF Joint blocks. The design target is three independent single-axis joints per leg. Review each free connection against the mechanical assembly and confirm the joint axes and motion before relying on the dynamics. [Complete XML and STEP package](../simulation/cad-export/)
+The R2025b import compiled with 18 Revolute Joint blocks and 29 additional 6-DOF Joint blocks. The cause is missing SOLIDWORKS mates (11 servos have none and each leg is three unattached islands; run `python tools/check_cad_mates.py simulation/cad-export/Full_Robot_Assembly.xml`). The fix is to fix each servo case to its carrier part, mate each horn axis to the next link and re-export; until then use `simulation/urdf/hexaloam.urdf` as the clean 18-joint kinematic model. The design target is three independent single-axis joints per leg. [Complete XML and STEP package](../simulation/cad-export/)
 
 1. Keep the Simscape Multibody XML export and its referenced STEP files together. Import the XML with MATLAB's `smimport` function. [MathWorks model-import documentation](https://www.mathworks.com/help/sm/ref/smimport.html)
 2. Confirm that the imported model has three independent revolute joints per leg. Check the joint axes and initial positions against the CAD. Confirm that each leg moves independently and that no imported constraint locks an intended axis.

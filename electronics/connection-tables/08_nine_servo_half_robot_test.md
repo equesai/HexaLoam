@@ -1,4 +1,4 @@
-# Connection Table — 08. Nine-Servo Half-Robot Test (Left Side J0..J8)
+# Connection Table — 08. Half-Robot Test (Left Side J0..J8 = 18 Servos)
 
 | Signal / Net | Description |
 |---|---|

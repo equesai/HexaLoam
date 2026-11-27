@@ -3,7 +3,7 @@
 **Objective:** Evaluate flat soil, loose loam, gravel, grass, slopes, and payload effects after lab sign-off.
 
 ## Validation Status
-- Current Status: `Not tested` (hardware required; software/simulation prerequisites validated).
+- Current Status: `Not tested` (hardware required; no hardware test has been run).
 - Allowed status labels: `Not tested`, `Software validated`, `Simulation validated`, `Bench hardware validated`, `Full robot validated`, `Field validated`, `Failed`.
 
 ## Results Template

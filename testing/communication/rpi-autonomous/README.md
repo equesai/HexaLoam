@@ -3,7 +3,7 @@
 **Objective:** Validate RP-Lidar scan, ROS2 joint_states/cmd_vel, obstacle avoidance, and telemetry logging.
 
 ## Validation Status
-- Current Status: `Not tested` (hardware required; software/simulation prerequisites validated).
+- Current Status: `Not tested` (hardware required; no hardware test has been run).
 - Allowed status labels: `Not tested`, `Software validated`, `Simulation validated`, `Bench hardware validated`, `Full robot validated`, `Field validated`, `Failed`.
 
 ## Results Template

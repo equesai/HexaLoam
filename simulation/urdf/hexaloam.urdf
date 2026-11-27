@@ -2,6 +2,8 @@
 <!-- HexaLoam Canonical 18-DOF URDF
      Dimensions derived from simulation/cad-export/Full_Robot_Assembly.xml
      Canonical joint names: LF_COXA..RR_TIBIA (control/robot-configuration/hexaloam_config.json) -->
+<!-- Joint effort = 2.157 N*m: each joint is driven by two back-to-back MG996R servos (MA1 + MA2),
+     2 x 1.0787 N*m stall torque at 6.0 V. This is the stall (peak) torque; the continuous design target is 70% of it. -->
 <robot name="hexaloam">
   <material name="amber_pla"><color rgba="0.85 0.47 0.02 1.0"/></material>
   <material name="slate_dark"><color rgba="0.12 0.16 0.22 1.0"/></material>
@@ -43,49 +45,49 @@
   <!-- Leg macros expanded explicitly for all 6 legs and 18 canonical revolute joints -->
   <!-- LF (+30 deg) -->
   <link name="LF_coxa_link"><inertial><mass value="0.181714"/><inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/></inertial><visual><origin xyz="0.043263 0 0.02635"/><geometry><box size="0.0865264 0.040 0.0527"/></geometry><material name="amber_pla"/></visual></link>
-  <joint name="LF_COXA" type="revolute"><parent link="base_link"/><child link="LF_coxa_link"/><origin xyz="0.0779423 0.0450000 -0.0496718" rpy="0 0 0.5235987756"/><axis xyz="0 0 1"/><limit lower="-0.785398" upper="0.785398" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="LF_COXA" type="revolute"><parent link="base_link"/><child link="LF_coxa_link"/><origin xyz="0.0779423 0.0450000 -0.0496718" rpy="0 0 0.5235987756"/><axis xyz="0 0 1"/><limit lower="-0.785398" upper="0.785398" effort="2.157" velocity="4.5"/></joint>
   <link name="LF_femur_link"><inertial><mass value="0.103983"/><inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/></inertial><visual><origin xyz="0.0605308 0 0"/><geometry><box size="0.1210616 0.035 0.035"/></geometry><material name="slate_dark"/></visual></link>
-  <joint name="LF_FEMUR" type="revolute"><parent link="LF_coxa_link"/><child link="LF_femur_link"/><origin xyz="0.0865264 -0.0510 0.0527" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-1.22173" upper="1.22173" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="LF_FEMUR" type="revolute"><parent link="LF_coxa_link"/><child link="LF_femur_link"/><origin xyz="0.0865264 -0.0510 0.0527" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-1.22173" upper="1.22173" effort="2.157" velocity="4.5"/></joint>
   <link name="LF_tibia_link"><inertial><mass value="0.281617"/><inertia ixx="2e-4" ixy="0" ixz="0" iyy="2e-4" iyz="0" izz="2e-4"/></inertial><visual><origin xyz="0.10125 0.0510 0"/><geometry><box size="0.2025 0.030 0.030"/></geometry><material name="amber_pla"/></visual></link>
-  <joint name="LF_TIBIA" type="revolute"><parent link="LF_femur_link"/><child link="LF_tibia_link"/><origin xyz="0.1210616 0 0" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-2.094395" upper="-0.261799" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="LF_TIBIA" type="revolute"><parent link="LF_femur_link"/><child link="LF_tibia_link"/><origin xyz="0.1210616 0 0" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-2.094395" upper="-0.261799" effort="2.157" velocity="4.5"/></joint>
 
   <!-- LM (+90 deg) -->
   <link name="LM_coxa_link"><inertial><mass value="0.181714"/><inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/></inertial><visual><origin xyz="0.043263 0 0.02635"/><geometry><box size="0.0865264 0.040 0.0527"/></geometry><material name="amber_pla"/></visual></link>
-  <joint name="LM_COXA" type="revolute"><parent link="base_link"/><child link="LM_coxa_link"/><origin xyz="0.0 0.0900000 -0.0496718" rpy="0 0 1.5707963268"/><axis xyz="0 0 1"/><limit lower="-0.785398" upper="0.785398" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="LM_COXA" type="revolute"><parent link="base_link"/><child link="LM_coxa_link"/><origin xyz="0.0 0.0900000 -0.0496718" rpy="0 0 1.5707963268"/><axis xyz="0 0 1"/><limit lower="-0.785398" upper="0.785398" effort="2.157" velocity="4.5"/></joint>
   <link name="LM_femur_link"><inertial><mass value="0.103983"/><inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/></inertial><visual><origin xyz="0.0605308 0 0"/><geometry><box size="0.1210616 0.035 0.035"/></geometry><material name="slate_dark"/></visual></link>
-  <joint name="LM_FEMUR" type="revolute"><parent link="LM_coxa_link"/><child link="LM_femur_link"/><origin xyz="0.0865264 -0.0510 0.0527" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-1.22173" upper="1.22173" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="LM_FEMUR" type="revolute"><parent link="LM_coxa_link"/><child link="LM_femur_link"/><origin xyz="0.0865264 -0.0510 0.0527" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-1.22173" upper="1.22173" effort="2.157" velocity="4.5"/></joint>
   <link name="LM_tibia_link"><inertial><mass value="0.281617"/><inertia ixx="2e-4" ixy="0" ixz="0" iyy="2e-4" iyz="0" izz="2e-4"/></inertial><visual><origin xyz="0.10125 0.0510 0"/><geometry><box size="0.2025 0.030 0.030"/></geometry><material name="amber_pla"/></visual></link>
-  <joint name="LM_TIBIA" type="revolute"><parent link="LM_femur_link"/><child link="LM_tibia_link"/><origin xyz="0.1210616 0 0" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-2.094395" upper="-0.261799" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="LM_TIBIA" type="revolute"><parent link="LM_femur_link"/><child link="LM_tibia_link"/><origin xyz="0.1210616 0 0" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-2.094395" upper="-0.261799" effort="2.157" velocity="4.5"/></joint>
 
   <!-- LR (+150 deg) -->
   <link name="LR_coxa_link"><inertial><mass value="0.181714"/><inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/></inertial><visual><origin xyz="0.043263 0 0.02635"/><geometry><box size="0.0865264 0.040 0.0527"/></geometry><material name="amber_pla"/></visual></link>
-  <joint name="LR_COXA" type="revolute"><parent link="base_link"/><child link="LR_coxa_link"/><origin xyz="-0.0779423 0.0450000 -0.0496718" rpy="0 0 2.617993878"/><axis xyz="0 0 1"/><limit lower="-0.785398" upper="0.785398" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="LR_COXA" type="revolute"><parent link="base_link"/><child link="LR_coxa_link"/><origin xyz="-0.0779423 0.0450000 -0.0496718" rpy="0 0 2.617993878"/><axis xyz="0 0 1"/><limit lower="-0.785398" upper="0.785398" effort="2.157" velocity="4.5"/></joint>
   <link name="LR_femur_link"><inertial><mass value="0.103983"/><inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/></inertial><visual><origin xyz="0.0605308 0 0"/><geometry><box size="0.1210616 0.035 0.035"/></geometry><material name="slate_dark"/></visual></link>
-  <joint name="LR_FEMUR" type="revolute"><parent link="LR_coxa_link"/><child link="LR_femur_link"/><origin xyz="0.0865264 -0.0510 0.0527" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-1.22173" upper="1.22173" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="LR_FEMUR" type="revolute"><parent link="LR_coxa_link"/><child link="LR_femur_link"/><origin xyz="0.0865264 -0.0510 0.0527" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-1.22173" upper="1.22173" effort="2.157" velocity="4.5"/></joint>
   <link name="LR_tibia_link"><inertial><mass value="0.281617"/><inertia ixx="2e-4" ixy="0" ixz="0" iyy="2e-4" iyz="0" izz="2e-4"/></inertial><visual><origin xyz="0.10125 0.0510 0"/><geometry><box size="0.2025 0.030 0.030"/></geometry><material name="amber_pla"/></visual></link>
-  <joint name="LR_TIBIA" type="revolute"><parent link="LR_femur_link"/><child link="LR_tibia_link"/><origin xyz="0.1210616 0 0" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-2.094395" upper="-0.261799" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="LR_TIBIA" type="revolute"><parent link="LR_femur_link"/><child link="LR_tibia_link"/><origin xyz="0.1210616 0 0" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-2.094395" upper="-0.261799" effort="2.157" velocity="4.5"/></joint>
 
   <!-- RF (-30 deg) -->
   <link name="RF_coxa_link"><inertial><mass value="0.181714"/><inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/></inertial><visual><origin xyz="0.043263 0 0.02635"/><geometry><box size="0.0865264 0.040 0.0527"/></geometry><material name="amber_pla"/></visual></link>
-  <joint name="RF_COXA" type="revolute"><parent link="base_link"/><child link="RF_coxa_link"/><origin xyz="0.0779423 -0.0450000 -0.0496718" rpy="0 0 -0.5235987756"/><axis xyz="0 0 1"/><limit lower="-0.785398" upper="0.785398" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="RF_COXA" type="revolute"><parent link="base_link"/><child link="RF_coxa_link"/><origin xyz="0.0779423 -0.0450000 -0.0496718" rpy="0 0 -0.5235987756"/><axis xyz="0 0 1"/><limit lower="-0.785398" upper="0.785398" effort="2.157" velocity="4.5"/></joint>
   <link name="RF_femur_link"><inertial><mass value="0.103983"/><inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/></inertial><visual><origin xyz="0.0605308 0 0"/><geometry><box size="0.1210616 0.035 0.035"/></geometry><material name="slate_dark"/></visual></link>
-  <joint name="RF_FEMUR" type="revolute"><parent link="RF_coxa_link"/><child link="RF_femur_link"/><origin xyz="0.0865264 -0.0510 0.0527" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-1.22173" upper="1.22173" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="RF_FEMUR" type="revolute"><parent link="RF_coxa_link"/><child link="RF_femur_link"/><origin xyz="0.0865264 -0.0510 0.0527" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-1.22173" upper="1.22173" effort="2.157" velocity="4.5"/></joint>
   <link name="RF_tibia_link"><inertial><mass value="0.281617"/><inertia ixx="2e-4" ixy="0" ixz="0" iyy="2e-4" iyz="0" izz="2e-4"/></inertial><visual><origin xyz="0.10125 0.0510 0"/><geometry><box size="0.2025 0.030 0.030"/></geometry><material name="amber_pla"/></visual></link>
-  <joint name="RF_TIBIA" type="revolute"><parent link="RF_femur_link"/><child link="RF_tibia_link"/><origin xyz="0.1210616 0 0" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-2.094395" upper="-0.261799" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="RF_TIBIA" type="revolute"><parent link="RF_femur_link"/><child link="RF_tibia_link"/><origin xyz="0.1210616 0 0" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-2.094395" upper="-0.261799" effort="2.157" velocity="4.5"/></joint>
 
   <!-- RM (-90 deg) -->
   <link name="RM_coxa_link"><inertial><mass value="0.181714"/><inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/></inertial><visual><origin xyz="0.043263 0 0.02635"/><geometry><box size="0.0865264 0.040 0.0527"/></geometry><material name="amber_pla"/></visual></link>
-  <joint name="RM_COXA" type="revolute"><parent link="base_link"/><child link="RM_coxa_link"/><origin xyz="0.0 -0.0900000 -0.0496718" rpy="0 0 -1.5707963268"/><axis xyz="0 0 1"/><limit lower="-0.785398" upper="0.785398" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="RM_COXA" type="revolute"><parent link="base_link"/><child link="RM_coxa_link"/><origin xyz="0.0 -0.0900000 -0.0496718" rpy="0 0 -1.5707963268"/><axis xyz="0 0 1"/><limit lower="-0.785398" upper="0.785398" effort="2.157" velocity="4.5"/></joint>
   <link name="RM_femur_link"><inertial><mass value="0.103983"/><inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/></inertial><visual><origin xyz="0.0605308 0 0"/><geometry><box size="0.1210616 0.035 0.035"/></geometry><material name="slate_dark"/></visual></link>
-  <joint name="RM_FEMUR" type="revolute"><parent link="RM_coxa_link"/><child link="RM_femur_link"/><origin xyz="0.0865264 -0.0510 0.0527" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-1.22173" upper="1.22173" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="RM_FEMUR" type="revolute"><parent link="RM_coxa_link"/><child link="RM_femur_link"/><origin xyz="0.0865264 -0.0510 0.0527" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-1.22173" upper="1.22173" effort="2.157" velocity="4.5"/></joint>
   <link name="RM_tibia_link"><inertial><mass value="0.281617"/><inertia ixx="2e-4" ixy="0" ixz="0" iyy="2e-4" iyz="0" izz="2e-4"/></inertial><visual><origin xyz="0.10125 0.0510 0"/><geometry><box size="0.2025 0.030 0.030"/></geometry><material name="amber_pla"/></visual></link>
-  <joint name="RM_TIBIA" type="revolute"><parent link="RM_femur_link"/><child link="RM_tibia_link"/><origin xyz="0.1210616 0 0" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-2.094395" upper="-0.261799" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="RM_TIBIA" type="revolute"><parent link="RM_femur_link"/><child link="RM_tibia_link"/><origin xyz="0.1210616 0 0" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-2.094395" upper="-0.261799" effort="2.157" velocity="4.5"/></joint>
 
   <!-- RR (-150 deg) -->
   <link name="RR_coxa_link"><inertial><mass value="0.181714"/><inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/></inertial><visual><origin xyz="0.043263 0 0.02635"/><geometry><box size="0.0865264 0.040 0.0527"/></geometry><material name="amber_pla"/></visual></link>
-  <joint name="RR_COXA" type="revolute"><parent link="base_link"/><child link="RR_coxa_link"/><origin xyz="-0.0779423 -0.0450000 -0.0496718" rpy="0 0 -2.617993878"/><axis xyz="0 0 1"/><limit lower="-0.785398" upper="0.785398" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="RR_COXA" type="revolute"><parent link="base_link"/><child link="RR_coxa_link"/><origin xyz="-0.0779423 -0.0450000 -0.0496718" rpy="0 0 -2.617993878"/><axis xyz="0 0 1"/><limit lower="-0.785398" upper="0.785398" effort="2.157" velocity="4.5"/></joint>
   <link name="RR_femur_link"><inertial><mass value="0.103983"/><inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/></inertial><visual><origin xyz="0.0605308 0 0"/><geometry><box size="0.1210616 0.035 0.035"/></geometry><material name="slate_dark"/></visual></link>
-  <joint name="RR_FEMUR" type="revolute"><parent link="RR_coxa_link"/><child link="RR_femur_link"/><origin xyz="0.0865264 -0.0510 0.0527" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-1.22173" upper="1.22173" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="RR_FEMUR" type="revolute"><parent link="RR_coxa_link"/><child link="RR_femur_link"/><origin xyz="0.0865264 -0.0510 0.0527" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-1.22173" upper="1.22173" effort="2.157" velocity="4.5"/></joint>
   <link name="RR_tibia_link"><inertial><mass value="0.281617"/><inertia ixx="2e-4" ixy="0" ixz="0" iyy="2e-4" iyz="0" izz="2e-4"/></inertial><visual><origin xyz="0.10125 0.0510 0"/><geometry><box size="0.2025 0.030 0.030"/></geometry><material name="amber_pla"/></visual></link>
-  <joint name="RR_TIBIA" type="revolute"><parent link="RR_femur_link"/><child link="RR_tibia_link"/><origin xyz="0.1210616 0 0" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-2.094395" upper="-0.261799" effort="1.0787" velocity="4.5"/></joint>
+  <joint name="RR_TIBIA" type="revolute"><parent link="RR_femur_link"/><child link="RR_tibia_link"/><origin xyz="0.1210616 0 0" rpy="0 0 0"/><axis xyz="0 -1 0"/><limit lower="-2.094395" upper="-0.261799" effort="2.157" velocity="4.5"/></joint>
 </robot>

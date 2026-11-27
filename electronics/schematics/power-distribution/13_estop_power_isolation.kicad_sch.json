@@ -18,7 +18,7 @@
   ],
   "connections": [
     {
-      "signal": "30A Main"
+      "signal": "40A Main"
     },
     {
       "signal": "Switched 6V"

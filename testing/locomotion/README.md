@@ -3,7 +3,7 @@
 **Objective:** Start with slow Wave gait (5 legs stance), progress to Ripple (4 legs), then Tripod (3 legs).
 
 ## Validation Status
-- Current Status: `Not tested` (hardware required; software/simulation prerequisites validated).
+- Current Status: `Not tested` (hardware required; no hardware test has been run).
 - Allowed status labels: `Not tested`, `Software validated`, `Simulation validated`, `Bench hardware validated`, `Full robot validated`, `Field validated`, `Failed`.
 
 ## Results Template

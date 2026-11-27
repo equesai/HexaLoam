@@ -48,7 +48,7 @@
         "LidarCover": 42.68,
         "total_20_pieces_g": 1306.23
       },
-      "total_printed_and_servo_cad_mass_kg": 4.568882,
+      "total_printed_and_servo_cad_mass_kg": 5.177244,
       "total_printed_and_servo_slicer_est_kg": 3.28623
     },
     "links": {
@@ -95,7 +95,7 @@
     "stall_torque_6v0_nm": 1.0787,
     "idle_current_ma": 10.0,
     "running_no_load_current_ma": 170.0,
-    "typical_loaded_current_ma": 750.0,
+    "typical_loaded_current_ma": 650.0,
     "stall_current_6v0_ma": 2500.0,
     "default_max_velocity_rad_s": 4.5,
     "default_max_acceleration_rad_s2": 18.0
@@ -103,7 +103,7 @@
   "joint_limits": {
     "coxa":  {"min_rad": -0.785398, "max_rad": 0.785398,  "neutral_rad": 0.0},
     "femur": {"min_rad": -1.221730, "max_rad": 1.221730,  "neutral_rad": 0.349066},
-    "tibia": {"min_rad": -2.356194, "max_rad": -0.261799, "neutral_rad": -1.570796}
+    "tibia": {"min_rad": -2.094395, "max_rad": -0.261799, "neutral_rad": -1.570796}
   },
   "joints": [
     {"id": 0,  "name": "LF_COXA",  "leg": "LF", "joint": "coxa",  "side": "left",  "mega_pin": 22, "mega_pin_label": "D22", "pca_board": "A", "pca_addr_single_esp32": "0x40", "pca_addr_dual_esp32": "0x40", "esp32_dual_node": "A", "pca_channel": 0, "direction": 1,  "min_rad": -0.785398, "max_rad": 0.785398,  "neutral_rad": 0.0},

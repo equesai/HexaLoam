@@ -1,9 +1,9 @@
-# Stage 06 — Full 18-Servo Supported Test
+# Stage 06 — Full Robot Supported Test (18 Joints, 36 Servos)
 
-**Objective:** With chassis elevated on a stand, verify all 18 joints, neutral pose, current draw, and E-stop.
+**Objective:** With chassis elevated on a stand, verify all 18 joints (36 servos), neutral pose, current draw, and E-stop.
 
 ## Validation Status
-- Current Status: `Not tested` (hardware required; software/simulation prerequisites validated).
+- Current Status: `Not tested` (hardware required; no hardware test has been run).
 - Allowed status labels: `Not tested`, `Software validated`, `Simulation validated`, `Bench hardware validated`, `Full robot validated`, `Field validated`, `Failed`.
 
 ## Results Template

@@ -1,10 +1,10 @@
 {
   "diagram": "08_nine_servo_half_robot_test",
-  "title": "08. Nine-Servo Half-Robot Test (Left Side J0..J8)",
+  "title": "08. Half-Robot Test (Left Side J0..J8 = 18 Servos)",
   "format": "hexaloam-kicad-netlist-v1",
   "blocks": [
     {
-      "label": "6.0V 15A PSU + 15A Fuse",
+      "label": "6.0V 20A PSU + 20A Branch Fuse",
       "color": "#7C2D12"
     },
     {
@@ -12,7 +12,7 @@
       "color": "#1E293B"
     },
     {
-      "label": "9x Servos (LF, LM, LR)",
+      "label": "18x Servos (9 joints: LF, LM, LR; MA2 via 9 reversers)",
       "color": "#0F766E"
     }
   ],

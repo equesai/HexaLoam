@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HexaLoam — Modular 3D-Printable Hexapod Robot with LiDAR | HexaLoam contributors</title>
-  <meta name="description" content="HexaLoam is a modifiable 3D-printable 18-DOF hexapod robot platform with RP-Lidar mount, SOLIDWORKS CAD, gait demos, and Simscape Multibody files.">
+  <title>HexaLoam: Open-Source 3D-Printable Hexapod Robot for Agricultural Inspection (SOLIDWORKS, MG996R, LiDAR)</title>
+  <meta name="description" content="Open-source, fully 3D-printable hexapod robot: 18 joints, 36 MG996R servos, native SOLIDWORKS CAD, RP-Lidar mount, MATLAB Simscape and URDF, ROS 2, Arduino/ESP32/Raspberry Pi. Guide for agricultural plant inspection. MIT.">
+  <meta name="keywords" content="open-source hexapod robot, hexabot, agricultural robot, plant inspection, SOLIDWORKS, 3D printable robot, MG996R, RP-Lidar, MATLAB Simscape, URDF, ROS 2, Arduino, ESP32, Raspberry Pi">
   <link rel="sitemap" type="application/xml" href="sitemap.xml">
   <link rel="canonical" href="https://equesai.github.io/HexaLoam/">
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -19,8 +20,8 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="HexaLoam">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="HexaLoam: Modular 3D-Printable 18-DOF Hexapod Robot with LiDAR">
-  <meta property="og:description" content="Modifiable six-legged robot platform with editable SOLIDWORKS CAD, 20 3D-printable parts, RP-Lidar mount, kinematic gait animations, GLB meshes, and MATLAB Simscape compilation results.">
+  <meta property="og:title" content="HexaLoam: Open-Source 3D-Printable Hexapod Robot with SOLIDWORKS CAD and LiDAR">
+  <meta property="og:description" content="Fully 3D-printable hexapod robot (18 joints, 36 MG996R servos) with editable SOLIDWORKS CAD, RP-Lidar mount, MATLAB Simscape and URDF models, ROS 2 and a guide for agricultural plant inspection. MIT license.">
   <meta property="og:url" content="https://equesai.github.io/HexaLoam/">
   <meta property="og:image" content="https://equesai.github.io/HexaLoam/assets/assembly-hero.png">
   <meta property="og:image:width" content="1280">
@@ -29,8 +30,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="HexaLoam: Modular 3D-Printable 18-DOF Hexapod Robot with LiDAR">
-  <meta name="twitter:description" content="Modifiable six-legged robot platform with editable SOLIDWORKS CAD, 20 3D-printable parts, RP-Lidar mount, kinematic gait animations, GLB meshes, and MATLAB Simscape compilation results.">
+  <meta name="twitter:title" content="HexaLoam: Open-Source 3D-Printable Hexapod Robot with SOLIDWORKS CAD and LiDAR">
+  <meta name="twitter:description" content="Fully 3D-printable hexapod robot (18 joints, 36 MG996R servos) with editable SOLIDWORKS CAD, RP-Lidar mount, MATLAB Simscape and URDF models, ROS 2 and a guide for agricultural plant inspection. MIT license.">
   <meta name="twitter:image" content="https://equesai.github.io/HexaLoam/assets/assembly-hero.png">
   <meta name="twitter:image:alt" content="Isometric assembly render of the HexaLoam hexapod robot showing chassis, six legs, and central RP-Lidar mount">
 
@@ -41,20 +42,14 @@
       {
         "@type": "Organization",
         "@id": "https://equesai.github.io/HexaLoam/#organization",
-        "name": "HexaLoam contributors",
+        "name": "HexaLoam Project",
         "url": "https://equesai.github.io/HexaLoam/",
         "logo": {
           "@type": "ImageObject",
           "url": "https://equesai.github.io/HexaLoam/assets/hexaloam-logo.png",
           "width": 512,
           "height": 512
-        },
-        "sameAs": [
-          "https://github.com/equesai",
-          "https://www.youtube.com/shorts/4rD9bK5iIl8",
-          "https://www.youtube.com/shorts/ggAerDmc-yU",
-          "https://www.youtube.com/shorts/ZopVjcM9axM"
-        ]
+        }
       },
       {
         "@type": "WebSite",
@@ -69,7 +64,7 @@
         "@type": "WebPage",
         "@id": "https://equesai.github.io/HexaLoam/#webpage",
         "url": "https://equesai.github.io/HexaLoam/",
-        "name": "HexaLoam — Modular 3D-Printable Hexapod Robot with LiDAR",
+        "name": "HexaLoam: Open-Source 3D-Printable Hexapod Robot with SOLIDWORKS CAD and LiDAR",
         "isPartOf": {
           "@id": "https://equesai.github.io/HexaLoam/#website"
         },
@@ -81,17 +76,18 @@
           "url": "https://equesai.github.io/HexaLoam/assets/assembly-hero.png",
           "width": 1280,
           "height": 720
-        }
+        },
+        "description": "Open-source 3D-printable hexapod robot with SOLIDWORKS CAD, 36 MG996R servos, RP-Lidar mount, MATLAB Simscape and URDF models, and a guide for agricultural plant inspection."
       },
       {
         "@type": "SoftwareSourceCode",
         "@id": "https://equesai.github.io/HexaLoam/#software",
         "name": "HexaLoam",
-        "alternateName": "HexaLoam 18-DOF Hexapod",
+        "alternateName": "HexaLoam open-source hexapod robot",
         "url": "https://equesai.github.io/HexaLoam/",
         "codeRepository": "https://github.com/equesai/HexaLoam",
         "license": "https://github.com/equesai/HexaLoam/blob/main/LICENSE",
-        "description": "Complete open robotics platform featuring editable SOLIDWORKS CAD, 20 3D-printable PLA+ STL/3MF structural parts, 15 wiring diagrams, Arduino Mega and ESP32 firmware, Raspberry Pi and ROS2 control software, URDF, MATLAB Simscape Multibody files, and Tripod/Ripple/Wave gait demonstrations for an 18-DOF hexapod with an RP-Lidar mount.",
+        "description": "Open-source, fully 3D-printable hexapod robot (hexabot) with native editable SOLIDWORKS CAD: 18 joints driven by 36 MG996R servos, 5 STL designs (20 PLA+ pieces, 1.306 kg as sliced), an integrated RP-Lidar (2D) mount, MATLAB Simscape Multibody and URDF models, four controller configurations (Arduino Mega, ESP32, Raspberry Pi with 1 or 2 ESP32), 15 wiring diagrams, firmware and a Raspberry Pi Python and ROS 2 controller. MIT license. No camera mount or plant-vision code yet.",
         "programmingLanguage": [
           "C++",
           "Python",
@@ -108,17 +104,23 @@
           "Unreal Engine"
         ],
         "keywords": [
-          "HexaLoam",
-          "hexapod",
+          "open-source hexapod robot",
           "hexabot",
-          "LOAM",
-          "LiDAR",
-          "RP-Lidar",
-          "3D-printable robot",
-          "18-DOF",
-          "agricultural robotics",
-          "Simscape Multibody",
+          "agricultural robot",
+          "plant inspection",
           "SOLIDWORKS",
+          "3D-printable robot",
+          "MG996R",
+          "RP-Lidar",
+          "2D SLAM",
+          "MATLAB Simscape Multibody",
+          "URDF",
+          "ROS 2",
+          "Arduino",
+          "ESP32",
+          "Raspberry Pi",
+          "legged robot",
+          "18-DOF",
           "STL",
           "3MF",
           "GLB"
@@ -130,7 +132,12 @@
         ],
         "creator": {
           "@id": "https://equesai.github.io/HexaLoam/#organization"
-        }
+        },
+        "applicationCategory": "Robotics",
+        "publisher": {
+          "@id": "https://equesai.github.io/HexaLoam/#organization"
+        },
+        "isAccessibleForFree": true
       },
       {
         "@type": "VideoObject",
@@ -141,8 +148,6 @@
         "uploadDate": "2026-11-24T22:46:53Z",
         "duration": "PT10S",
         "contentUrl": "https://equesai.github.io/HexaLoam/assets/gait-tripod.mp4",
-        "embedUrl": "https://www.youtube.com/embed/4rD9bK5iIl8",
-        "sameAs": "https://www.youtube.com/shorts/4rD9bK5iIl8",
         "publisher": {
           "@id": "https://equesai.github.io/HexaLoam/#organization"
         }
@@ -156,8 +161,6 @@
         "uploadDate": "2026-11-24T22:46:53Z",
         "duration": "PT10S",
         "contentUrl": "https://equesai.github.io/HexaLoam/assets/gait-ripple.mp4",
-        "embedUrl": "https://www.youtube.com/embed/ggAerDmc-yU",
-        "sameAs": "https://www.youtube.com/shorts/ggAerDmc-yU",
         "publisher": {
           "@id": "https://equesai.github.io/HexaLoam/#organization"
         }
@@ -171,8 +174,6 @@
         "uploadDate": "2026-11-24T22:46:53Z",
         "duration": "PT10S",
         "contentUrl": "https://equesai.github.io/HexaLoam/assets/gait-wave.mp4",
-        "embedUrl": "https://www.youtube.com/embed/ZopVjcM9axM",
-        "sameAs": "https://www.youtube.com/shorts/ZopVjcM9axM",
         "publisher": {
           "@id": "https://equesai.github.io/HexaLoam/#organization"
         }
@@ -212,10 +213,74 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Are all HexaLoam structural parts 3D printable?",
+            "name": "Is HexaLoam open source?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Five watertight STL designs make 20 printed pieces for one robot: Robot_Base (1), leg links L1 (6), L2 (6), and L3 (6), plus LidarCover (1). They are also pre-arranged in the six-plate Printables/Full_Robot.3mf Bambu Studio file. The longest exported part dimension is L3 at 246.2 mm. Servos, fasteners, controller, batteries, and LiDAR are sourced separately."
+              "text": "Yes. Everything is released under the MIT License; third-party reference CAD (servo, LiDAR, battery) keeps its own source terms."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which CAD does HexaLoam use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Native, editable SOLIDWORKS parts and assemblies (Full_Robot_Assembly.SLDASM, LegMates.SLDASM, Designed/), plus STEP, STL, 3MF and GLB files."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which servos does HexaLoam use, and how many?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "36 MG996R servos: 18 joints (3 per leg: coxa, femur, tibia), two back-to-back per joint with mirrored angles (MA2 = 3000 - MA1 microseconds). Two give 2.157 N·m stall torque per joint at 6.0 V."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the HexaLoam body fully 3D printable?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The structure is. Five watertight STL designs make 20 PLA+ pieces for one robot (Robot_Base 1, L1 6, L2 6, L3 6, LidarCover 1), 1.306 kg as sliced in Bambu Studio with supports excluded, also arranged in the six-plate Printables/Full_Robot.3mf. Servos, fasteners, electronics and battery are bought parts. The longest exported dimension is L3 at 246.2 mm."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can MATLAB simulate HexaLoam?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The repository includes a Simscape Multibody XML export with seven STEP files, a single-leg static study, a gait-trajectory replay and a URDF for importrobot. The Simscape import compiles in MATLAB R2025b but still has 29 extra 6-DOF joints from missing CAD mates (tools/check_cad_mates.py explains them), so use the URDF as the clean 18-joint kinematic model."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the LiDAR mounted?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The chassis CAD includes an RP-Lidar (2D) model and an editable cover (LidarCover). A 2D lidar supports 2D SLAM, for example slam_toolbox. LOAM in the project name is not a claim of 3D LOAM odometry."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I add a camera to HexaLoam for plant disease detection?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not out of the box: there is no camera mount in the CAD and no plant-vision code yet. The agricultural plant-inspection guide covers camera placement on the chassis M3 holes, a YOLO-style detection pipeline, severity by affected area, SLAM geotagging, and a MATLAB digital-twin path."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which controller configuration should I choose?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Four configurations are compared: A Arduino Mega, B ESP32 with two PCA9685, C Raspberry Pi with one ESP32, D Raspberry Pi with two ESP32. Use C or D when you need an on-board computer, for example for a camera."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is HexaLoam validated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By simulation and analysis only. The robot was tested in four controller configurations (A-D) through simulation parameters and an analysis of mass versus required motor torque: wave and ripple gaits stay within 70% of continuous torque and tripod needs 81-86%. These are analytical estimates from slicer-reported masses; physical bench and field tests are pending."
             }
           },
           {
@@ -223,23 +288,7 @@
             "name": "How do the M3 nut pockets and controller/battery bay work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The 203.5 × 208.9 mm base is controller-agnostic, offering an open central equipment area along with mounting holes and recessed M3 nut pockets for adapter plates, brackets, batteries, and payloads. Verify your actual hardware envelopes, fastener lengths, and cable paths in CAD before printing."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is HexaLoam compatible with LiDAR and SLAM/LOAM experiments?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The reference SOLIDWORKS assembly places an RP-Lidar model on the chassis with an editable protective cover (LidarCover). Builders can adapt the mount for their chosen LiDAR, verify scan-plane clearance, and integrate an onboard computer with SLAM or LOAM mapping software."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the current status of the MATLAB Simscape 18-DOF simulation?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Full_Robot_Assembly.xml and its seven STEP files import and compile in MATLAB R2025b with Simscape Multibody, producing 18 revolute joint blocks and 29 additional 6-DOF joint blocks. Those free connections and each hinge axis must be verified against the CAD before computing full-body torque or walking dynamics. A runnable single-leg static torque script (legStaticStudy.m) is also included."
+              "text": "The 203.5 × 208.9 mm base is controller-agnostic, offering an open central equipment area along with mounting holes and recessed M3 nut pockets for adapter plates, brackets, batteries, and payloads. Check your actual hardware envelopes, screw lengths, and cable paths in CAD before printing."
             }
           },
           {
@@ -247,10 +296,30 @@
             "name": "Can I import HexaLoam into Unity, Unreal Engine, or Blender?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. The simulation/meshes/ directory contains five static, meter-scaled GLB meshes (Robot_Base, L1, L2, L3, and LidarCover). All five passed Blender 4.2.16 LTS geometry checks, and import workflows for Unity glTFast and Unreal Engine 5.3 are documented, with native Unity/Unreal editor tests pending."
+              "text": "Yes. simulation/meshes/ provides five static, meter-scaled GLB meshes. All five passed Blender 4.2.16 LTS geometry checks, and Unity glTFast and Unreal Engine 5.3 workflows are documented, with native editor tests pending."
             }
           }
         ]
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://equesai.github.io/HexaLoam/#design",
+        "name": "HexaLoam hexapod robot design files",
+        "additionalType": "https://schema.org/3DModel",
+        "description": "Editable SOLIDWORKS parts and assemblies, STEP, STL, 3MF and GLB files of a six-legged robot with 18 joints and 36 MG996R servos, plus electronics, firmware, URDF and MATLAB files. Simulation and analysis tested in four controller configurations; physical tests pending.",
+        "license": "https://github.com/equesai/HexaLoam/blob/main/LICENSE",
+        "isAccessibleForFree": true,
+        "keywords": "hexapod, hexabot, agricultural robot, SOLIDWORKS, 3D printing, MG996R, RP-Lidar, MATLAB, URDF",
+        "creator": {
+          "@id": "https://equesai.github.io/HexaLoam/#organization"
+        },
+        "publisher": {
+          "@id": "https://equesai.github.io/HexaLoam/#organization"
+        },
+        "dateModified": "2026-11-27",
+        "hasPart": {
+          "@id": "https://equesai.github.io/HexaLoam/agricultural-plant-inspection/#article"
+        }
       }
     ]
   }
@@ -267,7 +336,7 @@
         <img src="assets/hexaloam-logo.png" width="28" height="28" alt="" aria-hidden="true" class="brand-mark">
         <span class="brand-name">HexaLoam</span>
         <span class="brand-divider" aria-hidden="true">·</span>
-        <span class="brand-org">HexaLoam contributors</span>
+        <span class="brand-org">Open hardware</span>
       </a>
       <nav class="nav-menu" aria-label="Project Navigation">
         <a href="#chassis" class="nav-item">Hardware</a>
@@ -275,6 +344,7 @@
         <a href="videos/" class="nav-item">Videos</a>
         <a href="#simulation" class="nav-item">Simulation</a>
         <a href="#control" class="nav-item">Control</a>
+        <a href="#agriculture" class="nav-item">Agriculture</a>
         <a href="#faq" class="nav-item">FAQ</a>
         <a href="https://github.com/equesai/HexaLoam" class="nav-item nav-repo">GitHub</a>
       </nav>
@@ -287,12 +357,12 @@
         <div class="hero-content">
           <div class="hero-brand-eyebrow">
             <img src="assets/hexaloam-logo.png" width="28" height="28" alt="HexaLoam hexagonal LiDAR and six-legged emblem" class="hero-logo-mark">
-            <span>HexaLoam contributors · Modular Robotics Platform</span>
+            <span>Open hardware · Modular Robotics Platform</span>
           </div>
           <h1 class="hero-title">HexaLoam</h1>
           <p class="hero-subhead">Modular 3D-printable 18-DOF hexapod with LiDAR</p>
           <p class="hero-lede">
-            An adaptable six-legged robotics platform for agricultural scouting, LiDAR/LOAM mapping, and legged locomotion research. Download the SOLIDWORKS CAD, PLA+ print files, 15 wiring diagrams, Arduino/ESP32 firmware, and Raspberry Pi/ROS2 controller in one unified repository.
+            An open-source, fully 3D-printable hexapod robot for agricultural scouting and plant-inspection projects, education and legged-robot research. Download the editable SOLIDWORKS CAD, PLA+ print files, MATLAB Simscape and URDF models, 15 wiring diagrams, Arduino/ESP32 firmware and a Raspberry Pi/ROS 2 controller (MIT license). <a href="agricultural-plant-inspection/">Agricultural plant-inspection guide</a>.
           </p>
           <div class="hero-actions">
             <a href="https://github.com/equesai/HexaLoam/blob/main/docs/gallery.md" class="cta-btn cta-primary">Explore the CAD</a>
@@ -442,7 +512,7 @@
           <div class="sim-card">
             <h3 class="sim-card-title">MATLAB and Simscape Analysis</h3>
             <p>
-              The assembly XML and seven STEP files imported and compiled in MATLAB R2025b with Simscape Multibody. The model contains 18 revolute joint blocks and 29 additional 6-DOF joint blocks. Trace those free connections and verify each hinge axis before using the model to estimate torque or walking speed.
+              The assembly XML and seven STEP files imported and compiled in MATLAB R2025b with Simscape Multibody. The model contains 18 revolute joint blocks and 29 additional 6-DOF joint blocks. Trace those free connections and verify each hinge axis before using the model to estimate torque or walking speed. The extra joints come from missing CAD mates (11 of 36 servos have none; run tools/check_cad_mates.py). Until the CAD is fixed and re-exported, use simulation/urdf/hexaloam.urdf as the clean 18-joint kinematic model.
             </p>
           </div>
           <div class="sim-card">
@@ -455,6 +525,18 @@
             </p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="agriculture" class="content-section">
+      <div class="section-container">
+        <h2 class="section-title">Agricultural plant inspection</h2>
+        <p class="section-intro">
+          HexaLoam fits a graduation project or research prototype that needs an open-source hexabot for crop or greenhouse scouting: editable SOLIDWORKS CAD, a fully 3D-printable PLA+ body, low-cost MG996R servos, an RP-Lidar mount already in the chassis, MATLAB Simscape and URDF files, and an MIT license. <strong>There is no camera mount in the CAD and no plant-vision code yet.</strong> The <a href="agricultural-plant-inspection/">agricultural plant-inspection guide</a> shows how to add a Raspberry Pi Camera Module 3 or USB camera on the chassis M3 holes, build a YOLO-style leaf-defect pipeline with severity by affected area, geotag detections with the 2D SLAM pose, and validate the route in a MATLAB/Simulink digital twin. Wave and ripple gaits stay within the 70% continuous torque limit and suit steady image capture.
+        </p>
+        <p class="section-intro">
+          <a class="cta-btn cta-primary" href="agricultural-plant-inspection/">Read the plant-inspection guide</a>
+        </p>
       </div>
     </section>
 
@@ -481,9 +563,57 @@
 
         <div class="faq-list">
           <details class="faq-item">
-            <summary class="faq-question">Are all HexaLoam structural parts 3D printable?</summary>
+            <summary class="faq-question">Is HexaLoam open source?</summary>
             <p class="faq-answer">
-              Yes. Five watertight STL designs make 20 printed pieces for one robot: <code>Robot_Base</code> (1), leg links <code>L1</code> (6), <code>L2</code> (6), and <code>L3</code> (6), plus <code>LidarCover</code> (1). They are also pre-arranged in the six-plate <code>Printables/Full_Robot.3mf</code> Bambu Studio project. The longest exported dimension is <code>L3</code> at 246.2 mm. Servos, fasteners, controller, batteries, and LiDAR are sourced separately.
+              Yes. Everything is released under the MIT License; third-party reference CAD (servo, LiDAR, battery) keeps its own source terms.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Which CAD does HexaLoam use?</summary>
+            <p class="faq-answer">
+              Native, editable SOLIDWORKS parts and assemblies (<code>Full_Robot_Assembly.SLDASM</code>, <code>LegMates.SLDASM</code>, Designed/), plus STEP, STL, 3MF and GLB files.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Which servos does HexaLoam use, and how many?</summary>
+            <p class="faq-answer">
+              36 MG996R servos: 18 joints (3 per leg: coxa, femur, tibia), two back-to-back per joint with mirrored angles (<code>MA2 = 3000 - MA1</code> microseconds). Two give 2.157 N·m stall torque per joint at 6.0 V.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Is the HexaLoam body fully 3D printable?</summary>
+            <p class="faq-answer">
+              The structure is. Five watertight STL designs make 20 PLA+ pieces for one robot (Robot_Base 1, L1 6, L2 6, L3 6, <code>LidarCover</code> 1), 1.306 kg as sliced in Bambu Studio with supports excluded, also arranged in the six-plate <code>Printables/Full_Robot.3mf</code>. Servos, fasteners, electronics and battery are bought parts. The longest exported dimension is L3 at 246.2 mm.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can MATLAB simulate HexaLoam?</summary>
+            <p class="faq-answer">
+              Yes. The repository includes a Simscape Multibody XML export with seven STEP files, a single-leg static study, a gait-trajectory replay and a URDF for <code>importrobot</code>. The Simscape import compiles in MATLAB R2025b but still has 29 extra 6-DOF joints from missing CAD mates (<code>tools/check_cad_mates.py</code> explains them), so use the URDF as the clean 18-joint kinematic model.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How is the LiDAR mounted?</summary>
+            <p class="faq-answer">
+              The chassis CAD includes an RP-Lidar (2D) model and an editable cover (<code>LidarCover</code>). A 2D lidar supports 2D SLAM, for example <code>slam_toolbox</code>. LOAM in the project name is not a claim of 3D LOAM odometry.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can I add a camera to HexaLoam for plant disease detection?</summary>
+            <p class="faq-answer">
+              Not out of the box: there is no camera mount in the CAD and no plant-vision code yet. The <a href="agricultural-plant-inspection/">agricultural plant-inspection guide</a> covers camera placement on the chassis M3 holes, a YOLO-style detection pipeline, severity by affected area, SLAM geotagging, and a MATLAB digital-twin path.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Which controller configuration should I choose?</summary>
+            <p class="faq-answer">
+              Four configurations are compared: A Arduino Mega, B ESP32 with two PCA9685, C Raspberry Pi with one ESP32, D Raspberry Pi with two ESP32. Use C or D when you need an on-board computer, for example for a camera.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Is HexaLoam validated?</summary>
+            <p class="faq-answer">
+              By simulation and analysis only. The robot was tested in four controller configurations (A-D) through simulation parameters and an analysis of mass versus required motor torque: wave and ripple gaits stay within 70% of continuous torque and tripod needs 81-86%. These are analytical estimates from slicer-reported masses; physical bench and field tests are pending.
             </p>
           </details>
           <details class="faq-item">
@@ -493,21 +623,9 @@
             </p>
           </details>
           <details class="faq-item">
-            <summary class="faq-question">Is HexaLoam compatible with LiDAR and SLAM/LOAM workflows?</summary>
-            <p class="faq-answer">
-              The reference assembly places an RP-Lidar model on the chassis with an editable protective cover (<code>LidarCover</code>). Builders can adapt the mount for their chosen LiDAR, verify scan-plane clearance, and add an onboard computer running SLAM or LOAM mapping software.
-            </p>
-          </details>
-          <details class="faq-item">
-            <summary class="faq-question">What is the current status of the MATLAB Simscape 18-DOF simulation?</summary>
-            <p class="faq-answer">
-              <code>Full_Robot_Assembly.xml</code> and seven STEP files import and compile in MATLAB R2025b with Simscape Multibody, producing 18 revolute joint blocks and 29 additional 6-DOF joint blocks. Free connections and hinge axes must be verified against CAD before computing full-body torque or walking dynamics. A runnable single-leg static torque script (<code>legStaticStudy.m</code>) is included.
-            </p>
-          </details>
-          <details class="faq-item">
             <summary class="faq-question">Can I import HexaLoam into Unity, Unreal Engine, or Blender?</summary>
             <p class="faq-answer">
-              Yes. <code>simulation/meshes/</code> provides five static, meter-scaled GLB meshes (<code>Robot_Base.glb</code>, <code>L1.glb</code>, <code>L2.glb</code>, <code>L3.glb</code>, <code>LidarCover.glb</code>). All five passed Blender 4.2.16 LTS geometry checks, and Unity glTFast and Unreal Engine 5.3 workflows are documented, with native editor tests pending.
+              Yes. simulation/meshes/ provides five static, meter-scaled GLB meshes. All five passed Blender 4.2.16 LTS geometry checks, and Unity glTFast and Unreal Engine 5.3 workflows are documented, with native editor tests pending.
             </p>
           </details>
         </div>
@@ -518,13 +636,13 @@
       <div class="section-container">
         <h2 class="section-title">Control architectures, wiring &amp; torque analysis</h2>
         <p class="section-intro">
-          HexaLoam is engineered around one shared 18-joint mapping (<code>LF_COXA..RR_TIBIA</code>), CAD-derived 3R kinematics (<code>L1 = 86.53 mm</code>, <code>L2 = 121.06 mm</code>, <code>L3 = 202.50 mm</code>), and back-to-back mirrored dual-motor joints (<code>MA1</code> &amp; <code>MA2</code>). All four control configurations below are validated in software and analytical torque simulation; physical hardware commissioning is structured into 11 progressive checklists.
+          HexaLoam is engineered around one shared 18-joint mapping (<code>LF_COXA..RR_TIBIA</code>), CAD-derived 3R kinematics (<code>L1 = 86.53 mm</code>, <code>L2 = 121.06 mm</code>, <code>L3 = 202.50 mm</code>), and back-to-back mirrored dual-motor joints (<code>MA1</code> &amp; <code>MA2</code>). The robot was tested in four controller configurations (A-D) through simulation parameters and an analysis of the mass of each configuration's controllers and top-mounted parts against the torque each set of motors needs. These are analytical and simulation results only; no hardware has been tested, and physical commissioning is structured into 11 progressive checklists.
         </p>
 
         <div class="metric-strip">
           <div class="metric-card">
             <span class="metric-value">1.306 kg</span>
-            <span class="metric-label">PLA+ printed structure (20 pcs, G-code verified, no support)</span>
+            <span class="metric-label">PLA+ printed structure (20 pcs, slicer-reported weights, no support)</span>
           </div>
           <div class="metric-card">
             <span class="metric-value">3.79–4.02 kg</span>
@@ -610,7 +728,7 @@
 
         <h3 class="subsection-title">PLA+ Slicer Part Weights (Support Negated)</h3>
         <p class="section-intro">
-          Measured directly from the Bambu Studio single-part G-code plates (<code>PLA+</code>, <code>0.4 mm</code> nozzle, 2 walls, 15% gyroid infill), excluding support and brim filament:
+          Slicer-reported weights from the Bambu Studio single-part plates (G-code not included in the repository) (<code>PLA+</code>, <code>0.4 mm</code> nozzle, 2 walls, 15% gyroid infill), excluding support and brim filament:
         </p>
         <div class="table-card">
           <table class="data-table">
@@ -637,7 +755,7 @@
 
         <h3 class="subsection-title">Weight, 3S 5000 mAh LiPo &amp; Dual-Motor Torque Comparison</h3>
         <p class="section-intro">
-          Analytical 3R leg Jacobian comparison (<code>H = 185 mm</code>, <code>R_foot = 290 mm</code>) for the G-code PLA+ robot + 36 servos (<strong>3.286 kg</strong>) plus controllers, RP-Lidar (2D planar SLAM; 3D LOAM requires a 3D LiDAR upgrade), and a <strong>3S 5000 mAh LiPo (0.360 kg)</strong> against <strong>2× MG996R per joint</strong> (<strong>2.157 N·m</strong> stall @ 6.0 V; analytical <code>70%</code> continuous target = <strong>1.510 N·m</strong>, pending bench thermal validation). Each 18-channel controller drives <code>MA1</code> directly and opposing <code>MA2</code> via an inline PWM signal reverser (or optional 36-channel 3× PCA9685 / Mega <code>D22..D57</code>):
+          Analytical 3R leg Jacobian comparison (<code>H = 185 mm</code>, <code>R_foot = 290 mm</code>) for the slicer-weight PLA+ robot + 36 servos (<strong>3.286 kg</strong>) plus controllers, RP-Lidar (2D planar SLAM; 3D LOAM requires a 3D LiDAR upgrade), and a <strong>3S 5000 mAh LiPo (0.360 kg)</strong> against <strong>2× MG996R per joint</strong> (<strong>2.157 N·m</strong> stall @ 6.0 V; analytical <code>70%</code> continuous target = <strong>1.510 N·m</strong>, pending bench thermal validation). Each 18-channel controller drives <code>MA1</code> directly and opposing <code>MA2</code> via an inline PWM signal reverser. A software-mirrored 36-channel mode is not available on two PCA9685 boards (32 channels):
         </p>
         <div class="table-card">
           <table class="data-table">
@@ -691,6 +809,7 @@
               </tr>
             </tbody>
           </table>
+          <p><strong>Tripod caution:</strong> 3-leg support needs 81.5%–86.4% of stall torque, above the 70% continuous limit. Ripple and Wave are the loaded-walking gaits; use Tripod only for short, unloaded runs (the Raspberry Pi controller defaults to Tripod).</p>
         </div>
 
         <figure class="figure-card">
@@ -727,7 +846,7 @@
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-col-left">
-        <span class="footer-title">HexaLoam · HexaLoam contributors</span>
+        <span class="footer-title">HexaLoam · Open hardware</span>
         <span class="footer-note"><a href="https://github.com/equesai/HexaLoam/blob/main/LICENSE">MIT License</a> · <a href="https://github.com/equesai/HexaLoam/blob/main/CONTRIBUTING.md">Contributing</a></span>
       </div>
       <div class="footer-col-right">

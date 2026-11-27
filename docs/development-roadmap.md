@@ -1,6 +1,6 @@
 # HexaLoam engineering development roadmap
 
-**Objective.** Take the HexaLoam contributors HexaLoam mechanical hexapod from editable CAD to a reproducible, instrumented agricultural scouting experiment. A researcher should be able to reproduce the gait, payload, terrain and sensor results from a tagged revision. A student should be able to inspect one leg and reproduce a smaller experiment before moving on to the full robot.
+**Objective.** Take the HexaLoam mechanical hexapod from editable CAD to a reproducible, instrumented agricultural scouting experiment. A researcher should be able to reproduce the gait, payload, terrain and sensor results from a tagged revision. A student should be able to inspect one leg and reproduce a smaller experiment before moving on to the full robot.
 
 **First engineering priority.** Trace the free connections in the imported assembly and validate one leg. A visually correct mesh cannot establish a hinge axis, an independent degree of freedom or a motor torque requirement. Engine scene preparation and print-fit studies can proceed alongside this work.
 
@@ -11,7 +11,7 @@
 | Mechanical design | Main and leg assemblies opened in SOLIDWORKS. Five custom print designs make 20 pieces. | The separate battery reference lacks its spacer part. Payload capacity, stiffness, fatigue and real-world fit require tests. |
 | Visual interchange | Five part-level GLB files, their source STLs and a rebuild tool. | Record native Unity and Unreal Editor imports and integration tests. Assembly pivots and constraints require separate data. |
 | Locomotion | The CAD-derived tripod, ripple and wave demonstrations use the same stride and clearance. The footfall panel shows the stance and swing phases for each leg. [Walking sequences](walking.md) | Measure the available joint travel, check collisions and compare the prescribed foot paths with instrumented walking trials. |
-| Dynamics | The XML and seven geometry files imported and compiled in MATLAB R2025b. The generated model contains 18 revolute and 29 additional 6-DOF joints. | Trace free connections, verify rigid attachments, and check three independent physical axes per leg. |
+| Dynamics | The XML and seven geometry files imported and compiled in MATLAB R2025b. The generated model contains 18 revolute and 29 additional 6-DOF joints, caused by 11 servos with no CAD mates and three unattached islands per leg (`python tools/check_cad_mates.py simulation/cad-export/Full_Robot_Assembly.xml`). | Fix each servo case to its carrier part, mate each horn axis to the next link and re-export; meanwhile use `simulation/urdf/hexaloam.urdf` (`importrobot`) as the clean 18-joint model. |
 | Sensing and field work | The CAD includes an RP-Lidar reference model and a printable cover. | Measure the sensor pose and scan clearance, add timestamped data, and validate with the chosen hardware. |
 | Hardware | Chassis mounting holes and M3 nut pockets allow application-specific brackets, controllers and batteries. | Establish a configuration-specific BOM, wiring, power budget and test record. |
 

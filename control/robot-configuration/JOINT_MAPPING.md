@@ -1,4 +1,4 @@
-# HexaLoam Canonical 18-Servo Joint Mapping
+# HexaLoam Canonical 18-Joint Mapping (36 Servos, 2 per Joint)
 
 Auto-generated from [hexaloam_config.json](hexaloam_config.json).
 

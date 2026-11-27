@@ -67,7 +67,7 @@ def main() -> None:
     HEADER_PATH.write_text("\n".join(lines), encoding="utf-8")
 
     md = [
-        "# HexaLoam Canonical 18-Servo Joint Mapping",
+        "# HexaLoam Canonical 18-Joint Mapping (36 Servos, 2 per Joint)",
         "",
         "Auto-generated from [hexaloam_config.json](hexaloam_config.json).",
         "",

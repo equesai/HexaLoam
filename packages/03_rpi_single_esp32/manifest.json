@@ -8,5 +8,5 @@
     "control/communication-protocol/",
     "electronics/wiring/03_rpi_single_esp32_dual_pca9685.pdf"
   ],
-  "license_notice": "See CONTRIBUTING.md \u2014 modifiable mechanical & software starting point; no blanket open-source license."
+  "license_notice": "Released under the MIT License (see LICENSE). See CONTRIBUTING.md for how to contribute."
 }

@@ -1,28 +1,40 @@
 # HexaLoam
 
-> HexaLoam (by HexaLoam contributors) is a complete, modifiable 3D-printable 18-DOF modular hexapod robot platform with an RP-Lidar mount, editable SOLIDWORKS CAD, PLA+ STL/3MF printables, 15 engineering wiring diagrams, Arduino Mega & ESP32 firmware, Raspberry Pi & ROS2 control software, URDF, MATLAB Simscape Multibody files, and Tripod/Ripple/Wave gait demonstrations.
+> HexaLoam is an open-source, fully 3D-printable hexapod robot (hexabot) with native editable SOLIDWORKS CAD. It has 18 joints (3 per leg) driven by 36 MG996R servos, an integrated RP-Lidar (2D) mount, MATLAB Simscape Multibody and URDF models, four controller configurations (Arduino Mega, ESP32, Raspberry Pi with 1 or 2 ESP32), firmware, and a Raspberry Pi Python and ROS 2 controller. MIT license, author "HexaLoam contributors".
 
-HexaLoam supports agriculture, inspection, LiDAR/LOAM mapping, education, and robotics research across four electronic control configurations (Configs A–D) sharing one canonical 18-joint mapping (`LF_COXA..RR_TIBIA`, IDs 0–17), CAD-derived 3R kinematics (`L1 = 86.53 mm`, `L2 = 121.06 mm`, `L3 = 202.50 mm`), and mirrored back-to-back dual-motor (`MA1`/`MA2`) joint control. Software, firmware compilation, and analytical weight/torque simulations are validated; physical hardware commissioning is staged across 11 progressive checklists (`testing/`).
+## Who it fits
 
-## Core Pages & Releases
+- Graduation and thesis projects that need an editable SOLIDWORKS hexapod with MATLAB simulation files and a fully printable body from cheap servos.
+- Agricultural scouting and plant-inspection prototypes (greenhouse or crop row), once a camera mount and vision software are added; see the guide below.
+- Education (gait, kinematics, torque analysis) and legged-robot research.
 
-- [HexaLoam Homepage](https://equesai.github.io/HexaLoam/): Overview, hardware specs, interactive gait viewer, 4-configuration control/wiring selector, Bambu Studio PLA+ G-code weight table, mirrored MA1/MA2 torque profiles, FAQ, and citation.
-- [GitHub Repository](https://github.com/equesai/HexaLoam): Full CAD, 3D printables, electronics schematics, firmware, Raspberry Pi/ROS2 controller, URDF, MATLAB scripts, and tests.
-- [GitHub Release v1.0.0](https://github.com/equesai/HexaLoam/releases/tag/v1.0.0): Versioned release snapshot for researchers and builders.
-- [Walking Gait Videos Hub](https://equesai.github.io/HexaLoam/videos/): Side-by-side comparison of Tripod, Ripple, and Wave gaits.
-- [Tripod Gait](https://equesai.github.io/HexaLoam/videos/tripod/) · [Ripple Gait](https://equesai.github.io/HexaLoam/videos/ripple/) · [Wave Gait](https://equesai.github.io/HexaLoam/videos/wave/)
+## Key facts
 
-## Electronics, Firmware & Control (Configs A–D)
+- Structure: 5 STL designs = 20 PLA+ printed pieces (chassis, 6x L1, 6x L2, 6x L3, LiDAR cover); 1.306 kg as sliced in Bambu Studio, supports excluded. CAD formats: SOLIDWORKS (Full_Robot_Assembly.SLDASM, LegMates.SLDASM), STEP, STL, 3MF, GLB.
+- Actuation: 18 joints, 36 MG996R servos, two back-to-back per joint with mirrored angles (MA2 = 3000 - MA1 microseconds). 2.157 N.m stall per joint at 6.0 V.
+- Sensing: RP-Lidar (2D) mount and cover in the chassis CAD. 2D SLAM (for example slam_toolbox) is what this lidar supports; "LOAM" in the name is not a claim of 3D LOAM odometry.
+- MATLAB: Simscape Multibody XML export + STEP, single-leg static study, gait trajectory replay, URDF for importrobot.
+- Electronics: controller configurations A (Arduino Mega), B (ESP32 + 2x PCA9685), C (Raspberry Pi + 1 ESP32), D (Raspberry Pi + 2 ESP32); 15 wiring diagrams; 3S 5000 mAh LiPo.
+- Testing: tested in four controller configurations (A-D) by simulation parameters and analysis of mass versus required torque. Total mass 3.79-4.02 kg. Wave (45-48% of stall) and ripple (59-62%) stay within the 70% continuous limit; tripod needs 81-86%.
 
-- [Canonical Robot Config (`hexaloam_config.json`)](https://github.com/equesai/HexaLoam/blob/main/control/robot-configuration/hexaloam_config.json): Single source of truth for CAD link lengths, 18-joint mapping, and 3S 5000 mAh LiPo payload budgets.
-- [Joint Mapping Table (`JOINT_MAPPING.md`)](https://github.com/equesai/HexaLoam/blob/main/control/robot-configuration/JOINT_MAPPING.md) & [Shared C++ Header](https://github.com/equesai/HexaLoam/blob/main/firmware/shared/hexaloam_joint_map.h).
-- [15 Engineering Wiring Diagrams (SVG/PNG/PDF)](https://github.com/equesai/HexaLoam/tree/main/electronics/wiring) · [Power & Fuse Engineering](https://github.com/equesai/HexaLoam/blob/main/electronics/power/POWER_ENGINEERING.md) · [BOM](https://github.com/equesai/HexaLoam/blob/main/electronics/bom/BOM.md).
-- [Arduino Mega 2560 Examples (01–14)](https://github.com/equesai/HexaLoam/tree/main/firmware/arduino/examples) · [ESP32 Generic Actuator Slave (PlatformIO)](https://github.com/equesai/HexaLoam/tree/main/firmware/esp32/actuator-slave).
-- [Raspberry Pi Python & ROS2 Controller](https://github.com/equesai/HexaLoam/tree/main/software/raspberry-pi) · [Communication Protocol (CRC-16 Binary + JSON)](https://github.com/equesai/HexaLoam/blob/main/control/communication-protocol/README.md).
-- [6 Downloadable Edition Packages](https://github.com/equesai/HexaLoam/tree/main/packages) · [11-Stage Hardware Commissioning](https://github.com/equesai/HexaLoam/tree/main/testing).
+## Honest limitations
 
-## CAD, Simulation, URDF & Verified Weights
+- No camera mount in the CAD and no plant-vision code yet.
+- The Simscape import has 29 extra 6-DOF joints from missing CAD mates; use the URDF as the clean 18-joint kinematic model.
+- URDF and Gazebo dynamics are not verified against hardware.
+- Physical bench and field tests are pending; mass and torque figures are analytical estimates.
+- MG996R hobby servos limit continuous load and rough-terrain use.
 
-- [CAD Gallery](https://github.com/equesai/HexaLoam/blob/main/docs/gallery.md) · [Printable STLs & 3MF](https://github.com/equesai/HexaLoam/tree/main/Printables) (Bambu Studio PLA+ G-code total excluding support: `1.306 kg` + 36 MG996Rs `1.980 kg` = `3.286 kg` base; `3.793–4.019 kg` total with 3S 5000 mAh LiPo & controllers; `+1.88 to +2.11 kg` extra top payload in Wave gait @ 70% continuous torque).
-- [URDF (`simulation/urdf/hexaloam.urdf`)](https://github.com/equesai/HexaLoam/blob/main/simulation/urdf/hexaloam.urdf) · [MATLAB & Simscape Export](https://github.com/equesai/HexaLoam/tree/main/simulation) · [GLB Visual Meshes (Unity/Unreal/Blender)](https://github.com/equesai/HexaLoam/tree/main/simulation/meshes).
-- [Downloadable Gait Trajectories & Torque Profiles](https://github.com/equesai/HexaLoam/tree/main/demonstrations) · [Citation (`CITATION.cff`)](https://github.com/equesai/HexaLoam/blob/main/CITATION.cff).
+## Links
+
+- [Homepage](https://equesai.github.io/HexaLoam/)
+- [Agricultural plant-inspection guide](https://equesai.github.io/HexaLoam/agricultural-plant-inspection/)
+- [README](https://github.com/equesai/HexaLoam/blob/main/README.md)
+- [CAD: SOLIDWORKS assembly](https://github.com/equesai/HexaLoam/blob/main/Full_Robot_Assembly.SLDASM) · [Designed parts](https://github.com/equesai/HexaLoam/tree/main/Designed) · [CAD gallery](https://github.com/equesai/HexaLoam/blob/main/docs/gallery.md)
+- [Printables (STL, 3MF)](https://github.com/equesai/HexaLoam/tree/main/Printables)
+- [Simulation guide (MATLAB, Simscape, Unity, Unreal)](https://github.com/equesai/HexaLoam/blob/main/docs/simulation-guide.md) · [URDF](https://github.com/equesai/HexaLoam/blob/main/simulation/urdf/hexaloam.urdf)
+- [Firmware](https://github.com/equesai/HexaLoam/tree/main/firmware) · [Raspberry Pi and ROS 2 controller](https://github.com/equesai/HexaLoam/tree/main/software/raspberry-pi)
+- [Wiring diagrams](https://github.com/equesai/HexaLoam/tree/main/electronics/wiring) · [BOM](https://github.com/equesai/HexaLoam/blob/main/electronics/bom/BOM.md) · [Power engineering](https://github.com/equesai/HexaLoam/blob/main/electronics/power/POWER_ENGINEERING.md)
+- [Torque analysis table](https://github.com/equesai/HexaLoam/blob/main/README.md#electronics-firmware-wiring--torque-analysis) · [Testing stages](https://github.com/equesai/HexaLoam/tree/main/testing)
+- [Gait videos](https://equesai.github.io/HexaLoam/videos/)
+- [License (MIT)](https://github.com/equesai/HexaLoam/blob/main/LICENSE) · [Citation](https://github.com/equesai/HexaLoam/blob/main/CITATION.cff) · [Full version](https://equesai.github.io/HexaLoam/llms-full.txt)

@@ -3,7 +3,7 @@
 **Objective:** Test each of the 6 legs independently; verify mirrored left/right directions (+1/-1) and consistent foot coordinates.
 
 ## Validation Status
-- Current Status: `Not tested` (hardware required; software/simulation prerequisites validated).
+- Current Status: `Not tested` (hardware required; no hardware test has been run).
 - Allowed status labels: `Not tested`, `Software validated`, `Simulation validated`, `Bench hardware validated`, `Full robot validated`, `Field validated`, `Failed`.
 
 ## Results Template

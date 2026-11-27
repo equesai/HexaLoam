@@ -3,7 +3,7 @@
 **Objective:** Gradually transfer chassis weight (~5.66–5.88 kg) onto 6 legs; monitor femur servo temperature and bus voltage.
 
 ## Validation Status
-- Current Status: `Not tested` (hardware required; software/simulation prerequisites validated).
+- Current Status: `Not tested` (hardware required; no hardware test has been run).
 - Allowed status labels: `Not tested`, `Software validated`, `Simulation validated`, `Bench hardware validated`, `Full robot validated`, `Field validated`, `Failed`.
 
 ## Results Template

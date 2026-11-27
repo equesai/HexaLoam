@@ -3,7 +3,7 @@
 **Objective:** Connect 1x MG996R (J0 LF_COXA) to 6.0V @ 2A current-limited PSU; verify 1500 us neutral, direction, and E-stop.
 
 ## Validation Status
-- Current Status: `Not tested` (hardware required; software/simulation prerequisites validated).
+- Current Status: `Not tested` (hardware required; no hardware test has been run).
 - Allowed status labels: `Not tested`, `Software validated`, `Simulation validated`, `Bench hardware validated`, `Full robot validated`, `Field validated`, `Failed`.
 
 ## Results Template

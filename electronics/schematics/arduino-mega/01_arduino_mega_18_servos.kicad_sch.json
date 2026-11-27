@@ -1,6 +1,6 @@
 {
   "diagram": "01_arduino_mega_18_servos",
-  "title": "01. Arduino Mega 2560 \u2014 18 Direct PWM Servos (D22..D39)",
+  "title": "01. Arduino Mega 2560 \u2014 18 PWM Channels -> 36 Servos (MA1 + MA2)",
   "format": "hexaloam-kicad-netlist-v1",
   "blocks": [
     {
@@ -8,27 +8,37 @@
       "color": "#1E293B"
     },
     {
-      "label": "External 6.0V 20A-30A Regulated Servo PSU",
+      "label": "External 6.0V 35A Regulated Servo PSU",
       "color": "#7C2D12"
     },
     {
-      "label": "Servo Bus Bar + E-Stop (30A Fuse, Common GND)",
+      "label": "Servo Bus Bar + E-Stop 40A Main + 2x20A Branch Common GND",
       "color": "#985107"
     },
     {
-      "label": "18x MG996R Servos J0..J17 (D22..D39) Brown=GND Red=+6V Orn=PWM",
+      "label": "36x MG996R Servos (2 per joint) J0..J17: MA1 + MA2 Brown=GND Red=+6V Orn=PWM",
       "color": "#0F172A"
+    },
+    {
+      "label": "18x PWM Servo Reverser (1 per joint, MA2 path)",
+      "color": "#6D28D9"
     }
   ],
   "connections": [
     {
-      "signal": "D22..D39 PWM (5V)"
+      "signal": "D22..D39 PWM (5V) -> MA1 direct"
     },
     {
-      "signal": "+6V / GND (12 AWG)"
+      "signal": "Same PWM"
     },
     {
-      "signal": "6.0V Bus + Common GND"
+      "signal": "Reversed -> MA2"
+    },
+    {
+      "signal": "10 AWG"
+    },
+    {
+      "signal": "14 AWG branches"
     },
     {
       "signal": "Common Signal GND"
