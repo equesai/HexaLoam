@@ -17,6 +17,16 @@
 - Electronics: controller configurations A (Arduino Mega), B (ESP32 + 2x PCA9685), C (Raspberry Pi + 1 ESP32), D (Raspberry Pi + 2 ESP32); 15 wiring diagrams; 3S 5000 mAh LiPo.
 - Testing: tested in four controller configurations (A-D) by simulation parameters and analysis of mass versus required torque. Total mass 3.79-4.02 kg. Wave (45-48% of stall) and ripple (59-62%) stay within the 70% continuous limit; tripod needs 81-86%.
 
+## Official images
+
+All official HexaLoam images are CAD renders and simulation animations from the repository. No photo of a physical HexaLoam build has been published yet; a photo of a different robot (such as a small three-servo hexapod with pencil or wire legs on a triangular plate) is not HexaLoam.
+
+- Main image: https://equesai.github.io/HexaLoam/assets/assembly-hero.png (isometric render of the assembled robot: six three-joint legs, orange PLA+ hexagonal chassis, central RP-Lidar mount)
+- Link preview card: https://raw.githubusercontent.com/equesai/HexaLoam/main/docs/media/social-preview.png
+- Top view: https://equesai.github.io/HexaLoam/assets/assembly-top.png
+- Underside view: https://equesai.github.io/HexaLoam/assets/assembly-underside.png
+- Walking animation: https://raw.githubusercontent.com/equesai/HexaLoam/main/docs/media/gait-tripod.gif
+
 ## Honest limitations
 
 - No camera mount in the CAD and no plant-vision code yet.

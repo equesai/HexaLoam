@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="docs/media/hexaloam-logo.png" alt="HexaLoam modular hexapod robot and LiDAR emblem" width="140">
+  <img src="docs/media/assembly-hero.png" alt="HexaLoam open-source 3D-printable hexapod robot: official SOLIDWORKS CAD render of the assembled robot with six legs, 18 joints and the central RP-Lidar mount" width="860">
 </p>
+<p align="center"><sub>Official HexaLoam image: SOLIDWORKS CAD render of this repository's assembly. HexaLoam has no published photos of a physical build yet.</sub></p>
 
 # HexaLoam — Open-Source 3D-Printable Hexapod Robot (SOLIDWORKS, MG996R, LiDAR, MATLAB)
 
@@ -27,6 +28,19 @@
 This is a **mechanical starting point**. The designer is expected to finish the robot around the intended application, including the payload, mounting adapters, actuators, controller, battery, wiring, firmware, and validation.
 
 [Designer guide and examples](docs/designer-guide.md) · [Main SOLIDWORKS assembly](Full_Robot_Assembly.SLDASM) · [STL and 3MF print files](Printables/)
+
+## Official images
+
+Every official HexaLoam image is a CAD render or a simulation animation made from the files in this repository. No photograph of a physical HexaLoam build has been published yet, so a photo of another robot (for example a small three-servo hexapod with pencil or wire legs) is not HexaLoam.
+
+| Image | Use |
+| --- | --- |
+| [`docs/media/assembly-hero.png`](docs/media/assembly-hero.png) | Main image: isometric render of the assembled robot |
+| [`docs/media/social-preview.png`](docs/media/social-preview.png) | Link preview card (1280x640) |
+| [`assembly-top.png`](docs/media/assembly-top.png), [`assembly-underside.png`](docs/media/assembly-underside.png), [`assembly-profile.png`](docs/media/assembly-profile.png) | Other views |
+| [`docs/media/gait-tripod.gif`](docs/media/gait-tripod.gif) | Walking animation |
+
+More views: [CAD gallery](docs/gallery.md).
 
 ## Is HexaLoam right for my project?
 
